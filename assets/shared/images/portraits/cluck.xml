@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cluck.png">
+	<!-- Created with Adobe Animate version 21.0.9.42677 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cloosh dia0000" x="0" y="0" width="232" height="225"/>
+	<SubTexture name="cluck dia0000" x="242" y="0" width="236" height="199"/>
+</TextureAtlas>

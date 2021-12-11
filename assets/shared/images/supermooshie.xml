@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="supermooshie.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="supermooshie down0000" x="0" y="0" width="566" height="471" frameX="0" frameY="-7" frameWidth="568" frameHeight="478"/>
+	<SubTexture name="supermooshie down0001" x="0" y="0" width="566" height="471" frameX="0" frameY="-7" frameWidth="568" frameHeight="478"/>
+	<SubTexture name="supermooshie down0002" x="566" y="0" width="568" height="478"/>
+	<SubTexture name="supermooshie down0003" x="566" y="0" width="568" height="478"/>
+	<SubTexture name="supermooshie idle0000" x="1134" y="0" width="560" height="472" frameX="0" frameY="-1" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0001" x="1134" y="0" width="560" height="472" frameX="0" frameY="-1" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0002" x="1694" y="0" width="565" height="468" frameX="0" frameY="-5" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0003" x="1694" y="0" width="565" height="468" frameX="0" frameY="-5" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0004" x="2259" y="0" width="565" height="468" frameX="0" frameY="-5" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0005" x="2259" y="0" width="565" height="468" frameX="0" frameY="-5" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0006" x="2824" y="0" width="564" height="468" frameX="0" frameY="-5" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0007" x="2824" y="0" width="564" height="468" frameX="0" frameY="-5" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0008" x="3388" y="0" width="563" height="473" frameX="0" frameY="0" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0009" x="3388" y="0" width="563" height="473" frameX="0" frameY="0" frameWidth="567" frameHeight="473"/>
+	<SubTexture name="supermooshie idle0010" x="0" y="478" width="567" height="473"/>
+	<SubTexture name="supermooshie idle0011" x="0" y="478" width="567" height="473"/>
+	<SubTexture name="supermooshie left0000" x="567" y="478" width="565" height="473"/>
+	<SubTexture name="supermooshie left0001" x="567" y="478" width="565" height="473"/>
+	<SubTexture name="supermooshie left0002" x="1132" y="478" width="563" height="473" frameX="0" frameY="0" frameWidth="565" frameHeight="473"/>
+	<SubTexture name="supermooshie left0003" x="1132" y="478" width="563" height="473" frameX="0" frameY="0" frameWidth="565" frameHeight="473"/>
+	<SubTexture name="supermooshie mad0000" x="1695" y="478" width="559" height="472" frameX="0" frameY="-70" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0001" x="2254" y="478" width="555" height="472" frameX="0" frameY="-70" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0002" x="2809" y="478" width="545" height="472" frameX="0" frameY="-70" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0003" x="3354" y="478" width="520" height="471" frameX="0" frameY="-71" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0004" x="0" y="951" width="450" height="469" frameX="0" frameY="-73" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0005" x="450" y="951" width="450" height="471" frameX="0" frameY="-71" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0006" x="900" y="951" width="450" height="472" frameX="0" frameY="-70" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0007" x="1350" y="951" width="450" height="473" frameX="0" frameY="-69" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0008" x="1800" y="951" width="450" height="459" frameX="0" frameY="-83" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0009" x="2250" y="951" width="450" height="442" frameX="0" frameY="-100" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0010" x="2700" y="951" width="450" height="420" frameX="0" frameY="-122" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0011" x="3150" y="951" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0012" x="3600" y="951" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0013" x="0" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0014" x="0" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0015" x="0" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0016" x="0" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0017" x="0" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0018" x="450" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0019" x="900" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0020" x="1350" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0021" x="1800" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0022" x="1800" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0023" x="1800" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0024" x="1800" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0025" x="1350" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0026" x="1350" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0027" x="900" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0028" x="900" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0029" x="450" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0030" x="450" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0031" x="450" y="1424" width="450" height="386" frameX="0" frameY="-156" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0032" x="2250" y="1424" width="450" height="380" frameX="0" frameY="-162" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0033" x="2250" y="1424" width="450" height="380" frameX="0" frameY="-162" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0034" x="2700" y="1424" width="450" height="376" frameX="0" frameY="-166" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0035" x="2700" y="1424" width="450" height="376" frameX="0" frameY="-166" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0036" x="2700" y="1424" width="450" height="376" frameX="0" frameY="-166" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0037" x="2700" y="1424" width="450" height="376" frameX="0" frameY="-166" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0038" x="3150" y="1424" width="451" height="386" frameX="-1" frameY="-131" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0039" x="3601" y="1424" width="450" height="386" frameX="0" frameY="-59" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0040" x="0" y="1810" width="450" height="386" frameX="0" frameY="0" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0041" x="0" y="1810" width="450" height="386" frameX="0" frameY="0" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0042" x="0" y="1810" width="450" height="386" frameX="0" frameY="0" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie mad0043" x="0" y="1810" width="450" height="386" frameX="0" frameY="0" frameWidth="559" frameHeight="542"/>
+	<SubTexture name="supermooshie right0000" x="450" y="1810" width="575" height="473"/>
+	<SubTexture name="supermooshie right0001" x="450" y="1810" width="575" height="473"/>
+	<SubTexture name="supermooshie right0002" x="1025" y="1810" width="573" height="473" frameX="-2" frameY="0" frameWidth="575" frameHeight="473"/>
+	<SubTexture name="supermooshie right0003" x="1025" y="1810" width="573" height="473" frameX="-2" frameY="0" frameWidth="575" frameHeight="473"/>
+	<SubTexture name="supermooshie up0000" x="1598" y="1810" width="557" height="486" frameX="0" frameY="0" frameWidth="558" frameHeight="486"/>
+	<SubTexture name="supermooshie up0001" x="1598" y="1810" width="557" height="486" frameX="0" frameY="0" frameWidth="558" frameHeight="486"/>
+	<SubTexture name="supermooshie up0002" x="2155" y="1810" width="558" height="481" frameX="0" frameY="-5" frameWidth="558" frameHeight="486"/>
+	<SubTexture name="supermooshie up0003" x="2155" y="1810" width="558" height="481" frameX="0" frameY="-5" frameWidth="558" frameHeight="486"/>
+</TextureAtlas>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="james.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="baby james dialogue0000" x="0" y="0" width="307" height="287"/>
+	<SubTexture name="james group dialogue0000" x="307" y="0" width="361" height="394"/>
+	<SubTexture name="sooubway james dialogue0000" x="668" y="0" width="239" height="232"/>
+</TextureAtlas>

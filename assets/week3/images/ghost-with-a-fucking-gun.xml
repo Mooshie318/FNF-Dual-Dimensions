@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ghost-with-a-fucking-gun.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ghost down0000" x="0" y="0" width="236" height="222"/>
+	<SubTexture name="ghost down0001" x="0" y="0" width="236" height="222"/>
+	<SubTexture name="ghost down0002" x="236" y="0" width="235" height="216" frameX="0" frameY="-3" frameWidth="236" frameHeight="222"/>
+	<SubTexture name="ghost down0003" x="236" y="0" width="235" height="216" frameX="0" frameY="-3" frameWidth="236" frameHeight="222"/>
+	<SubTexture name="ghost idle0000" x="471" y="0" width="249" height="222" frameX="0" frameY="0" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0001" x="471" y="0" width="249" height="222" frameX="0" frameY="0" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0002" x="720" y="0" width="249" height="214" frameX="0" frameY="-9" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0003" x="720" y="0" width="249" height="214" frameX="0" frameY="-9" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0004" x="0" y="222" width="249" height="198" frameX="0" frameY="-23" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0005" x="0" y="222" width="249" height="198" frameX="0" frameY="-23" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0006" x="249" y="222" width="249" height="185" frameX="0" frameY="-35" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0007" x="249" y="222" width="249" height="185" frameX="0" frameY="-35" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0008" x="0" y="222" width="249" height="198" frameX="0" frameY="-23" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0009" x="0" y="222" width="249" height="198" frameX="0" frameY="-23" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0010" x="720" y="0" width="249" height="214" frameX="0" frameY="-9" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0011" x="720" y="0" width="249" height="214" frameX="0" frameY="-9" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0012" x="471" y="0" width="249" height="222" frameX="0" frameY="0" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost idle0013" x="471" y="0" width="249" height="222" frameX="0" frameY="0" frameWidth="249" frameHeight="223"/>
+	<SubTexture name="ghost left0000" x="498" y="222" width="227" height="222" frameX="-4" frameY="0" frameWidth="231" frameHeight="222"/>
+	<SubTexture name="ghost left0001" x="498" y="222" width="227" height="222" frameX="-4" frameY="0" frameWidth="231" frameHeight="222"/>
+	<SubTexture name="ghost left0002" x="725" y="222" width="229" height="222" frameX="0" frameY="0" frameWidth="231" frameHeight="222"/>
+	<SubTexture name="ghost left0003" x="725" y="222" width="229" height="222" frameX="0" frameY="0" frameWidth="231" frameHeight="222"/>
+	<SubTexture name="ghost right0000" x="0" y="444" width="270" height="222" frameX="-3" frameY="0" frameWidth="276" frameHeight="222"/>
+	<SubTexture name="ghost right0001" x="0" y="444" width="270" height="222" frameX="-3" frameY="0" frameWidth="276" frameHeight="222"/>
+	<SubTexture name="ghost right0002" x="270" y="444" width="276" height="222"/>
+	<SubTexture name="ghost right0003" x="270" y="444" width="276" height="222"/>
+	<SubTexture name="ghost up0000" x="546" y="444" width="249" height="237" frameX="0" frameY="-1" frameWidth="249" frameHeight="242"/>
+	<SubTexture name="ghost up0001" x="546" y="444" width="249" height="237" frameX="0" frameY="-1" frameWidth="249" frameHeight="242"/>
+	<SubTexture name="ghost up0002" x="0" y="681" width="249" height="242"/>
+	<SubTexture name="ghost up0003" x="0" y="681" width="249" height="242"/>
+</TextureAtlas>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="note-heal.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue0000" x="0" y="0" width="131" height="138"/>
+	<SubTexture name="green0000" x="131" y="0" width="131" height="138"/>
+	<SubTexture name="purple0000" x="262" y="0" width="131" height="138"/>
+	<SubTexture name="red0000" x="0" y="138" width="131" height="138"/>
+</TextureAtlas>

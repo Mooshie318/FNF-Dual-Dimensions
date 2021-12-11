@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="james.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="James down0000" x="0" y="0" width="361" height="396"/>
+	<SubTexture name="James down0001" x="0" y="0" width="361" height="396"/>
+	<SubTexture name="James down0002" x="361" y="0" width="361" height="396"/>
+	<SubTexture name="James down0003" x="361" y="0" width="361" height="396"/>
+	<SubTexture name="James idle0000" x="722" y="0" width="361" height="394"/>
+	<SubTexture name="James idle0001" x="722" y="0" width="361" height="394"/>
+	<SubTexture name="James idle0002" x="1083" y="0" width="361" height="383" frameX="0" frameY="-11" frameWidth="361" frameHeight="394"/>
+	<SubTexture name="James idle0003" x="1083" y="0" width="361" height="383" frameX="0" frameY="-11" frameWidth="361" frameHeight="394"/>
+	<SubTexture name="James idle0004" x="1444" y="0" width="361" height="383" frameX="0" frameY="-11" frameWidth="361" frameHeight="394"/>
+	<SubTexture name="James idle0005" x="1444" y="0" width="361" height="383" frameX="0" frameY="-11" frameWidth="361" frameHeight="394"/>
+	<SubTexture name="James idle0006" x="0" y="396" width="361" height="394"/>
+	<SubTexture name="James idle0007" x="0" y="396" width="361" height="394"/>
+	<SubTexture name="James idle0008" x="361" y="396" width="361" height="394"/>
+	<SubTexture name="James idle0009" x="361" y="396" width="361" height="394"/>
+	<SubTexture name="James idle0010" x="1083" y="0" width="361" height="383" frameX="0" frameY="-11" frameWidth="361" frameHeight="394"/>
+	<SubTexture name="James idle0011" x="1083" y="0" width="361" height="383" frameX="0" frameY="-11" frameWidth="361" frameHeight="394"/>
+	<SubTexture name="James left0000" x="722" y="396" width="384" height="407" frameX="0" frameY="-5" frameWidth="384" frameHeight="413"/>
+	<SubTexture name="James left0001" x="722" y="396" width="384" height="407" frameX="0" frameY="-5" frameWidth="384" frameHeight="413"/>
+	<SubTexture name="James left0002" x="1106" y="396" width="377" height="413" frameX="-3" frameY="0" frameWidth="384" frameHeight="413"/>
+	<SubTexture name="James left0003" x="1106" y="396" width="377" height="413" frameX="-3" frameY="0" frameWidth="384" frameHeight="413"/>
+	<SubTexture name="James right0000" x="1483" y="396" width="305" height="428" frameX="-1" frameY="0" frameWidth="307" frameHeight="428"/>
+	<SubTexture name="James right0001" x="1483" y="396" width="305" height="428" frameX="-1" frameY="0" frameWidth="307" frameHeight="428"/>
+	<SubTexture name="James right0002" x="0" y="824" width="307" height="427" frameX="0" frameY="0" frameWidth="307" frameHeight="428"/>
+	<SubTexture name="James right0003" x="0" y="824" width="307" height="427" frameX="0" frameY="0" frameWidth="307" frameHeight="428"/>
+	<SubTexture name="James up0000" x="307" y="824" width="355" height="426"/>
+	<SubTexture name="James up0001" x="307" y="824" width="355" height="426"/>
+	<SubTexture name="James up0002" x="662" y="824" width="355" height="423" frameX="0" frameY="-3" frameWidth="355" frameHeight="426"/>
+	<SubTexture name="James up0003" x="662" y="824" width="355" height="423" frameX="0" frameY="-3" frameWidth="355" frameHeight="426"/>
+</TextureAtlas>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="deadUI.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="quit highlight0000" x="0" y="0" width="167" height="166"/>
+	<SubTexture name="quit idle0000" x="167" y="0" width="167" height="166"/>
+	<SubTexture name="quit selected0000" x="334" y="0" width="209" height="204" frameX="-36" frameY="-20" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="quit selected0001" x="543" y="0" width="234" height="226" frameX="-26" frameY="-8" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="quit selected0002" x="0" y="226" width="260" height="241" frameX="-14" frameY="-1" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="quit selected0003" x="260" y="226" width="279" height="251" frameX="-3" frameY="0" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="quit selected0004" x="539" y="226" width="282" height="260" frameX="0" frameY="-1" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="quit selected0005" x="821" y="226" width="167" height="166" frameX="-55" frameY="-38" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="quit selected0006" x="821" y="226" width="167" height="166" frameX="-55" frameY="-38" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="quit selected0007" x="821" y="226" width="167" height="166" frameX="-55" frameY="-38" frameWidth="282" frameHeight="261"/>
+	<SubTexture name="retry hightlight0000" x="0" y="486" width="166" height="166"/>
+	<SubTexture name="retry idle0000" x="166" y="486" width="166" height="166"/>
+	<SubTexture name="retry selected0000" x="332" y="486" width="208" height="204" frameX="-34" frameY="-20" frameWidth="281" frameHeight="261"/>
+	<SubTexture name="retry selected0001" x="540" y="486" width="233" height="226" frameX="-23" frameY="-8" frameWidth="281" frameHeight="261"/>
+	<SubTexture name="retry selected0002" x="0" y="712" width="258" height="241" frameX="-13" frameY="-1" frameWidth="281" frameHeight="261"/>
+	<SubTexture name="retry selected0003" x="258" y="712" width="278" height="251" frameX="-1" frameY="0" frameWidth="281" frameHeight="261"/>
+	<SubTexture name="retry selected0004" x="536" y="712" width="281" height="260" frameX="0" frameY="-1" frameWidth="281" frameHeight="261"/>
+	<SubTexture name="retry selected0005" x="817" y="712" width="166" height="166" frameX="-57" frameY="-38" frameWidth="281" frameHeight="261"/>
+	<SubTexture name="retry selected0006" x="817" y="712" width="166" height="166" frameX="-57" frameY="-38" frameWidth="281" frameHeight="261"/>
+	<SubTexture name="retry selected0007" x="817" y="712" width="166" height="166" frameX="-57" frameY="-38" frameWidth="281" frameHeight="261"/>
+</TextureAtlas>

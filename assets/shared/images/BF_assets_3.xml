@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF_assets_3.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BF idle dance0000" x="0" y="0" width="406" height="392" frameX="-1" frameY="-20" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0001" x="0" y="0" width="406" height="392" frameX="-1" frameY="-20" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0002" x="406" y="0" width="408" height="393" frameX="0" frameY="-19" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0003" x="406" y="0" width="408" height="393" frameX="0" frameY="-19" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0004" x="814" y="0" width="405" height="398" frameX="-3" frameY="-14" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0005" x="814" y="0" width="405" height="398" frameX="-3" frameY="-14" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0006" x="1219" y="0" width="410" height="411" frameX="-1" frameY="-1" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0007" x="1219" y="0" width="410" height="411" frameX="-1" frameY="-1" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0008" x="1629" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0009" x="1629" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0010" x="1629" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0011" x="1629" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0012" x="1629" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="BF idle dance0013" x="1629" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="bf dodge down0000" x="2037" y="0" width="427" height="372"/>
+	<SubTexture name="bf dodge left0000" x="2464" y="0" width="354" height="347" frameX="-24" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0001" x="2818" y="0" width="376" height="347" frameX="0" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0002" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0003" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0004" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0005" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0006" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0007" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0008" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0009" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0010" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0011" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0012" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0013" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge left0014" x="3194" y="0" width="366" height="347" frameX="-11" frameY="0" frameWidth="378" frameHeight="347"/>
+	<SubTexture name="bf dodge right0000" x="3560" y="0" width="375" height="404" frameX="-3" frameY="0" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0001" x="0" y="412" width="375" height="404" frameX="-3" frameY="0" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0002" x="375" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0003" x="755" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0004" x="1135" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0005" x="375" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0006" x="755" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0007" x="1135" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0008" x="375" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0009" x="755" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0010" x="1135" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0011" x="375" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0012" x="755" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0013" x="1135" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge right0014" x="375" y="412" width="380" height="403" frameX="0" frameY="-1" frameWidth="380" frameHeight="404"/>
+	<SubTexture name="bf dodge up0000" x="1515" y="412" width="354" height="427" frameX="-38" frameY="-91" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0001" x="1869" y="412" width="373" height="424" frameX="-30" frameY="-94" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0002" x="2242" y="412" width="373" height="424" frameX="-30" frameY="-94" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0003" x="2615" y="412" width="401" height="434" frameX="-2" frameY="-84" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0004" x="3016" y="412" width="402" height="473" frameX="-1" frameY="-45" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0005" x="3418" y="412" width="373" height="516" frameX="-30" frameY="-2" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0006" x="0" y="928" width="382" height="518" frameX="-21" frameY="0" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0007" x="382" y="928" width="403" height="468" frameX="0" frameY="-50" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0008" x="785" y="928" width="399" height="485" frameX="-4" frameY="-33" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0009" x="1184" y="928" width="386" height="499" frameX="-17" frameY="-19" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0010" x="1570" y="928" width="373" height="464" frameX="-30" frameY="-54" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0011" x="1943" y="928" width="373" height="424" frameX="-30" frameY="-94" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0012" x="2316" y="928" width="373" height="424" frameX="-30" frameY="-94" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0013" x="2316" y="928" width="373" height="424" frameX="-30" frameY="-94" frameWidth="403" frameHeight="518"/>
+	<SubTexture name="bf dodge up0014" x="2316" y="928" width="373" height="424" frameX="-30" frameY="-94" frameWidth="403" frameHeight="518"/>
+</TextureAtlas>

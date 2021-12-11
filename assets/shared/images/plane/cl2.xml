@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cl2.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cl20000" x="0" y="0" width="1637" height="991" frameX="-638" frameY="-260" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20001" x="1647" y="0" width="1684" height="1026" frameX="-481" frameY="-197" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20002" x="3341" y="0" width="1634" height="879" frameX="-388" frameY="-300" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20003" x="4985" y="0" width="1670" height="972" frameX="-245" frameY="-278" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20004" x="0" y="1036" width="1724" height="1107" frameX="-76" frameY="-162" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20005" x="1734" y="1036" width="709" height="1133" frameX="-948" frameY="-78" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20006" x="2453" y="1036" width="749" height="1071" frameX="-770" frameY="-56" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20007" x="3212" y="1036" width="776" height="942" frameX="-476" frameY="-167" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20008" x="3998" y="1036" width="776" height="942" frameX="-276" frameY="-145" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20009" x="4784" y="1036" width="776" height="942" frameX="-62" frameY="-131" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20010" x="5570" y="1036" width="416" height="296" frameX="-52" frameY="-162" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20011" x="5996" y="1036" width="950" height="1539" frameX="-34" frameY="0" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20012" x="6956" y="1036" width="657" height="990" frameX="-100" frameY="-13" frameWidth="2275" frameHeight="1539"/>
+	<SubTexture name="cl20013" x="0" y="2585" width="1349" height="840" frameX="0" frameY="-17" frameWidth="2275" frameHeight="1539"/>
+</TextureAtlas>

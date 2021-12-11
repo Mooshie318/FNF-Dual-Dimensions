@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="supermooshie-mad.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="supermooshie down laser0000" x="0" y="0" width="1639" height="384" frameX="0" frameY="-5" frameWidth="1639" frameHeight="389"/>
+	<SubTexture name="supermooshie down laser0001" x="0" y="0" width="1639" height="384" frameX="0" frameY="-5" frameWidth="1639" frameHeight="389"/>
+	<SubTexture name="supermooshie down laser0002" x="1639" y="0" width="1639" height="389"/>
+	<SubTexture name="supermooshie down laser0003" x="1639" y="0" width="1639" height="389"/>
+	<SubTexture name="supermooshie down mad0000" x="3179" y="1149" width="468" height="388"/>
+	<SubTexture name="supermooshie down mad0001" x="3179" y="1149" width="468" height="388"/>
+	<SubTexture name="supermooshie down mad0002" x="0" y="1821" width="463" height="383" frameX="0" frameY="-5" frameWidth="468" frameHeight="388"/>
+	<SubTexture name="supermooshie down mad0003" x="0" y="1821" width="463" height="383" frameX="0" frameY="-5" frameWidth="468" frameHeight="388"/>
+	<SubTexture name="supermooshie idle mad0000" x="463" y="1821" width="450" height="386" frameX="0" frameY="-9" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0001" x="463" y="1821" width="450" height="386" frameX="0" frameY="-9" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0002" x="913" y="1821" width="510" height="390" frameX="0" frameY="-5" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0003" x="913" y="1821" width="510" height="390" frameX="0" frameY="-5" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0004" x="1423" y="1821" width="468" height="395" frameX="0" frameY="0" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0005" x="1423" y="1821" width="468" height="395" frameX="0" frameY="0" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0006" x="1891" y="1821" width="464" height="391" frameX="0" frameY="-4" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0007" x="1891" y="1821" width="464" height="391" frameX="0" frameY="-4" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0008" x="2355" y="1821" width="458" height="385" frameX="0" frameY="-10" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0009" x="2355" y="1821" width="458" height="385" frameX="0" frameY="-10" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0010" x="2813" y="1821" width="453" height="380" frameX="0" frameY="-15" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie idle mad0011" x="2813" y="1821" width="453" height="380" frameX="0" frameY="-15" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie lava rise0000" x="463" y="1821" width="450" height="386" frameX="-489" frameY="-62" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie lava rise0001" x="463" y="1821" width="450" height="386" frameX="-489" frameY="-62" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie lava rise0002" x="3266" y="1821" width="457" height="376" frameX="-489" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0003" x="3266" y="1821" width="457" height="376" frameX="-489" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0004" x="3266" y="1821" width="457" height="376" frameX="-489" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0005" x="463" y="1821" width="450" height="386" frameX="-489" frameY="-62" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie lava rise0006" x="463" y="1821" width="450" height="386" frameX="-489" frameY="-62" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie lava rise0007" x="0" y="2216" width="435" height="403" frameX="-483" frameY="-45" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0008" x="0" y="2216" width="435" height="403" frameX="-483" frameY="-45" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0009" x="435" y="2216" width="415" height="413" frameX="-478" frameY="-35" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0010" x="850" y="2216" width="417" height="448" frameX="-475" frameY="0" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0011" x="850" y="2216" width="417" height="448" frameX="-475" frameY="0" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0012" x="850" y="2216" width="417" height="448" frameX="-475" frameY="0" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0013" x="435" y="2216" width="415" height="413" frameX="-478" frameY="-35" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0014" x="435" y="2216" width="415" height="413" frameX="-478" frameY="-35" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0015" x="0" y="2216" width="435" height="403" frameX="-483" frameY="-45" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0016" x="463" y="1821" width="450" height="386" frameX="-489" frameY="-62" frameWidth="510" frameHeight="395"/>
+	<SubTexture name="supermooshie lava rise0017" x="1267" y="2216" width="511" height="377" frameX="-435" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0018" x="1778" y="2216" width="502" height="376" frameX="-444" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0019" x="2280" y="2216" width="626" height="391" frameX="-347" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0020" x="2906" y="2216" width="758" height="376" frameX="-388" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0021" x="0" y="2664" width="764" height="376" frameX="-375" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0022" x="764" y="2664" width="770" height="376" frameX="-302" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0023" x="1534" y="2664" width="767" height="376" frameX="-267" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0024" x="2301" y="2664" width="831" height="376" frameX="-234" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0025" x="0" y="3040" width="978" height="376" frameX="-241" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0026" x="978" y="3040" width="1272" height="376" frameX="-86" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie lava rise0027" x="2250" y="3040" width="1586" height="376" frameX="0" frameY="-72" frameWidth="1586" frameHeight="463"/>
+	<SubTexture name="supermooshie left laser0000" x="0" y="389" width="1640" height="380" frameX="0" frameY="0" frameWidth="1642" frameHeight="380"/>
+	<SubTexture name="supermooshie left laser0001" x="0" y="389" width="1640" height="380" frameX="0" frameY="0" frameWidth="1642" frameHeight="380"/>
+	<SubTexture name="supermooshie left laser0002" x="1640" y="389" width="1642" height="380"/>
+	<SubTexture name="supermooshie left laser0003" x="1640" y="389" width="1642" height="380"/>
+	<SubTexture name="supermooshie left mad0000" x="0" y="3416" width="444" height="380" frameX="0" frameY="0" frameWidth="448" frameHeight="380"/>
+	<SubTexture name="supermooshie left mad0001" x="0" y="3416" width="444" height="380" frameX="0" frameY="0" frameWidth="448" frameHeight="380"/>
+	<SubTexture name="supermooshie left mad0002" x="444" y="3416" width="448" height="380"/>
+	<SubTexture name="supermooshie left mad0003" x="444" y="3416" width="448" height="380"/>
+	<SubTexture name="supermooshie right laser0000" x="0" y="769" width="1667" height="380"/>
+	<SubTexture name="supermooshie right laser0001" x="0" y="769" width="1667" height="380"/>
+	<SubTexture name="supermooshie right laser0002" x="1667" y="769" width="1665" height="380" frameX="-2" frameY="0" frameWidth="1667" frameHeight="380"/>
+	<SubTexture name="supermooshie right laser0003" x="1667" y="769" width="1665" height="380" frameX="-2" frameY="0" frameWidth="1667" frameHeight="380"/>
+	<SubTexture name="supermooshie right mad0000" x="892" y="3416" width="472" height="380"/>
+	<SubTexture name="supermooshie right mad0001" x="892" y="3416" width="472" height="380"/>
+	<SubTexture name="supermooshie right mad0002" x="1364" y="3416" width="467" height="380" frameX="-2" frameY="0" frameWidth="472" frameHeight="380"/>
+	<SubTexture name="supermooshie right mad0003" x="1364" y="3416" width="467" height="380" frameX="-2" frameY="0" frameWidth="472" frameHeight="380"/>
+	<SubTexture name="supermooshie up laser0000" x="0" y="1149" width="1587" height="672" frameX="0" frameY="0" frameWidth="1592" frameHeight="672"/>
+	<SubTexture name="supermooshie up laser0001" x="0" y="1149" width="1587" height="672" frameX="0" frameY="0" frameWidth="1592" frameHeight="672"/>
+	<SubTexture name="supermooshie up laser0002" x="1587" y="1149" width="1592" height="666" frameX="0" frameY="-6" frameWidth="1592" frameHeight="672"/>
+	<SubTexture name="supermooshie up laser0003" x="1587" y="1149" width="1592" height="666" frameX="0" frameY="-6" frameWidth="1592" frameHeight="672"/>
+	<SubTexture name="supermooshie up mad0000" x="1831" y="3416" width="446" height="406"/>
+	<SubTexture name="supermooshie up mad0001" x="1831" y="3416" width="446" height="406"/>
+	<SubTexture name="supermooshie up mad0002" x="2277" y="3416" width="442" height="401" frameX="0" frameY="-5" frameWidth="446" frameHeight="406"/>
+	<SubTexture name="supermooshie up mad0003" x="2277" y="3416" width="442" height="401" frameX="0" frameY="-5" frameWidth="446" frameHeight="406"/>
+</TextureAtlas>

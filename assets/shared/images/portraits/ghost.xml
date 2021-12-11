@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ghost.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ghost dialogue0000" x="0" y="0" width="249" height="134"/>
+	<SubTexture name="ghost dialogue bring it0000" x="249" y="0" width="227" height="137"/>
+	<SubTexture name="ghost dialogue mad0000" x="0" y="137" width="261" height="129"/>
+	<SubTexture name="ghost dialogue oh0000" x="261" y="137" width="236" height="134"/>
+	<SubTexture name="ghost dialogue yay0000" x="0" y="271" width="246" height="133"/>
+</TextureAtlas>

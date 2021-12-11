@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="supermooshie.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="supermooshie dialogue0000" x="0" y="0" width="286" height="264"/>
+	<SubTexture name="supermooshie dialogue mad0000" x="286" y="0" width="272" height="259"/>
+</TextureAtlas>

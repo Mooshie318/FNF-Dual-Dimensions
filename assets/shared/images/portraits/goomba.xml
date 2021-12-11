@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="goomba.png">
+	<!-- Created with Adobe Animate version 21.0.9.42677 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gooey dia0000" x="0" y="0" width="197" height="261"/>
+	<SubTexture name="goomba dia0000" x="207" y="0" width="197" height="236"/>
+</TextureAtlas>
