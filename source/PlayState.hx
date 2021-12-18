@@ -788,7 +788,7 @@ class PlayState extends MusicBeatState
 				bg.active = false;
 				add(bg);
 			}
-			case 'showdown' | 'red' | 'light-speed' | 'moo-storm' | '7391203':
+			case 'showdown' | 'red-old' | 'red' | 'light-speed-old' | 'light-speed' | 'moo-storm' | '7391203':
 			{
 				defaultCamZoom = 0.7;
 				curStage = 'mooStageEvil';
@@ -842,7 +842,7 @@ class PlayState extends MusicBeatState
 				add(leCoolO);
 			}
 
-			case 'moosanity' | 'moovenge':
+			case 'moosanity-old' | 'moosanity' | 'moovenge':
 			{
 				defaultCamZoom = 0.6;
 				curStage = 'mooStageInsane';
@@ -996,10 +996,6 @@ class PlayState extends MusicBeatState
 
 			case "james":
 				dad.y += 200;
-			case "monster":
-				dad.y += 100;
-			case 'monster-christmas':
-				dad.y += 130;
 			case 'slime':
 				camPos.x += 400;
 				dad.y += 200;
@@ -4567,6 +4563,15 @@ class PlayState extends MusicBeatState
 				 }
 			}
 
+		if (curSong == 'light-speed')
+			{
+				switch (curBeat)
+				{
+					case 1:
+						FlxTween.tween(SONG,{speed:4},130);
+				}
+			}
+
 		if (curSong == 'moo-storm')
 			{
 				switch (curBeat)
@@ -4607,7 +4612,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-		if (curSong == 'moosanity')
+		if (curSong == 'moosanity-old')
 			{
 				switch (curBeat)
 				{
@@ -4646,20 +4651,74 @@ class PlayState extends MusicBeatState
 				}
 			}
 
+			if (curSong == 'moosanity-old')
+			{
+				switch (curStep)
+				{
+					case 344 | 504 | 984 | 1336 | 1784:
+						remove(boyfriend);
+						boyfriend = new Boyfriend(1190, 500, 'bf-dodge');
+						add(boyfriend);
+					case 352 | 512 | 992 | 1344 | 1792:
+						remove(boyfriend);
+						boyfriend = new Boyfriend(1190, 500, 'bf');
+						add(boyfriend);
+				}
+			}
+
 			if (curSong == 'moosanity')
 				{
-					switch (curStep)
+					switch (curBeat)
 					{
-						case 344 | 504 | 984 | 1336 | 1784:
+						case 1:
 							remove(boyfriend);
 							boyfriend = new Boyfriend(1190, 500, 'bf-dodge');
 							add(boyfriend);
-						case 352 | 512 | 992 | 1344 | 1792:
+						case 3:
 							remove(boyfriend);
 							boyfriend = new Boyfriend(1190, 500, 'bf');
 							add(boyfriend);
+						case 120:
+							health = 0.5;
+						case 176:
+							health = 1.0;
+						case 280:
+							health = 0.01;
+						case 480:
+							health = 2.0;
+						case 484:
+							health = 1.0;
+						case 488:
+							health = 0.75;
+						case 492:
+							health = 0.5;
+						case 496:
+							health = 0.25;
+						case 500:
+							health = 0.1;
+						case 504:
+							health = 0.05;
+						case 508:
+							health = 0.2;
+						case 512:
+							health = 2.0;
 					}
 				}
+	
+			if (curSong == 'moosanity')
+			{
+				switch (curStep)
+				{
+					case 472 | 632 | 1112 | 1464 | 1912:
+						remove(boyfriend);
+						boyfriend = new Boyfriend(1190, 500, 'bf-dodge');
+						add(boyfriend);
+					case 480 | 640 | 1120 | 1472 | 1920:
+						remove(boyfriend);
+						boyfriend = new Boyfriend(1190, 500, 'bf');
+						add(boyfriend);
+				}
+			}
 
 			if (curSong == 'Moovenge')
 				{

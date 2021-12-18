@@ -311,17 +311,16 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHTmiss', 'bf right miss reg color', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'down miss reg color', 24, false);
 				animation.addByPrefix('hey', 'BF HEY', 24, false);
-	
 				animation.addByPrefix('scared', 'BF idle shaking', 24);
 	
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
 				addOffset("singRIGHT", -38, -7);
 				addOffset("singLEFT", 12, -6);
-				addOffset("singDOWN", -10, -50);
-				addOffset("singUPmiss", -29, 27);
-				addOffset("singRIGHTmiss", -30, 21);
-				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWN", -18, -56);
+				addOffset("singUPmiss", -42, 17);
+				addOffset("singRIGHTmiss", -44, -14);
+				addOffset("singLEFTmiss", -13, -21);
 				addOffset("singDOWNmiss", -11, -19);
 				addOffset("hey", 7, 4);
 				addOffset('scared', -4);
@@ -453,9 +452,9 @@ class Character extends FlxSprite
 				animation.addByPrefix('attack', 'attack', 24, false);
 
 				addOffset('idle');
-				addOffset("singUP", 20, 20);
+				addOffset("singUP", -3, 37);
 				addOffset("singRIGHT", 50, -100);
-				addOffset("singLEFT", 40, 0);
+				addOffset("singLEFT", 123, 0);
 				addOffset("singDOWN", -20, -100);
 				addOffset('attack');
 
@@ -599,10 +598,10 @@ class Character extends FlxSprite
 				if (PlayState.SONG.song.toLowerCase() != 'plane')
 				{
 					addOffset('idle'); 
-					addOffset("singUP", 0, 14);
-					addOffset("singRIGHT", -5, 0);
-					addOffset("singLEFT", 5, 0);
-					addOffset("singDOWN", 0, 10);
+					addOffset("singUP", 0, 24);
+					addOffset("singRIGHT", -12, -11);
+					addOffset("singLEFT", 21, -19);
+					addOffset("singDOWN", 0, -15);
 					addOffset("singUP-alt", 0, 200);
 					addOffset("singRIGHT-alt", 0, -80);
 					addOffset("singLEFT-alt", 0, -80);

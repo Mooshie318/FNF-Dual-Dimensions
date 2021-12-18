@@ -67,7 +67,7 @@ class StoryMenuState extends MusicBeatState
 		"Sheary",
 		"Cluck team",
 		"Flying simulator ft. Trooper",
-		"Gooey",
+		"Airship",
 		"Mooshie",
 		"Moo Land",
 		"Plane battle"

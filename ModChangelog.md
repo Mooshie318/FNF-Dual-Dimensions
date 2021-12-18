@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2021-12-18
+### Added
+- A new mechanic for Light-Speed (Because the song's name is Light-Speed)
+### Changed
+- Made the game over buttons when highlighted even darker
+- Remastered Red, Light-Speed and Moosanity
+- Changed w7 name in story mode
+- Updated the modchart for Moosanity
+### Note
+- Moosanity remastered has already been made before 1.0.0, but I was too lazy to chart it
+
 ## [Release 1.0.0] - 2021-12-11
 ### Added
 - Rest of the weeks made/changed! (10 total weeks!)

@@ -33,8 +33,7 @@ class MenuCharacter extends FlxSprite
 		this.flipped = flipped;
 
 		antialiasing = true;
-
-		//frames = Paths.getSparrowAtlas('campaign_menu_UI_characters');
+		
 		frames = Paths.getSparrowAtlas('mooin-menu-characters');
 
 		animation.addByPrefix('bf', "BF idle dance white", 24);

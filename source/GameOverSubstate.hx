@@ -101,23 +101,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			}		
 		}
 
-		if (controls.RIGHT_P || controls.LEFT_P)
-		{
-			if (retrySelected)
-			{
-				retrySelected = false;
-
-				quit.animation.play('highlight');
-				retry.animation.play('idle');
-			}
-			else
-			{
-				retrySelected = true;
-
-				quit.animation.play('idle');
-				retry.animation.play('highlight');
-			}
-		}
+		changeThing();
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)
 		{
@@ -161,5 +145,25 @@ class GameOverSubstate extends MusicBeatSubstate
 				});
 			});
 		}
+	}
+
+	function changeThing():Void
+	{
+		retrySelected = !retrySelected;
+
+		if (controls.RIGHT_P || controls.LEFT_P)
+		{
+			if (retrySelected)
+			{
+				quit.animation.play('highlight', true);
+				retry.animation.play('idle', true);
+			}
+			else
+			{
+				quit.animation.play('idle', true);
+				retry.animation.play('highlight', true);
+			}
+		}
+		
 	}
 }
