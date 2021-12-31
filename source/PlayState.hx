@@ -55,6 +55,8 @@ import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
 
+import GameJolt.GameJoltAPI; // gamejolt
+
 #if windows
 import Discord.DiscordClient;
 #end
@@ -109,6 +111,7 @@ class PlayState extends MusicBeatState
 	private var gf:Character;
 	private var boyfriend:Boyfriend;
 
+	// 2v1
 	var cloosh:Character;
 	var sheary:Character;
 
@@ -194,6 +197,7 @@ class PlayState extends MusicBeatState
 	var scoreTxt:FlxText;
 	var replayTxt:FlxText;
 
+	// FNM Custom vars
 	var moo:FlxSprite; // for changing background mid-song
 	var clouds:FlxSprite;
 	var shading:FlxSprite;
@@ -206,8 +210,9 @@ class PlayState extends MusicBeatState
 	var leCoolP:FlxSprite;  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	var leCoolR:FlxSprite;  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	var leCoolO:FlxSprite;  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-	//var xp:Float = 0; //  for level up mechanic in 1.1.0 (which is why these are commented out)
-	//var xpLvl:Int = 0; // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	//var xp:Int = 0; //    for level up mechanic
+	//var xpLvl:Int = 1; // ^^^^^^^^^^^^^^^^^^^^^
+	//var xpGained:Int = 34; // ^^^^^^^^^^^^^^^^^
 
 	public static var campaignScore:Int = 0;
 
@@ -527,18 +532,18 @@ class PlayState extends MusicBeatState
 			switch (SONG.song.toLowerCase())
 			{
 				case 'tutorial':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('tutorial/tutorialDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('tutorial/dia'));
 				case 'icy':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('icy/icyDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('icy/dia'));
 				case 'fire':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('fire/fireDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('fire/dia'));
 				case 'slime-attack':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('slime-attack/slime-attackDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('slime-attack/dia'));
 					diaEnd = CoolUtil.coolTextFile(Paths.txt('slime-attack/diaEnd')); // end of week dialogue
 				case 'interview':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('interview/interviewDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('interview/dia'));
 				case 'drive-thru':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('drive-thru/drive-thruDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('drive-thru/dia'));
 					diaEnd = CoolUtil.coolTextFile(Paths.txt('drive-thru/diaEnd')); // end of week dialogue
 				case 'boo':
 					dialogue = CoolUtil.coolTextFile(Paths.txt('boo/dia'));
@@ -576,15 +581,15 @@ class PlayState extends MusicBeatState
 					dialogue = CoolUtil.coolTextFile(Paths.txt('showdown/dia'));
 					diaEnd = CoolUtil.coolTextFile(Paths.txt('showdown/diaEnd')); // end of week dialogue
 				case 'red':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('red/redDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('red/dia'));
 				case 'light-speed':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('light-speed/light-speedDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('light-speed/dia'));
 				case 'moo-storm':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('moo-storm/moo-stormDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('moo-storm/dia'));
 				case '7391203':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('7391203/7391203Dialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('7391203/dia'));
 				case 'moosanity':
-					dialogue = CoolUtil.coolTextFile(Paths.txt('moosanity/moosanityDialogue'));
+					dialogue = CoolUtil.coolTextFile(Paths.txt('moosanity/dia'));
 				case 'moovenge':
 					dialogue = CoolUtil.coolTextFile(Paths.txt('moovenge/dia'));
 				case 'plane':
@@ -985,6 +990,8 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.player2)
 		{
+			case 'bf-opponent':
+				dad.y += 330;
 			case 'gf':
 				dad.setPosition(gf.x, gf.y);
 				gf.visible = false;
@@ -1750,8 +1757,6 @@ class PlayState extends MusicBeatState
 		{
 			dad.dance();
 			gf.dance();
-			cloosh.playAnim('idle', true);
-			sheary.playAnim('idle', true);
 			boyfriend.playAnim('idle');
 
 			var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
@@ -1780,7 +1785,6 @@ class PlayState extends MusicBeatState
 			}
 
 			switch (swagCounter)
-
 			{
 				case 0:
 					FlxG.sound.play(Paths.sound('intro3' + altSuffix), 0.6);
@@ -2324,6 +2328,8 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		FlxG.mouse.visible = false;
+
 		floatShit += 0.1;
 		#if !debug
 		perfectMode = false;
@@ -2332,8 +2338,8 @@ class PlayState extends MusicBeatState
 			health -= 0.001 * (elapsed / (1/60));
 
 		// this was lagging the game badly so I removed it
-		// will make this like 10x better in 1.1.0
-		/*function attackTimer(timer:FlxTimer):Void // this line to 2323 is for battle mechanic
+		// will make this like 10x better sometime in the future
+		/*function attackTimer(timer:FlxTimer):Void
 		{
 			if (boyfriend.animation.curAnim.name == 'attack')
 			{
@@ -2914,6 +2920,7 @@ class PlayState extends MusicBeatState
 
 						var dadsDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
 
+						// 2v1
 						if (isCloosh)
 						{
 							cloosh.playAnim('sing' + dadsDir[daNote.noteData], true);
@@ -3054,9 +3061,20 @@ class PlayState extends MusicBeatState
 			lua = null;
 		}
 
-		// for level up mechanic in 1.1.0
-		/*xp += 34;
-		trace("+34 xp!");
+		// for level up mechanic
+		/*if (xpLvl < 10)
+			xpGained = 34;
+		if (xpLvl >= 10)
+			xpGained = 30;
+		else if (xpLvl >= 15)
+			xpGained = 25;
+		else if (xpLvl >= 20)
+			xpGained = 20;
+		else if (xpLvl >= 30)
+			xpGained = 15;
+		
+		xp += xpGained;
+		trace("+" + xpGained + " xp!");
 		if (xp >= 100)
 		{
 			xpLvl += 1;
@@ -3072,6 +3090,23 @@ class PlayState extends MusicBeatState
 			#if !switch
 			Highscore.saveScore(SONG.song, Math.round(songScore), storyDifficulty);
 			#end
+		}
+
+		// "Secret" achievement
+		if (curSong == '7391203')
+		{
+			GameJoltAPI.getTrophy(153766);
+		}
+		// "Secret 2" achievement
+		if (curSong == 'boyfriend')
+		{
+			GameJoltAPI.getTrophy(154198);
+		}
+
+		// "Keeping it 100" achievement
+		if (misses == 0 && bads == 0 && shits == 0 && goods == 0 && curSong != 'Tutorial')
+		{
+			GameJoltAPI.getTrophy(153767);
 		}
 
 		if (offsetTesting)
@@ -3095,7 +3130,9 @@ class PlayState extends MusicBeatState
 
 					transIn = FlxTransitionableState.defaultTransIn;
 					transOut = FlxTransitionableState.defaultTransOut;
-					switch(SONG.song.toLowerCase()) // end of week dialogue and cutscenes
+
+					// end of week dialogue and cutscenes
+					switch(SONG.song.toLowerCase())
 					{
 						case 'slime-attack':
 							if (FlxG.save.data.dialogue)
@@ -3272,7 +3309,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 	}
-
 
 	var endingSong:Bool = false;
 
@@ -4240,6 +4276,7 @@ class PlayState extends MusicBeatState
 		gf.playAnim('scared', true);
 	}
 
+	// 2v1
 	function resetChars():Void
 	{
 		isBf = false;
@@ -4248,6 +4285,7 @@ class PlayState extends MusicBeatState
 		isSheary = false;
 	}
 
+	// 2v1
 	function switchChars(characters:String):Void
 	{
 		switch(characters)
@@ -4509,6 +4547,7 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 
+		// 2v1
 		if (curSong == 'plane' || curSong == 'air-battle' || curSong == 'thunder-storm' && curBeat % 2 == 1)
 		{
 			sheary.playAnim('idle');

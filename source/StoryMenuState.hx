@@ -35,7 +35,6 @@ class StoryMenuState extends MusicBeatState
 		['moo', 'mooshie', 'showdown'],
 		['red', 'light-speed', 'moo-storm', 'moosanity', 'Moovenge'],
 		['Plane', 'Air-Battle', 'Thunder-Storm']
-		//['FNM-Marathon']
 	];
 	var curDifficulty:Int = 1;
 
@@ -56,7 +55,6 @@ class StoryMenuState extends MusicBeatState
 		['', 'bf', ''],
 		['', 'bf', ''],
 		['', 'bf', '']
-		//['', 'bf', '']
 	];
 
 	var weekNames:Array<String> = [
@@ -71,7 +69,6 @@ class StoryMenuState extends MusicBeatState
 		"Mooshie",
 		"Moo Land",
 		"Plane battle"
-		//"Friday night mooin marathon"
 	];
 
 	// Based on hard mode (+ means more difficult and - means less difficult)
@@ -87,24 +84,7 @@ class StoryMenuState extends MusicBeatState
 		"Hard +",
 		"Super hard",
 		"Super hard"
-		//"Extreme +"
 	];
-
-	// Based on hard mode + coming in 1.1.0
-	/*var weekMechanics:Array<String> = [
-		"Mechanics\n\nNone\nE",
-		"Mechanics\n\nNone\nE",
-		"Mechanics\n\nNone\nE",
-		"Mechanics\n\nNone\nE",
-		"Mechanics\n\nNone\nE",
-		"Mechanics\n\nHealth drain\nE",
-		"Mechanics\n\nShell notes\nBattle (in 1.1.0)\nE",
-		"Mechanics\n\nCustom notes\nBattle (in 1.1.0)\nE",
-		"Mechanics\n\nCustom notes\nE",
-		"Mechanics\n\nCustom notes\n/kill\nHealth drain\nBattle (in 1.1.0)\nE",
-		"Mechanics\n\nCustom notes\n/kill\nHealth drain\nBattle (in 1.1.0)\nE"
-		//"Mechanics\n\nEverything\nE"
-	];*/
 
 	var txtWeekTitle:FlxText;
 
@@ -113,8 +93,6 @@ class StoryMenuState extends MusicBeatState
 	var txtTracklist:FlxText;
 
 	var difficultyText:FlxText;
-
-	//var mechanicText:FlxText;
 
 	var grpWeekText:FlxTypedGroup<MenuItem>;
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
@@ -154,12 +132,6 @@ class StoryMenuState extends MusicBeatState
 		difficultyText = new FlxText(0, 10, 0, "", 32);
 		difficultyText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER);
 		difficultyText.screenCenter(X);
-
-		/*mechanicText = new FlxText(0, 480, 0, "", 32);
-		mechanicText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER);
-		mechanicText.alignment = CENTER;
-		mechanicText.color = 0xFFe55777;
-		mechanicText.screenCenter(X);*/
 
 		var rankText:FlxText = new FlxText(0, 10);
 		rankText.text = 'RANK: GREAT';
@@ -255,7 +227,6 @@ class StoryMenuState extends MusicBeatState
 		add(scoreText);
 		add(txtWeekTitle);
 		add(difficultyText);
-		//add(mechanicText);
 
 		updateText();
 
@@ -275,9 +246,6 @@ class StoryMenuState extends MusicBeatState
 
 		difficultyText.text = weekDifficulty[curWeek].toUpperCase();
 		difficultyText.screenCenter(X);
-
-		//mechanicText.text = weekMechanics[curWeek].toUpperCase();
-		//mechanicText.screenCenter(X);
 
 		difficultySelectors.visible = weekUnlocked[curWeek];
 

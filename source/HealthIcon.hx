@@ -22,6 +22,7 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 		animation.add('bf-dodge', [0, 1], 0, false, isPlayer);
 		animation.add('bf-gf', [37, 38], 0, false, isPlayer);
+		animation.add('bf-opponent', [0, 1], 0, false, isPlayer);
 		animation.add('james', [2, 3], 0, false, isPlayer);
 		animation.add('ghost', [4, 5], 0, false, isPlayer);
 		animation.add('sheary', [6, 7], 0, false, isPlayer);

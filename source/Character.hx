@@ -298,6 +298,27 @@ class Character extends FlxSprite
 
 				flipX = true;
 
+			case 'bf-opponent':
+				var tex = Paths.getSparrowAtlas('BOYFRIEND','shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+
+				addOffset('idle', 0, -2);
+				addOffset("singUP", 10, 27);
+				addOffset("singRIGHT", 44, -7);
+				addOffset("singLEFT", -22, -7);
+				addOffset("singDOWN", -13, -52);
+
+				iconColor = 'FF009BFF';
+
+				playAnim('idle');
+
+				flipX = true;
+
 			case 'bf-neon':
 				var tex = Paths.getSparrowAtlas('BF_assets_2');
 				frames = tex;

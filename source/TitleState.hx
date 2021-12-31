@@ -24,6 +24,8 @@ import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
 
+import GameJolt.GameJoltAPI; // Gamejolt
+
 #if windows
 import Discord.DiscordClient;
 #end
@@ -58,6 +60,9 @@ class TitleState extends MusicBeatState
 		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
 		#end
+
+		GameJoltAPI.connect();
+		GameJoltAPI.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken);
 
 		@:privateAccess
 		{

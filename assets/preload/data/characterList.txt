@@ -1,12 +1,11 @@
 bf
 bf-neon
 bf-car
-bf-pixel
 bf-dodge
 bf-gf
+bf-opponent
 gf
 gf-airship
-gf-pixel
 slime
 james
 ghost

@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2021-12-31
+### Added
+- Gamejolt achievements
+- A new secret song
+- An easier way to get to the first secret song
+### Changed
+- Slightly changed the bf-gf sprites
+- Secret song vocals to better match with the inst
+- Moo-Storm vocals to better match with the inst
+
 ## [1.0.1] - 2021-12-18
 ### Added
 - A new mechanic for Light-Speed (Because the song's name is Light-Speed)

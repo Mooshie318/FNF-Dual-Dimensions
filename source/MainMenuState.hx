@@ -13,8 +13,9 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import io.newgrounds.NG;
 import lime.app.Application;
-//import PlayState.xp; // for level up mechanic in 1.1.0
-//import PlayState.xpLvl; //^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+import flixel.addons.ui.FlxUIButton;
+
+import GameJolt.GameJoltLogin; // Gamejolt
 
 #if windows
 import Discord.DiscordClient;
@@ -37,17 +38,20 @@ class MainMenuState extends MusicBeatState
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
 
-	//var xpTxt:FlxText; // for level up mechanic in 1.1.0
-	//var xpLvlTxt:FlxText; //^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	//var xpTxt:FlxText; //   for level up mechanic
+	//var xpLvlTxt:FlxText; //^^^^^^^^^^^^^^^^^^^
 
 	public static var nightly:String = "";
 
 	public static var kadeEngineVer:String = "1.4.2" + nightly;
 	public static var gameVer:String = "0.2.7.1";
-	public static var fnmVer:String = "1.0.1";
+	public static var fnmVer:String = "1.1.0";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
+
+	var guessButton:FlxUIButton;
+	var gjButton:FlxUIButton;
 
 	override function create()
 	{
@@ -110,19 +114,21 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, "FNF " + gameVer + "," + " KE " + kadeEngineVer + "," + " FNM " + fnmVer, 12);
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 24, 0, "FNF " + gameVer + "," + " KE " + kadeEngineVer + "," + " FNM " + fnmVer, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
-		// all for 1.1.0 level up mechanic
-		/*xpTxt = new FlxText(5, 20, 0, 'XP: ' + xp, 30);
+		// all for level up mechanic
+		/*xpTxt = new FlxText(5, FlxG.height - 64, 0, 'XP: ' + PlayState.xp, 12);
 		xpTxt.scrollFactor.set();
 		xpTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		xpTxt.screenCenter(X);
 		add(xpTxt);
-		xpLvlTxt = new FlxText(5, xpTxt - 30, 0, 'XP Level: ' + xpLvl, 30);
+		xpLvlTxt = new FlxText(5, FlxG.height - 44, 0, 'XP Level: ' + PlayState.xpLvl, 12);
 		xpLvlTxt.scrollFactor.set();
 		xpLvlTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		xpLvlTxt.screenCenter(X);
 		add(xpLvlTxt);*/
 
 		if (FlxG.save.data.dfjk)
@@ -136,6 +142,17 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
+		guessButton = new FlxUIButton(1200, 10, "Guess the\ncode", sendToGuess);
+		guessButton.resize(100, 50);
+		guessButton.setLabelFormat(null, 12, FlxColor.BLACK);
+
+		gjButton = new FlxUIButton(1080, 10, "Login to\nGameJolt", sendToGJLogin);
+		gjButton.resize(100, 50);
+		gjButton.setLabelFormat(null, 12, FlxColor.BLACK);
+
+		add(guessButton);
+		add(gjButton);
+
 		super.create();
 	}
 
@@ -146,6 +163,19 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
+		}
+
+		FlxG.mouse.visible = true;
+
+		if (FlxG.mouse.justPressed && FlxG.mouse.screenX <= 30 && FlxG.mouse.screenY <= 30)
+		{
+			PlayState.isStoryMode = true;
+
+			PlayState.storyDifficulty = 2;
+
+			PlayState.SONG = Song.loadFromJson('boyfriend-hard', 'boyfriend');
+
+			LoadingState.loadAndSwitchState(new PlayState(), true);
 		}
 
 		if (!selectedSomethin)
@@ -222,11 +252,6 @@ class MainMenuState extends MusicBeatState
 		}
 
 		super.update(elapsed);
-
-		//menuItems.forEach(function(spr:FlxSprite)
-		//{
-		//	spr.screenCenter(X);
-		//});
 	}
 
 	function changeItem(huh:Int = 0)
@@ -250,5 +275,15 @@ class MainMenuState extends MusicBeatState
 
 			spr.updateHitbox();
 		});
+	}
+
+	function sendToGuess():Void
+	{
+		FlxG.switchState(new GuessState());
+	}
+
+	function sendToGJLogin():Void
+	{
+		FlxG.switchState(new GameJoltLogin());
 	}
 }
