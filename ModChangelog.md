@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-01-10
+### Added
+- New "Extras" menu
+- New week
+- New mechanic
+- 5 new songs
+- 2 new achievements
+### Changed
+- Moved the guessing screen into the extras menu
+### Fixed
+- Moovenge /kill mechanic (You dont need to hold space anymore)
+### Note
+- Updates will be slower after this since I'll be working on another mod
+
 ## [1.1.0] - 2021-12-31
 ### Added
 - Gamejolt achievements

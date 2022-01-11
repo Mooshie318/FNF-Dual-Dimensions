@@ -5,6 +5,18 @@ class KadeEngineData
 {
     public static function initSave()
     {
+		if (FlxG.save.data.platformerUnlocked == null)
+			FlxG.save.data.platformerUnlocked = false;
+
+		if (FlxG.save.data.platformerLevel == null)
+			FlxG.save.data.platformerLevel = 0;
+		
+		if (FlxG.save.data.platformerMtnPrograss == null)
+			FlxG.save.data.platformerMtnPrograss = 1;
+
+		if (FlxG.save.data.platformerCompleted == null)
+			FlxG.save.data.platformerCompleted = false;
+
         if (FlxG.save.data.newInput == null)
 			FlxG.save.data.newInput = true;
 

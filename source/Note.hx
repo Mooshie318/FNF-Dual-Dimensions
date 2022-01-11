@@ -166,6 +166,18 @@ class Note extends FlxSprite
 						updateHitbox();
 						antialiasing = true;
 					}
+					case 7:
+					{
+						frames = Paths.getSparrowAtlas('note-ice', 'shared');
+						animation.addByPrefix('greenScroll', 'green');
+						animation.addByPrefix('redScroll', 'red');
+						animation.addByPrefix('blueScroll', 'blue');
+						animation.addByPrefix('purpleScroll', 'purple');
+
+						setGraphicSize(Std.int(width * 0.7));
+						updateHitbox();
+						antialiasing = true;
+					}
 					default:
 					{
 						frames = Paths.getSparrowAtlas('NOTE_assets');

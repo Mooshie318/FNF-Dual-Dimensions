@@ -1040,6 +1040,8 @@ class ChartingState extends MusicBeatState
 			noteType = 5;
 		if (FlxG.keys.pressed.V) // shell
 			noteType = 6;
+		if (FlxG.keys.pressed.B) // ice
+			noteType = 7;
 		if (n != null)
 			_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength, n.noteType]);
 		else

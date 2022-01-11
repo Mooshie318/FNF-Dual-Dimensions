@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="world_spaces.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="beat0000" x="0" y="0" width="107" height="107"/>
+	<SubTexture name="locked0000" x="117" y="0" width="108" height="107"/>
+	<SubTexture name="unlocked0000" x="0" y="117" width="107" height="107"/>
+</TextureAtlas>

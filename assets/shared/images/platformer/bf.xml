@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bf.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle0000" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="jump0000" x="351" y="0" width="313" height="441" frameX="-43" frameY="0" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0001" x="351" y="0" width="313" height="441" frameX="-43" frameY="0" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0002" x="351" y="0" width="313" height="441" frameX="-43" frameY="0" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0003" x="351" y="0" width="313" height="441" frameX="-43" frameY="0" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0004" x="351" y="0" width="313" height="441" frameX="-43" frameY="0" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0005" x="351" y="0" width="313" height="441" frameX="-43" frameY="0" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0006" x="351" y="0" width="313" height="441" frameX="-43" frameY="0" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0007" x="674" y="0" width="341" height="403" frameX="-20" frameY="-16" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0008" x="674" y="0" width="341" height="403" frameX="-20" frameY="-16" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0009" x="674" y="0" width="341" height="403" frameX="-20" frameY="-16" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0010" x="1025" y="0" width="350" height="387" frameX="0" frameY="-31" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0011" x="1025" y="0" width="350" height="387" frameX="0" frameY="-31" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0012" x="1025" y="0" width="350" height="387" frameX="0" frameY="-31" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0013" x="1025" y="0" width="350" height="387" frameX="0" frameY="-31" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="jump0014" x="1025" y="0" width="350" height="387" frameX="0" frameY="-31" frameWidth="361" frameHeight="441"/>
+	<SubTexture name="walk0000" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0001" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0002" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0003" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0004" x="1385" y="0" width="341" height="404"/>
+	<SubTexture name="walk0005" x="1385" y="0" width="341" height="404"/>
+	<SubTexture name="walk0006" x="1385" y="0" width="341" height="404"/>
+	<SubTexture name="walk0007" x="1385" y="0" width="341" height="404"/>
+	<SubTexture name="walk0008" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0009" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0010" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0011" x="0" y="0" width="341" height="403"/>
+	<SubTexture name="walk0012" x="0" y="451" width="341" height="402" frameX="0" frameY="0" frameWidth="341" frameHeight="404"/>
+	<SubTexture name="walk0013" x="0" y="451" width="341" height="402" frameX="0" frameY="0" frameWidth="341" frameHeight="404"/>
+	<SubTexture name="walk0014" x="0" y="451" width="341" height="402" frameX="0" frameY="0" frameWidth="341" frameHeight="404"/>
+	<SubTexture name="walk0015" x="0" y="451" width="341" height="402" frameX="0" frameY="0" frameWidth="341" frameHeight="404"/>
+</TextureAtlas>

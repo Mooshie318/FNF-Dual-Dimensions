@@ -33,3 +33,8 @@ Moovenge:supermooshie-mad:9
 plane:mooshep-both:10
 air-battle:mooshep-both:10
 thunder-storm:mooshep-both:10
+lemons:slime:11
+freezing:slime:11
+burning:slime:11
+slimy:slime:11
+slime-rematch:slime:11

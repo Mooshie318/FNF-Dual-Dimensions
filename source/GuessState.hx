@@ -28,8 +28,11 @@ class GuessState extends MusicBeatState
 {
     var guessButton:FlxUIButton;
     var hintButton:FlxUIButton;
+    var hintButton2:FlxUIButton;
+
     var uiTxt:FlxText;
     var uiHintTxt:FlxText;
+    var uiHintTxt2:FlxText;
     var uiTxt2:FlxText;
     var codeBox:FlxUIInputText;
     var show:String = '';
@@ -77,25 +80,41 @@ class GuessState extends MusicBeatState
         uiTxt2.setFormat("VCR OSD Mono", 25, FlxColor.WHITE, LEFT);
         uiTxt2.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
 
+        uiTxt2 = new FlxText(10, 100, 0);
+        uiTxt2.text = "The code is 7 numbers long";
+        uiTxt2.setFormat("VCR OSD Mono", 25, FlxColor.WHITE, LEFT);
+        uiTxt2.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
+
         uiHintTxt = new FlxText(10, 150, 0);
         uiHintTxt.text = "The code is in the files";
         uiHintTxt.setFormat("VCR OSD Mono", 25, FlxColor.WHITE, LEFT);
         uiHintTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
         uiHintTxt.visible = false;
 
-        codeBox = new FlxUIInputText(10, 200, 300, null, 32, FlxColor.BLACK, FlxColor.WHITE);
+        uiHintTxt2 = new FlxText(10, 200, 0);
+        uiHintTxt2.text = "0 1 2 3 3 7 9 (The code numbers (not in order))";
+        uiHintTxt2.setFormat("VCR OSD Mono", 25, FlxColor.WHITE, LEFT);
+        uiHintTxt2.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
+        uiHintTxt2.visible = false;
 
-        guessButton = new FlxUIButton(10, 275, 'Enter Guess', checkGuess);
+        codeBox = new FlxUIInputText(10, 250, 300, null, 32, FlxColor.BLACK, FlxColor.WHITE);
+
+        guessButton = new FlxUIButton(10, 325, 'Enter Guess', checkGuess);
         guessButton.resize(100, 50);
         guessButton.setLabelFormat(null, 12, FlxColor.BLACK);
 
-        hintButton = new FlxUIButton(120, 275, 'Give Hint', giveHint);
+        hintButton = new FlxUIButton(120, 325, 'Give Hint', giveHint);
         hintButton.resize(100, 50);
         hintButton.setLabelFormat(null, 12, FlxColor.BLACK);
+
+        hintButton2 = new FlxUIButton(120, 325, 'Give Another Hint', giveHint2);
+        hintButton2.resize(150, 50);
+        hintButton2.setLabelFormat(null, 12, FlxColor.BLACK);
 
         add(uiTxt);
         add(uiTxt2);
         add(uiHintTxt);
+        add(uiHintTxt2);
         add(codeBox);
         add(guessButton);
         add(hintButton);
@@ -143,17 +162,16 @@ class GuessState extends MusicBeatState
             case 'bf':
                 char.frames = Paths.getSparrowAtlas('BOYFRIEND', 'shared');
 				char.animation.addByPrefix('idle','BF idle dance', 24, false);
-				char.flipX = true;
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'bf-neon':
                 char.frames = Paths.getSparrowAtlas('BF_assets_2', 'shared');
 				char.animation.addByPrefix('idle','BF idle dance', 24, false);
-				char.flipX = true;
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'slime':
                 char.frames = Paths.getSparrowAtlas('slime_crew', 'shared');
 				char.animation.addByPrefix('idle','slime idle', 24, false);
 				char.setGraphicSize(Std.int(char.width * 1.2));
+                char.y -= 100;
             case 'james':
                 char.frames = Paths.getSparrowAtlas('james', 'week2');
 				char.animation.addByPrefix('idle','James idle', 24, false);
@@ -166,6 +184,7 @@ class GuessState extends MusicBeatState
                 char.frames = Paths.getSparrowAtlas('sheary', 'week4');
 				char.animation.addByPrefix('idle','idle', 24, false);
 				char.setGraphicSize(Std.int(char.width * 1.2));
+                char.x -= 100;
             case 'madcloud':
                 char.frames = Paths.getSparrowAtlas('madCloud', 'week4');
 				char.animation.addByPrefix('idle','c idle', 24, false);
@@ -186,19 +205,23 @@ class GuessState extends MusicBeatState
             case 'gooey':
                 char.frames = Paths.getSparrowAtlas('airship/gooey', 'shared');
 				char.animation.addByPrefix('idle','gooey idle', 24, false);
-				char.setGraphicSize(Std.int(char.width * 0.9));
+				char.setGraphicSize(Std.int(char.width * 0.6));
+                char.y -= 350;
             case 'gooey-squished':
                 char.frames = Paths.getSparrowAtlas('airship/squished-Gooey', 'shared');
 				char.animation.addByPrefix('idle','idle', 24, false);
 				char.setGraphicSize(Std.int(char.width * 1.2));
+                char.y += 200;
             case 'mooshie':
                 char.frames = Paths.getSparrowAtlas('mooshie/Mooshie_assets', 'shared');
 				char.animation.addByPrefix('idle','Mooshie idle', 24, false);
-				char.setGraphicSize(Std.int(char.width * 1.2));
+				char.y -= 100;
             case 'supermooshie':
                 char.frames = Paths.getSparrowAtlas('supermooshie', 'shared');
 				char.animation.addByPrefix('idle','supermooshie idle', 24, false);
 				char.setGraphicSize(Std.int(char.width * 1.2));
+                char.x -= 100;
+                char.y -= 100;
             case 'supermooshie-mad':
                 char.frames = Paths.getSparrowAtlas('supermooshie-mad', 'shared');
 				char.animation.addByPrefix('idle','supermooshie idle mad', 24, false);
@@ -213,7 +236,7 @@ class GuessState extends MusicBeatState
 	{
         if (FlxG.keys.justPressed.ESCAPE)
         {
-            FlxG.switchState(new MainMenuState());
+            FlxG.switchState(new ExtrasState());
         }
 
         FlxG.mouse.visible = true;
@@ -223,8 +246,8 @@ class GuessState extends MusicBeatState
 
     override function beatHit() 
     {
-        char.animation.play('idle');
         super.beatHit();
+        char.animation.play('idle');
     }
 
     function checkGuess():Void
@@ -244,5 +267,14 @@ class GuessState extends MusicBeatState
     function giveHint():Void
     {
         uiHintTxt.visible = true;
+
+        remove(hintButton);
+        add(hintButton2);
+    }
+
+    function giveHint2():Void
+    {
+        uiHintTxt2.visible = true;
+        remove(hintButton2);
     }
 }

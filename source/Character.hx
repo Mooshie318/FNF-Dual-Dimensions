@@ -274,6 +274,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
 				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
 
+				animation.addByPrefix('frozen', 'BF frozen', 24, true);
+
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
 				addOffset("singRIGHT", -38, -7);
@@ -291,6 +293,7 @@ class Character extends FlxSprite
 				addOffset('hit', 30, 25);
 				addOffset('dodge', 0, -8);
 				addOffset('attack', 300, 274);
+				addOffset('frozen', 68, 171);
 
 				iconColor = 'FF009BFF';
 
@@ -710,6 +713,82 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+
+			case 'fire':
+				frames = Paths.getSparrowAtlas('fire', 'shared');
+
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('idle'); 
+				addOffset("singUP", 20, 20);
+				addOffset("singRIGHT", 0, 10);
+				addOffset("singLEFT", 39, 9);
+				addOffset("singDOWN", 1, -15);
+
+				iconColor = 'FFFF0000';
+
+				playAnim('idle');
+
+			case 'lemony':
+				frames = Paths.getSparrowAtlas('lemony', 'shared');
+
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('idle'); 
+				addOffset("singUP", 9, 27);
+				addOffset("singRIGHT", -1, 12);
+				addOffset("singLEFT", 34, 11);
+				addOffset("singDOWN", 0, -14);
+
+				iconColor = 'FFFFFF00';
+
+				playAnim('idle');
+
+			case 'icy':
+				frames = Paths.getSparrowAtlas('icy', 'shared');
+
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('idle'); 
+				addOffset("singUP", 20, 93);
+				addOffset("singRIGHT", -2, 18);
+				addOffset("singLEFT", 73, 10);
+				addOffset("singDOWN", 0, -23);
+
+				iconColor = 'FF54EBFF';
+
+				playAnim('idle');
+
+			case 'slimy':
+				frames = Paths.getSparrowAtlas('slimy', 'shared');
+
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 23, 18);
+				addOffset("singRIGHT", -1, 16);
+				addOffset("singLEFT", 50, 15);
+				addOffset("singDOWN", 0, -17);
+
+				iconColor = 'FF00E500';
+
+				playAnim('idle');
 		}
 
 		dance();

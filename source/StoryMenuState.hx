@@ -34,16 +34,18 @@ class StoryMenuState extends MusicBeatState
 		['Gooey', 'Sacrifice', 'Squash'],
 		['moo', 'mooshie', 'showdown'],
 		['red', 'light-speed', 'moo-storm', 'moosanity', 'Moovenge'],
-		['Plane', 'Air-Battle', 'Thunder-Storm']
+		['Plane', 'Air-Battle', 'Thunder-Storm'],
+		['lemons', 'freezing', 'burning', 'slimy', 'slime-rematch']
 	];
 	var curDifficulty:Int = 1;
 
 	// comment below applys to this as well
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true, true, true];
 
 
 	// i really hope there's a better way to do this
 	var weekCharacters:Array<Dynamic> = [
+		['', 'bf', ''],
 		['', 'bf', ''],
 		['', 'bf', ''],
 		['', 'bf', ''],
@@ -68,7 +70,8 @@ class StoryMenuState extends MusicBeatState
 		"Airship",
 		"Mooshie",
 		"Moo Land",
-		"Plane battle"
+		"Plane battle",
+		"Slime crew rematch"
 	];
 
 	// Based on hard mode (+ means more difficult and - means less difficult)
@@ -83,7 +86,8 @@ class StoryMenuState extends MusicBeatState
 		"Hard",
 		"Hard +",
 		"Super hard",
-		"Super hard"
+		"Super hard",
+		"Challenging"
 	];
 
 	var txtWeekTitle:FlxText;

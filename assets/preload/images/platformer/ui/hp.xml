@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="hp.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="hp_empty0000" x="0" y="0" width="81" height="103"/>
+	<SubTexture name="hp_full0000" x="91" y="0" width="81" height="103"/>
+	<SubTexture name="hp_half0000" x="0" y="113" width="81" height="104"/>
+</TextureAtlas>

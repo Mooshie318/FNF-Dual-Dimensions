@@ -38,19 +38,16 @@ class MainMenuState extends MusicBeatState
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
 
-	//var xpTxt:FlxText; //   for level up mechanic
-	//var xpLvlTxt:FlxText; //^^^^^^^^^^^^^^^^^^^
-
 	public static var nightly:String = "";
 
 	public static var kadeEngineVer:String = "1.4.2" + nightly;
 	public static var gameVer:String = "0.2.7.1";
-	public static var fnmVer:String = "1.1.0";
+	public static var fnmVer:String = "1.2.0";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 
-	var guessButton:FlxUIButton;
+	var extrasButton:FlxUIButton;
 	var gjButton:FlxUIButton;
 
 	override function create()
@@ -119,18 +116,6 @@ class MainMenuState extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
-		// all for level up mechanic
-		/*xpTxt = new FlxText(5, FlxG.height - 64, 0, 'XP: ' + PlayState.xp, 12);
-		xpTxt.scrollFactor.set();
-		xpTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		xpTxt.screenCenter(X);
-		add(xpTxt);
-		xpLvlTxt = new FlxText(5, FlxG.height - 44, 0, 'XP Level: ' + PlayState.xpLvl, 12);
-		xpLvlTxt.scrollFactor.set();
-		xpLvlTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		xpLvlTxt.screenCenter(X);
-		add(xpLvlTxt);*/
-
 		if (FlxG.save.data.dfjk)
 			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
 		else if (FlxG.save.data.askl)
@@ -142,15 +127,15 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
-		guessButton = new FlxUIButton(1200, 10, "Guess the\ncode", sendToGuess);
-		guessButton.resize(100, 50);
-		guessButton.setLabelFormat(null, 12, FlxColor.BLACK);
+		extrasButton = new FlxUIButton(1200, 10, "Extras", sendToExtras);
+		extrasButton.resize(100, 50);
+		extrasButton.setLabelFormat(null, 12, FlxColor.BLACK);
 
 		gjButton = new FlxUIButton(1080, 10, "Login to\nGameJolt", sendToGJLogin);
 		gjButton.resize(100, 50);
 		gjButton.setLabelFormat(null, 12, FlxColor.BLACK);
 
-		add(guessButton);
+		add(extrasButton);
 		add(gjButton);
 
 		super.create();
@@ -277,9 +262,9 @@ class MainMenuState extends MusicBeatState
 		});
 	}
 
-	function sendToGuess():Void
+	function sendToExtras():Void
 	{
-		FlxG.switchState(new GuessState());
+		FlxG.switchState(new ExtrasState());
 	}
 
 	function sendToGJLogin():Void

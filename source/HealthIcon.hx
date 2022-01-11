@@ -29,6 +29,10 @@ class HealthIcon extends FlxSprite
 		animation.add('madcloud', [8, 9], 0, false, isPlayer);
 		animation.add('face', [10, 11], 0, false, isPlayer);
 		animation.add('slime', [12, 13], 0, false, isPlayer);
+		animation.add('lemony', [12, 13], 0, false, isPlayer);
+		animation.add('icy', [12, 13], 0, false, isPlayer);
+		animation.add('slimy', [12, 13], 0, false, isPlayer);
+		animation.add('fire', [12, 13], 0, false, isPlayer);
 		animation.add('trooper', [22, 23], 0, false, isPlayer);
 		animation.add('bf-old', [14, 15], 0, false, isPlayer);
 		animation.add('gf', [16], 0, false, isPlayer);

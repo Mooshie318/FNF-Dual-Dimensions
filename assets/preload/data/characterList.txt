@@ -19,3 +19,7 @@ gooey-squished
 mooshie
 supermooshie
 supermooshie-mad
+lemony
+icy
+slimy
+fire

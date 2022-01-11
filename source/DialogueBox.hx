@@ -31,8 +31,6 @@ class DialogueBox extends FlxSpriteGroup
 	public var finishThing:Void->Void;
 
 	// dialogue portraits are so annoying :(
-	var portraitRight:FlxSprite;
-
 	var firePort:FlxSprite;
 	var firePortMad:FlxSprite;
 	var firePortAhh:FlxSprite;
@@ -75,9 +73,15 @@ class DialogueBox extends FlxSpriteGroup
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
 
+	var background:FlxSprite;
+	var curBg:String = '';
+	var skip:Array<String> = [];
+
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
 	{
 		super();
+
+		skip = ['bgskip', 'hidebg'];
 
 		switch (PlayState.SONG.song.toLowerCase())
 		{
@@ -102,6 +106,10 @@ class DialogueBox extends FlxSpriteGroup
 		}, 5);
 
 		box = new FlxSprite(-20, 45);
+		box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
+		box.animation.addByPrefix('normalOpen', 'box open', 24, false);
+		box.animation.addByIndices('normal', 'box', [4], "", 24);
+		box.y = 400;
 		
 		var hasDialog = false;
 		if (FlxG.save.data.dialogue)
@@ -110,80 +118,28 @@ class DialogueBox extends FlxSpriteGroup
 			{
 				case 'icy' | 'fire' | 'slime-attack':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'tutorial':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'boo' | 'haunted':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-				
 				case 'cloud' | 'sheary' | 'monster-cloud':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'cluck' | 'clooshie' | 'fight-for-life':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'trooper' | 'shell' | 'attack':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'gooey' | 'sacrifice':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'moo' | 'mooshie' | 'showdown':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'red' | 'light-speed' | 'moo-storm' | 'moosanity' | 'moovenge' | '7391203':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'interview' | 'drive-thru':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
-
 				case 'plane' | 'air-battle' | 'thunder-storm':
 					hasDialog = true;
-					box.frames = Paths.getSparrowAtlas('dialogueThing/dialogue-box', 'shared');
-					box.animation.addByPrefix('normalOpen', 'box open', 24, false);
-					box.animation.addByIndices('normal', 'box', [4], "", 24);
-					box.y = 400;
+				case 'lemons' | 'freezing' | 'burning' | 'slimy' | 'slime-rematch':
+					hasDialog = true;
 			}
 		}
 
@@ -400,15 +356,6 @@ class DialogueBox extends FlxSpriteGroup
 		add(goombaPort);
 		goombaPort.visible = false;
 
-		portraitRight = new FlxSprite(0, 40);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		portraitRight.updateHitbox();
-		portraitRight.scrollFactor.set();
-		add(portraitRight);
-		portraitRight.visible = false;
-
 		gfPort = new FlxSprite(650, 210);
 		gfPort.frames = Paths.getSparrowAtlas('portraits/gf');
 		gfPort.animation.addByPrefix('enter', 'gf dialogue', 24, false);
@@ -444,6 +391,10 @@ class DialogueBox extends FlxSpriteGroup
 		box.animation.play('normalOpen');
 		box.updateHitbox();
 		add(box);
+
+		background = new FlxSprite(0,0);
+		background.visible = true;
+		add(background);
 
 		box.screenCenter(X);
 
@@ -502,7 +453,9 @@ class DialogueBox extends FlxSpriteGroup
 			kill();
 		}
 
-		if (FlxG.keys.justPressed.ANY  && dialogueStarted == true)
+		skip = ['bgskip', 'hidebg'];
+
+		if ((FlxG.keys.justPressed.ANY && dialogueStarted == true) || (skip.contains(curCharacter) && dialogueStarted == true))
 		{
 			remove(dialogue);
 				
@@ -521,7 +474,6 @@ class DialogueBox extends FlxSpriteGroup
 					{
 						box.alpha -= 1 / 5;
 						bgFade.alpha -= 1 / 5 * 0.7;
-						portraitRight.visible = false;
 						swagDialogue.alpha -= 1 / 5;
 						dropText.alpha = swagDialogue.alpha;
 					}, 5);
@@ -552,43 +504,9 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue.resetText(dialogueList[0]);
 		swagDialogue.start(0.04, true);
 
+		// there better be an easier way to do this, I hate doing this
 		switch (curCharacter)
 		{
-			case 'bf':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
-				if (!portraitRight.visible)
-				{
-					portraitRight.visible = true;
-					portraitRight.animation.play('enter');
-				}
 			case 'boyfriend':
 				firePort.visible = false;
 				firePortMad.visible = false;
@@ -603,7 +521,6 @@ class DialogueBox extends FlxSpriteGroup
 				slimyPortMad.visible = false;
 				slimyPortAhh.visible = false;
 				crewPort.visible = false;
-				portraitRight.visible = false;
 				gfPort.visible = false;
 				babyPort.visible = false;
 				sooubwayPort.visible = false;
@@ -639,7 +556,6 @@ class DialogueBox extends FlxSpriteGroup
 				slimyPortAhh.visible = false;
 				crewPort.visible = false;
 				bfPort.visible = false;
-				portraitRight.visible = false;
 				babyPort.visible = false;
 				sooubwayPort.visible = false;
 				groupPort.visible = false;
@@ -660,7 +576,6 @@ class DialogueBox extends FlxSpriteGroup
 					gfPort.animation.play('enter');
 				}
 			case 'fire':
-				portraitRight.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
 				icyPort.visible = false;
@@ -695,7 +610,6 @@ class DialogueBox extends FlxSpriteGroup
 					firePort.animation.play('enter');
 				}
 			case 'firemad':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortAhh.visible = false;
 				icyPort.visible = false;
@@ -730,7 +644,6 @@ class DialogueBox extends FlxSpriteGroup
 					firePortMad.animation.play('enter');
 				}
 			case 'fireahh':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				icyPort.visible = false;
@@ -765,7 +678,6 @@ class DialogueBox extends FlxSpriteGroup
 					firePortAhh.animation.play('enter');
 				}
 			case 'icy':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -799,8 +711,7 @@ class DialogueBox extends FlxSpriteGroup
 					icyPort.visible = true;
 					icyPort.animation.play('enter');
 				}
-				case 'icymad':
-				portraitRight.visible = false;
+			case 'icymad':
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -835,7 +746,6 @@ class DialogueBox extends FlxSpriteGroup
 					icyPortMad.animation.play('enter');
 				}
 			case 'icyahh':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -869,8 +779,7 @@ class DialogueBox extends FlxSpriteGroup
 					icyPortAhh.visible = true;
 					icyPortAhh.animation.play('enter');
 				}
-				case 'lemony':
-				portraitRight.visible = false;
+			case 'lemony':
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -905,7 +814,6 @@ class DialogueBox extends FlxSpriteGroup
 					lemonyPort.animation.play('enter');
 				}
 			case 'lemonymad':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -939,8 +847,7 @@ class DialogueBox extends FlxSpriteGroup
 					lemonyPortMad.visible = true;
 					lemonyPortMad.animation.play('enter');
 				}
-				case 'lemonyahh':
-				portraitRight.visible = false;
+			case 'lemonyahh':
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -975,7 +882,6 @@ class DialogueBox extends FlxSpriteGroup
 					lemonyPortAhh.animation.play('enter');
 				}
 			case 'slimy':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1010,7 +916,6 @@ class DialogueBox extends FlxSpriteGroup
 					slimyPort.animation.play('enter');
 				}
 			case 'slimymad':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1045,7 +950,6 @@ class DialogueBox extends FlxSpriteGroup
 					slimyPortMad.animation.play('enter');
 				}
 			case 'slimyahh':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1080,7 +984,6 @@ class DialogueBox extends FlxSpriteGroup
 					slimyPortAhh.animation.play('enter');
 				}
 			case 'crew':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1115,7 +1018,6 @@ class DialogueBox extends FlxSpriteGroup
 					crewPort.animation.play('enter');
 				}
 			case 'baby':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1149,7 +1051,6 @@ class DialogueBox extends FlxSpriteGroup
 					babyPort.animation.play('enter');
 				}
 			case 'sooubway':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1184,7 +1085,6 @@ class DialogueBox extends FlxSpriteGroup
 					sooubwayPort.animation.play('enter');
 				}
 			case 'group':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1219,7 +1119,6 @@ class DialogueBox extends FlxSpriteGroup
 					groupPort.animation.play('enter');
 				}
 			case 'mooshie':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1254,7 +1153,6 @@ class DialogueBox extends FlxSpriteGroup
 					mooshiePort.animation.play('enter');
 				}
 			case 'supermooshie':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1289,7 +1187,6 @@ class DialogueBox extends FlxSpriteGroup
 					supermooshiePort.animation.play('enter');
 				}
 			case 'supermadshie':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1324,7 +1221,6 @@ class DialogueBox extends FlxSpriteGroup
 					supermooshiePortMad.animation.play('enter');
 				}
 			case 'bfmad':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1359,7 +1255,6 @@ class DialogueBox extends FlxSpriteGroup
 					bfPortMad.animation.play('enter');
 				}
 			case 'ghost':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1394,7 +1289,6 @@ class DialogueBox extends FlxSpriteGroup
 					ghostPort.animation.play('enter');
 				}
 			case 'sheary':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1429,7 +1323,6 @@ class DialogueBox extends FlxSpriteGroup
 					shepPort.animation.play('enter');
 				}
 			case 'cluckington':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1463,7 +1356,6 @@ class DialogueBox extends FlxSpriteGroup
 					cluckPort.animation.play('enter');
 				}
 			case 'clooshie':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1497,7 +1389,6 @@ class DialogueBox extends FlxSpriteGroup
 					clooshPort.animation.play('enter');
 				}
 			case 'trooper':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1532,7 +1423,6 @@ class DialogueBox extends FlxSpriteGroup
 				}
 
 			case 'gooey':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1567,7 +1457,6 @@ class DialogueBox extends FlxSpriteGroup
 				}
 
 			case 'goomba':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1601,9 +1490,29 @@ class DialogueBox extends FlxSpriteGroup
 					goombaPort.animation.play('enter');
 				}
 
+			case 'bg':
+				remove(background);
+				background.loadGraphic(Paths.image('diaImage/$curBg'));
+				background.setGraphicSize(1280,720);
+				background.updateHitbox();
+				background.screenCenter();
+				background.antialiasing = true;
+				add(background);
+				trace('BG CHANGE ' + curBg);
+
+			case 'bgskip':
+				remove(background);
+				background.loadGraphic(Paths.image('diaImage/$curBg'));
+				add(background);
+			
+			case 'hidebg':
+				remove(background);
+
+			case 'narrator':
+				hideChars();
+
 			// full template (rename s to ur var)
 			/*case 's':
-				portraitRight.visible = false;
 				firePort.visible = false;
 				firePortMad.visible = false;
 				firePortAhh.visible = false;
@@ -1646,12 +1555,59 @@ class DialogueBox extends FlxSpriteGroup
 					e.animation.play('enter');
 				}*/
 		}
+
+		//switch(curCharacter)
+		//{
+		//	case 'bg' | 'hidebg' | 'bgskip':
+		//		// nothing lol
+		//	default:
+		//		resetBox();
+		//}
 	}
 
 	function cleanDialog():Void
 	{
 		var splitName:Array<String> = dialogueList[0].split(":");
+
 		curCharacter = splitName[1];
 		dialogueList[0] = dialogueList[0].substr(splitName[1].length + 2).trim();
+		curBg = splitName[2];
+	}
+
+	function resetBox():Void
+	{
+		remove(box);
+		add(box);
+	}
+
+	function hideChars():Void
+	{
+		firePort.visible = false;
+		firePortMad.visible = false;
+		firePortAhh.visible = false;
+		icyPort.visible = false;
+		icyPortMad.visible = false;
+		icyPortAhh.visible = false;
+		lemonyPort.visible = false;
+		lemonyPortMad.visible = false;
+		lemonyPortAhh.visible = false;
+		slimyPort.visible = false;
+		slimyPortMad.visible = false;
+		slimyPortAhh.visible = false;
+		crewPort.visible = false;
+		bfPort.visible = false;
+		gfPort.visible = false;
+		babyPort.visible = false;
+		sooubwayPort.visible = false;
+		groupPort.visible = false;
+		shepPort.visible = false;
+		cluckPort.visible = false;
+		clooshPort.visible = false;
+		gooeyPort.visible = false;
+		goombaPort.visible = false;
+		mooshiePort.visible = false;
+		supermooshiePort.visible = false;
+		supermooshiePortMad.visible = false;
+		bfPortMad.visible = false;
 	}
 }

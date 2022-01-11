@@ -36,3 +36,9 @@
 
 :supermooshie: for supermooshie
 :supermadshie: for supermooshie but mad
+
+:narrator: for narrator (all dia portraits won't be visible)
+
+:bg: for dialogue bg (ex. :bg:e (e is the path in diaImage/)
+:bgskip: same thing
+:hidebg: to remove the image
