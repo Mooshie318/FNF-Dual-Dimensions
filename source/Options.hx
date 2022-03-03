@@ -69,7 +69,7 @@ class Option
 	public function right():Bool { return throw "stub!"; }
 }
 
-class WASDOption extends Option
+class KeyBindings extends Option
 {
 	private var controls:Controls;
 
@@ -81,125 +81,15 @@ class WASDOption extends Option
 
 	public override function press():Bool
 	{
-		FlxG.save.data.wasd = !FlxG.save.data.wasd;
-
-		if (FlxG.save.data.dfjk)
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-		else if (FlxG.save.data.askl)
-			controls.setKeyboardScheme(KeyboardScheme.Askl, true);
-		else if (FlxG.save.data.woops)
-			controls.setKeyboardScheme(KeyboardScheme.Woops, true);
-		else if (FlxG.save.data.wasd)
-			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
-
-		display = updateDisplay();
-		return true;
+		OptionsMenu.instance.openSubState(new KeyBindsMenu());
+		return false;
 	}
 
 	private override function updateDisplay():String
 	{
-		return 'WASD ' + (FlxG.save.data.wasd ? "Enabled" : "Disabled");
+		return 'Key bindings';
 	}
-}
-
-class DFJKOption extends Option
-{
-	private var controls:Controls;
-
-	public function new(controls:Controls)
-	{
-		super();
-		this.controls = controls;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.save.data.dfjk = !FlxG.save.data.dfjk;
-		
-		if (FlxG.save.data.dfjk)
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-		else if (FlxG.save.data.askl)
-			controls.setKeyboardScheme(KeyboardScheme.Askl, true);
-		else if (FlxG.save.data.woops)
-			controls.setKeyboardScheme(KeyboardScheme.Woops, true);
-		else if (FlxG.save.data.wasd)
-			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
-
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return 'DFJK ' + (!FlxG.save.data.dfjk ? "Disabled" : "Enabled");
-	}
-}
-
-class ASKLOption extends Option
-{
-	private var controls:Controls;
-
-	public function new(controls:Controls)
-	{
-		super();
-		this.controls = controls;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.save.data.askl = !FlxG.save.data.askl;
-		
-		if (FlxG.save.data.askl)
-			controls.setKeyboardScheme(KeyboardScheme.Askl, true);
-		else if (FlxG.save.data.dfjk)
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-		else if (FlxG.save.data.woops)
-			controls.setKeyboardScheme(KeyboardScheme.Woops, true);
-		else if (FlxG.save.data.wasd)
-			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
-
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return 'ASKL ' + (!FlxG.save.data.askl ? "Disabled" : "Enabled");
-	}
-}
-
-class WOOPSOption extends Option
-{
-	private var controls:Controls;
-
-	public function new(controls:Controls)
-	{
-		super();
-		this.controls = controls;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.save.data.woops = !FlxG.save.data.woops;
-		
-		if (FlxG.save.data.woops)
-			controls.setKeyboardScheme(KeyboardScheme.Woops, true);
-		else if (FlxG.save.data.dfjk)
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-		else if (FlxG.save.data.askl)
-			controls.setKeyboardScheme(KeyboardScheme.Askl, true);
-		else if (FlxG.save.data.wasd)
-			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
-
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return 'ZX PERIOD SLASH ' + (!FlxG.save.data.woops ? "Disabled" : "Enabled");
-	}
-}
+} 
 
 class DialogueOption extends Option
 {
@@ -605,7 +495,7 @@ class WatermarkOption extends Option
 	}
 }
 
-class OffsetMenu extends Option
+class ItemBlockOption extends Option
 {
 	public function new(desc:String)
 	{
@@ -615,24 +505,13 @@ class OffsetMenu extends Option
 
 	public override function press():Bool
 	{
-		trace("switch");
-		var poop:String = Highscore.formatSong("Tutorial", 1);
-
-		PlayState.SONG = Song.loadFromJson(poop, "Tutorial");
-		PlayState.isStoryMode = false;
-		PlayState.storyDifficulty = 0;
-		PlayState.storyWeek = 0;
-		PlayState.offsetTesting = true;
-		trace('CUR WEEK' + PlayState.storyWeek);
-		LoadingState.loadAndSwitchState(new PlayState());
-		return false;
+		FlxG.save.data.itemBlock = !FlxG.save.data.itemBlock;
+		display = updateDisplay();
+		return true;
 	}
 
 	private override function updateDisplay():String
 	{
-		return "Time your offset";
+		return 'Item block ' + (FlxG.save.data.itemBlock ? "On" : "Off");
 	}
 }
-
-
-

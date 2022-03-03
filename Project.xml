@@ -40,6 +40,12 @@
 
 	<classpath name="source" />
 
+	<assets path="assets/preload/videos" rename="assets/videos" include="*mp4" embed='false' />
+
+
+
+	<assets path="plugins/" rename='' if="windows"/>
+	<assets path="dlls/" rename='' if="windows"/>
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3" unless="web"/>
 	
@@ -97,6 +103,7 @@
 	<assets path="CHANGELOG.md" rename='changelog.txt'/>
 	<assets path="ModChangelog.md" rename='mod changelog.txt'/>
 	<assets path="ForChangingDialogue.md" rename='for changing dialogue.txt'/>
+	<assets path="AddingCustomNotes.md" rename='how to add custom notes.txt'/>
 
 	<!-- NOTE FOR FUTURE SELF SINCE FONTS ARE ALWAYS FUCKY 
 		TO FIX ONE OF THEM, I CONVERTED IT TO OTF. DUNNO IF YOU NEED TO
@@ -120,8 +127,6 @@
 	<haxelib name="polymod"/>
 	<haxelib name="discord_rpc" if="windows"/>
 	<haxelib name="linc_luajit"/>
-	<haxelib name="actuate" />
-	<haxelib name="extension-webm" if="desktop" />
 	<haxelib name="tentools" />
 	<haxelib name="systools" />
 	<ndll name="systools" haxelib="systools" />

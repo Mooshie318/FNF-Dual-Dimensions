@@ -35,16 +35,18 @@ class StoryMenuState extends MusicBeatState
 		['moo', 'mooshie', 'showdown'],
 		['red', 'light-speed', 'moo-storm', 'moosanity', 'Moovenge'],
 		['Plane', 'Air-Battle', 'Thunder-Storm'],
-		['lemons', 'freezing', 'burning', 'slimy', 'slime-rematch']
+		['lemons', 'freezing', 'burning', 'slimy', 'slime-rematch'],
+		['all-around-you']
 	];
 	var curDifficulty:Int = 1;
 
 	// comment below applys to this as well
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true, true, true, true];
 
 
 	// i really hope there's a better way to do this
 	var weekCharacters:Array<Dynamic> = [
+		['', 'bf', ''],
 		['', 'bf', ''],
 		['', 'bf', ''],
 		['', 'bf', ''],
@@ -71,7 +73,8 @@ class StoryMenuState extends MusicBeatState
 		"Mooshie",
 		"Moo Land",
 		"Plane battle",
-		"Slime crew rematch"
+		"Slime crew rematch",
+		"Bonus week"
 	];
 
 	// Based on hard mode (+ means more difficult and - means less difficult)
@@ -87,6 +90,7 @@ class StoryMenuState extends MusicBeatState
 		"Hard +",
 		"Super hard",
 		"Super hard",
+		"Challenging",
 		"Challenging"
 	];
 
@@ -349,13 +353,15 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
+
+			var video:VideoHandlerMP4 = new VideoHandlerMP4();
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				if (curWeek == 9)
 				{
 					if (FlxG.save.data.cutscenes)
 					{
-						LoadingState.loadAndSwitchState(new VideoState("assets/videos/red.webm", new PlayState()));
+						video.playMP4(Paths.video('red'), new PlayState());
 						#if windows
 						DiscordClient.changePresence("In cutscene", null, null, true);
 						#end
@@ -367,7 +373,19 @@ class StoryMenuState extends MusicBeatState
 				{
 					if (FlxG.save.data.cutscenes)
 					{
-						LoadingState.loadAndSwitchState(new VideoState("assets/videos/bfFuckingDies.webm", new PlayState()));
+						video.playMP4(Paths.video('bfFuckingDies'), new PlayState());
+						#if windows
+						DiscordClient.changePresence("In cutscene", null, null, true);
+						#end
+					}
+					else
+						LoadingState.loadAndSwitchState(new PlayState());
+				}
+				else if (curWeek == 12)
+				{
+					if (FlxG.save.data.cutscenes)
+					{
+						video.playMP4(Paths.video('theyAppear'), new PlayState());
 						#if windows
 						DiscordClient.changePresence("In cutscene", null, null, true);
 						#end

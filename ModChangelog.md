@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0 - The mechanic update] - 2022-03-05
+### Added
+- Customizable keybinds (woo)
+- Item block mechanic
+- Battle mechanic
+- Achievement screen (will be changed later, it's garbage right now)
+- 5 new songs: 3 battle, 2 bonus
+- 4 new achievments
+### Overhauled
+- Cutscenes, now in MP4 because webm kept crashing and idk why
+### Note
+- Maybe 1.4.0, prob not tho. If not, next update is gonna be BEEG
+
 ## [1.2.0] - 2022-01-10
 ### Added
 - New "Extras" menu
@@ -17,8 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Moved the guessing screen into the extras menu
 ### Fixed
 - Moovenge /kill mechanic (You dont need to hold space anymore)
-### Note
-- Updates will be slower after this since I'll be working on another mod
 
 ## [1.1.0] - 2021-12-31
 ### Added

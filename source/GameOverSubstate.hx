@@ -12,7 +12,7 @@ class GameOverSubstate extends MusicBeatSubstate
 {
 	var retry:FlxSprite;
 	var quit:FlxSprite;
-	var retrySelected:Bool = true;
+	var retrySelected:Bool = false;
 
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
@@ -85,23 +85,21 @@ class GameOverSubstate extends MusicBeatSubstate
 
 			endBullshit();
 		}
-		else
+		else if (controls.ACCEPT && !retrySelected)
 		{
-			if (controls.ACCEPT && !retrySelected)
-			{
-				quit.animation.play('selected');
+			quit.animation.play('selected');
 
-				FlxG.sound.music.stop();
+			FlxG.sound.music.stop();
 
-				if (PlayState.isStoryMode)
-					FlxG.switchState(new StoryMenuState());
-				else
-					FlxG.switchState(new FreeplayState());
-				PlayState.loadRep = false;
-			}		
+			if (PlayState.isStoryMode)
+				FlxG.switchState(new StoryMenuState());
+			else
+				FlxG.switchState(new FreeplayState());
+			PlayState.loadRep = false;
 		}
 
-		changeThing();
+		if (FlxG.keys.justPressed.LEFT || FlxG.keys.justPressed.RIGHT)
+			changeThing();
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)
 		{
@@ -151,19 +149,15 @@ class GameOverSubstate extends MusicBeatSubstate
 	{
 		retrySelected = !retrySelected;
 
-		if (controls.RIGHT_P || controls.LEFT_P)
+		if (retrySelected)
 		{
-			if (retrySelected)
-			{
-				quit.animation.play('highlight', true);
-				retry.animation.play('idle', true);
-			}
-			else
-			{
-				quit.animation.play('idle', true);
-				retry.animation.play('highlight', true);
-			}
+			quit.animation.play('idle', true);
+			retry.animation.play('highlight', true);
 		}
-		
+		else
+		{
+			quit.animation.play('highlight', true);
+			retry.animation.play('idle', true);
+		}
 	}
 }

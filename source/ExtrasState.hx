@@ -30,6 +30,7 @@ class ExtrasState extends MusicBeatState
     var guessButton:FlxUIButton;
     var refrenceGuesser:FlxUIButton;
     var platformerButton:FlxUIButton;
+    var achievementsButton:FlxUIButton;
 
 	override function create()
 	{
@@ -75,6 +76,10 @@ class ExtrasState extends MusicBeatState
         refrenceGuesser.resize(150, 75);
         refrenceGuesser.setLabelFormat(null, 12, FlxColor.BLACK);
 
+        achievementsButton = new FlxUIButton(565, 300, 'Achievements', sendToAchievements);
+        achievementsButton.resize(150, 75);
+        achievementsButton.setLabelFormat(null, 12, FlxColor.BLACK);
+
         //platformerButton = new FlxUIButton(565, 500, 'Platformer mode', sendToPlatformer);
         //platformerButton.resize(150, 75);
         //platformerButton.setLabelFormat(null, 12, FlxColor.BLACK);
@@ -82,6 +87,7 @@ class ExtrasState extends MusicBeatState
         add(text);
         add(guessButton);
         add(refrenceGuesser);
+        add(achievementsButton);
 
         //if (FlxG.save.data.platformerUnlocked)
         //    add(platformerButton);
@@ -107,6 +113,11 @@ class ExtrasState extends MusicBeatState
     function sendToRG():Void
     {
         FlxG.switchState(new ReferenceGuessState());
+    }
+
+    function sendToAchievements():Void
+    {
+        FlxG.switchState(new AchievementsState());
     }
 
     function sendToPlatformer():Void

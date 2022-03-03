@@ -8,15 +8,6 @@ class KadeEngineData
 		if (FlxG.save.data.platformerUnlocked == null)
 			FlxG.save.data.platformerUnlocked = false;
 
-		if (FlxG.save.data.platformerLevel == null)
-			FlxG.save.data.platformerLevel = 0;
-		
-		if (FlxG.save.data.platformerMtnPrograss == null)
-			FlxG.save.data.platformerMtnPrograss = 1;
-
-		if (FlxG.save.data.platformerCompleted == null)
-			FlxG.save.data.platformerCompleted = false;
-
         if (FlxG.save.data.newInput == null)
 			FlxG.save.data.newInput = true;
 
@@ -86,8 +77,22 @@ class KadeEngineData
 
 		if (FlxG.save.data.watermark == null)
 			FlxG.save.data.watermark = true;
+		
+		if (FlxG.save.data.itemBlock == null)
+			FlxG.save.data.itemBlock = true;
+
+		if (FlxG.save.data.beatGooey == null)
+			FlxG.save.data.beatGooey = false;
+
+		if (FlxG.save.data.beatFire == null)
+			FlxG.save.data.beatFire = false;
+
+		if (FlxG.save.data.beatSupermooshie == null)
+			FlxG.save.data.beatSupermooshie == false;
 
 		Conductor.recalculateTimings();
+		PlayerSettings.player1.controls.loadKeyBinds();
+		KeyBinds.keyCheck();
 
 		Main.watermarks = FlxG.save.data.watermark;
 

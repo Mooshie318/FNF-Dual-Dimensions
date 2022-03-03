@@ -88,7 +88,12 @@ class AnimationDebug extends FlxState
 
 		for (anim => offsets in char.animOffsets)
 		{
-			var text:FlxText = new FlxText(10, 20 + (18 * daLoop), 0, anim + ": " + offsets, 15);
+			var escTxt:FlxText = new FlxText(10, 20, 0, 'Press ESC to go back', 15);
+			escTxt.scrollFactor.set();
+			escTxt.color = FlxColor.BLUE;
+			dumbTexts.add(escTxt);
+
+			var text:FlxText = new FlxText(10, 40 + (18 * daLoop), 0, anim + ": " + offsets, 15);
 			text.scrollFactor.set();
 			text.color = FlxColor.BLUE;
 			dumbTexts.add(text);

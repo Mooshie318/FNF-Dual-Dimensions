@@ -140,6 +140,8 @@ class DialogueBox extends FlxSpriteGroup
 					hasDialog = true;
 				case 'lemons' | 'freezing' | 'burning' | 'slimy' | 'slime-rematch':
 					hasDialog = true;
+				case 'all-around-you':
+					hasDialog = true;
 			}
 		}
 

@@ -42,7 +42,7 @@ class MainMenuState extends MusicBeatState
 
 	public static var kadeEngineVer:String = "1.4.2" + nightly;
 	public static var gameVer:String = "0.2.7.1";
-	public static var fnmVer:String = "1.2.0";
+	public static var fnmVer:String = "1.3.0";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -116,15 +116,6 @@ class MainMenuState extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
-		if (FlxG.save.data.dfjk)
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-		else if (FlxG.save.data.askl)
-			controls.setKeyboardScheme(KeyboardScheme.Askl, true);
-		else if (FlxG.save.data.woops)
-			controls.setKeyboardScheme(KeyboardScheme.Woops, true);
-		else if (FlxG.save.data.wasd)
-			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
-
 		changeItem();
 
 		extrasButton = new FlxUIButton(1200, 10, "Extras", sendToExtras);
@@ -165,13 +156,13 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 		{
-			if (controls.UP_P)
+			if (FlxG.keys.justPressed.W || FlxG.keys.justPressed.UP)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(-1);
 			}
 
-			if (controls.DOWN_P)
+			if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.DOWN)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(1);
