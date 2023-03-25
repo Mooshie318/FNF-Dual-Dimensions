@@ -50,8 +50,8 @@ class OptionsMenu extends MusicBeatState
 			new FPSOption("Toggle the FPS Counter"),
 			new ReplayOption("View replays"),
 			#end
-			new WatermarkOption("Turn off all watermarks from the engine."),
-			new ItemBlockOption("Toggles the itrm block")
+			new WatermarkOption("Turn off all watermarks from the engine.")
+			//new ItemBlockOption("Toggles the item block")
 		])
 	];
 
@@ -188,8 +188,8 @@ class OptionsMenu extends MusicBeatState
 			}
 		
 
-			if (controls.RESET)
-					FlxG.save.data.offset = 0;
+			// if (controls.RESET)
+			// 	FlxG.save.data.offset = 0;
 
 			if (controls.ACCEPT)
 			{

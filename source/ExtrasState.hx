@@ -28,9 +28,9 @@ class ExtrasState extends MusicBeatState
 {
     var text:FlxText;
     var guessButton:FlxUIButton;
-    var refrenceGuesser:FlxUIButton;
     var platformerButton:FlxUIButton;
     var achievementsButton:FlxUIButton;
+    var mgButton:FlxUIButton;
 
 	override function create()
 	{
@@ -68,17 +68,18 @@ class ExtrasState extends MusicBeatState
         text.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
         text.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
 
-        guessButton = new FlxUIButton(250, 300, 'Guess the code', sendToGuess);
+        // guessButton = new FlxUIButton(250, 300, 'Guess the code', sendToGuess);
+        guessButton = new FlxUIButton(565, 300, 'Guess the code', sendToGuess);
         guessButton.resize(150, 75);
         guessButton.setLabelFormat(null, 12, FlxColor.BLACK);
 
-        refrenceGuesser = new FlxUIButton(880, 300, 'Guess the references', sendToRG);
-        refrenceGuesser.resize(150, 75);
-        refrenceGuesser.setLabelFormat(null, 12, FlxColor.BLACK);
-
-        achievementsButton = new FlxUIButton(565, 300, 'Achievements', sendToAchievements);
+        achievementsButton = new FlxUIButton(565, 105, 'Achievements', sendToAchievements);
         achievementsButton.resize(150, 75);
         achievementsButton.setLabelFormat(null, 12, FlxColor.BLACK);
+
+        mgButton = new FlxUIButton(565, 500, 'Minigames', sendToMinigames);
+        mgButton.resize(150, 75);
+        mgButton.setLabelFormat(null, 12, FlxColor.BLACK);
 
         //platformerButton = new FlxUIButton(565, 500, 'Platformer mode', sendToPlatformer);
         //platformerButton.resize(150, 75);
@@ -86,8 +87,8 @@ class ExtrasState extends MusicBeatState
 
         add(text);
         add(guessButton);
-        add(refrenceGuesser);
         add(achievementsButton);
+        add(mgButton);
 
         //if (FlxG.save.data.platformerUnlocked)
         //    add(platformerButton);
@@ -118,6 +119,11 @@ class ExtrasState extends MusicBeatState
     function sendToAchievements():Void
     {
         FlxG.switchState(new AchievementsState());
+    }
+
+    function sendToMinigames():Void
+    {
+        openSubState(new MGSelectSubState(0,0));
     }
 
     function sendToPlatformer():Void

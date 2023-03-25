@@ -37,6 +37,37 @@
 :supermooshie: for supermooshie
 :supermadshie: for supermooshie but mad
 
+:stickletto: for stickletto
+:sticklettoahh: for stickletto but ahh
+
+:sticko: for sticko
+:stickomad: for sticko but mad
+:stickohaha: for sticko but haha
+
+:stickletta: for stickletta
+:sticklettahappy: for stickletta but happy
+:sticklettahappier: for stickletta but happier \O/
+:sticklettawink: for winking stickletta
+:sticklettaR: for stickletta right side
+:sticklettaC: for stickletta but :( (right side)
+
+:clonerman: for clonerman
+
+:sticklettabowL: for left side sticklettabow
+:sticklettabowR: for right side sticklettabow
+:swordlettoL: for left side swordletto
+:swordlettoR: for right side swordletto
+
+:striker: for striker
+
+:yellow: for yellow dude
+
+:red: for red dude
+:redmad: for red dude but mad
+:redhaha: for red dude but haha
+
+:stiburn: for stiburn
+
 :narrator: for narrator (all dia portraits won't be visible)
 
 :bg: for dialogue bg (ex. :bg:e (e is the path in diaImage/)

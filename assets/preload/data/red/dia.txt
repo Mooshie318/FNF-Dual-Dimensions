@@ -1,8 +1,6 @@
-:boyfriend:Beep bop?
-:girlfriend:...Where are we?
-:supermooshie:You're in my area
-:boyfriend:?
-:supermooshie:You're in my area, now LEAVE
+:supermooshie:..?
+:boyfriend:Bup?
+:supermooshie:You're in my area. LEAVE
 :boyfriend:Bo
 :supermooshie:YES, LEAVE!
 :boyfriend:Beep bo bop

@@ -42,13 +42,15 @@ class MainMenuState extends MusicBeatState
 
 	public static var kadeEngineVer:String = "1.4.2" + nightly;
 	public static var gameVer:String = "0.2.7.1";
-	public static var fnmVer:String = "1.3.0";
+	public static var fnmVer:String = "1.4.0";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 
 	var extrasButton:FlxUIButton;
 	var gjButton:FlxUIButton;
+
+	var bg:FlxSprite;
 
 	override function create()
 	{
@@ -59,12 +61,13 @@ class MainMenuState extends MusicBeatState
 
 		if (!FlxG.sound.music.playing)
 		{
-			FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			// FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			FlxG.sound.playMusic(Paths.music('menu'));
 		}
 
 		persistentUpdate = persistentDraw = true;
 
-		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		bg = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
 		bg.scrollFactor.x = 0;
 		bg.scrollFactor.y = 0.15;
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
@@ -146,11 +149,8 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.mouse.justPressed && FlxG.mouse.screenX <= 30 && FlxG.mouse.screenY <= 30)
 		{
 			PlayState.isStoryMode = true;
-
 			PlayState.storyDifficulty = 2;
-
 			PlayState.SONG = Song.loadFromJson('boyfriend-hard', 'boyfriend');
-
 			LoadingState.loadAndSwitchState(new PlayState(), true);
 		}
 
@@ -214,8 +214,7 @@ class MainMenuState extends MusicBeatState
 										FlxG.switchState(new StoryMenuState());
 										trace("Story Menu Selected");
 									case 'freeplay':
-										FlxG.switchState(new FreeplayState());
-
+										openSubState(new FPSelectSubState(bg.getGraphicMidpoint().x, bg.getGraphicMidpoint().y));
 										trace("Freeplay Menu Selected");
 									case 'options':
 										FlxG.switchState(new OptionsMenu());

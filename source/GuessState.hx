@@ -86,7 +86,7 @@ class GuessState extends MusicBeatState
         uiTxt2.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
 
         uiHintTxt = new FlxText(10, 150, 0);
-        uiHintTxt.text = "The code is in the files";
+        uiHintTxt.text = "Get lucky with the intro text";
         uiHintTxt.setFormat("VCR OSD Mono", 25, FlxColor.WHITE, LEFT);
         uiHintTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1);
         uiHintTxt.visible = false;
@@ -161,70 +161,70 @@ class GuessState extends MusicBeatState
         {
             case 'bf':
                 char.frames = Paths.getSparrowAtlas('BOYFRIEND', 'shared');
-				char.animation.addByPrefix('idle','BF idle dance', 24, false);
+				char.animation.addByPrefix('idle','BF idle dance', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'bf-neon':
                 char.frames = Paths.getSparrowAtlas('BF_assets_2', 'shared');
-				char.animation.addByPrefix('idle','BF idle dance', 24, false);
+				char.animation.addByPrefix('idle','BF idle dance', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'slime':
                 char.frames = Paths.getSparrowAtlas('slime_crew', 'shared');
-				char.animation.addByPrefix('idle','slime idle', 24, false);
+				char.animation.addByPrefix('idle','slime idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
                 char.y -= 100;
             case 'james':
                 char.frames = Paths.getSparrowAtlas('james', 'week2');
-				char.animation.addByPrefix('idle','James idle', 24, false);
+				char.animation.addByPrefix('idle','James idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'ghost':
                 char.frames = Paths.getSparrowAtlas('ghost-with-a-fucking-gun', 'week3');
-				char.animation.addByPrefix('idle','ghost idle', 24, false);
+				char.animation.addByPrefix('idle','ghost idle', 24);
 				char.setGraphicSize(Std.int(char.width * 2.2));
             case 'sheary':
                 char.frames = Paths.getSparrowAtlas('sheary', 'week4');
-				char.animation.addByPrefix('idle','idle', 24, false);
+				char.animation.addByPrefix('idle','idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
                 char.x -= 100;
             case 'madcloud':
                 char.frames = Paths.getSparrowAtlas('madCloud', 'week4');
-				char.animation.addByPrefix('idle','c idle', 24, false);
+				char.animation.addByPrefix('idle','c idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
                 char.x -= 300;
             case 'cluckington':
                 char.frames = Paths.getSparrowAtlas('cluck/cluckington', 'week5');
-				char.animation.addByPrefix('idle','idle', 24, false);
+				char.animation.addByPrefix('idle','idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'clooshie':
                 char.frames = Paths.getSparrowAtlas('cluck/clooshie', 'week5');
-				char.animation.addByPrefix('idle','idle', 24, false);
+				char.animation.addByPrefix('idle','idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'trooper':
                 char.frames = Paths.getSparrowAtlas('trooper/trooper', 'week6');
-				char.animation.addByPrefix('idle','idle', 24, false);
+				char.animation.addByPrefix('idle','idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
             case 'gooey':
                 char.frames = Paths.getSparrowAtlas('airship/gooey', 'shared');
-				char.animation.addByPrefix('idle','gooey idle', 24, false);
+				char.animation.addByPrefix('idle','gooey idle', 24);
 				char.setGraphicSize(Std.int(char.width * 0.6));
                 char.y -= 350;
             case 'gooey-squished':
                 char.frames = Paths.getSparrowAtlas('airship/squished-Gooey', 'shared');
-				char.animation.addByPrefix('idle','idle', 24, false);
+				char.animation.addByPrefix('idle','idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
                 char.y += 200;
             case 'mooshie':
                 char.frames = Paths.getSparrowAtlas('mooshie/Mooshie_assets', 'shared');
-				char.animation.addByPrefix('idle','Mooshie idle', 24, false);
+				char.animation.addByPrefix('idle','Mooshie idle', 24);
 				char.y -= 100;
             case 'supermooshie':
                 char.frames = Paths.getSparrowAtlas('supermooshie', 'shared');
-				char.animation.addByPrefix('idle','supermooshie idle', 24, false);
+				char.animation.addByPrefix('idle','supermooshie idle', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
                 char.x -= 100;
                 char.y -= 100;
             case 'supermooshie-mad':
                 char.frames = Paths.getSparrowAtlas('supermooshie-mad', 'shared');
-				char.animation.addByPrefix('idle','supermooshie idle mad', 24, false);
+				char.animation.addByPrefix('idle','supermooshie idle mad', 24);
 				char.setGraphicSize(Std.int(char.width * 1.2));
         }
         char.antialiasing = true;

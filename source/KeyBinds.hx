@@ -19,15 +19,19 @@ class KeyBinds
         FlxG.save.data.downBind = "S";
         FlxG.save.data.leftBind = "A";
         FlxG.save.data.rightBind = "D";
-        FlxG.save.data.attackBind = "Q";
-        FlxG.save.data.dodgeBind = "E";
+        FlxG.save.data.attackBind = "I";
+        FlxG.save.data.dodgeBind = "K";
+        FlxG.save.data.dodgeLBind = "J";
+        FlxG.save.data.dodgeRBind = "L";
         FlxG.save.data.killBind = "R";
         FlxG.save.data.gpupBind = "DPAD_UP";
         FlxG.save.data.gpdownBind = "DPAD_DOWN";
         FlxG.save.data.gpleftBind = "DPAD_LEFT";
         FlxG.save.data.gprightBind = "DPAD_RIGHT";
-        FlxG.save.data.gpattackBind = "A";
-        FlxG.save.data.gpdodgeBind = "B";
+        FlxG.save.data.gpattackBind = "Y";
+        FlxG.save.data.gpdodgeBind = "A";
+        FlxG.save.data.gpdodgeLBind = "X";
+        FlxG.save.data.gpdodgeRBind = "B";
         PlayerSettings.player1.controls.loadKeyBinds();
 	}
 
@@ -58,17 +62,29 @@ class KeyBinds
         if (StringTools.contains(FlxG.save.data.rightBind,"NUMPAD"))
             FlxG.save.data.rightBind = "D";
         if(FlxG.save.data.attackBind == null){
-            FlxG.save.data.attackBind = "Q";
+            FlxG.save.data.attackBind = "I";
             trace("No ATTACK");
         }
         if (StringTools.contains(FlxG.save.data.attackBind,"NUMPAD"))
-            FlxG.save.data.attackBind = "Q";
+            FlxG.save.data.attackBind = "I";
         if(FlxG.save.data.dodgeBind == null){
-            FlxG.save.data.dodgeBind = "E";
+            FlxG.save.data.dodgeBind = "K";
             trace("No DODGE");
         }
         if (StringTools.contains(FlxG.save.data.dodgeBind,"NUMPAD"))
-            FlxG.save.data.middleBind = "E";
+            FlxG.save.data.dodgeBind = "K";
+        if(FlxG.save.data.dodgeLBind == null){
+            FlxG.save.data.dodgeLBind = "J";
+            trace("No LEFT DODGE");
+        }
+        if (StringTools.contains(FlxG.save.data.dodgeLBind,"NUMPAD"))
+            FlxG.save.data.dodgeLBind = "J";
+        if(FlxG.save.data.dodgeRBind == null){
+            FlxG.save.data.dodgeRBind = "L";
+            trace("No RIGHT DODGE");
+        }
+        if (StringTools.contains(FlxG.save.data.dodgRBind,"NUMPAD"))
+            FlxG.save.data.dodgeRBind = "L";
         
         if(FlxG.save.data.gpupBind == null){
             FlxG.save.data.gpupBind = "DPAD_UP";
@@ -79,12 +95,20 @@ class KeyBinds
             trace("No GDOWN");
         }
         if(FlxG.save.data.gpattackBind == null){
-            FlxG.save.data.gpattackBind = "A";
-            trace("No GMIDDLE");
+            FlxG.save.data.gpattackBind = "Y";
+            trace("No GATTACK");
         }
         if(FlxG.save.data.gpdodgeBind == null){
-            FlxG.save.data.gpdodgeBind = "B";
+            FlxG.save.data.gpdodgeBind = "A";
             trace("No GDODGE");
+        }
+        if(FlxG.save.data.gpdodgeLBind == null){
+            FlxG.save.data.gpdodgeLBind = "X";
+            trace("No GLEFTDODGE");
+        }
+        if(FlxG.save.data.gpdodgeRBind == null){
+            FlxG.save.data.gpdodgeRBind = "B";
+            trace("No GRIGHTDODGE");
         }
         if(FlxG.save.data.gpleftBind == null){
             FlxG.save.data.gpleftBind = "DPAD_LEFT";

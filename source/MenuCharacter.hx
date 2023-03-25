@@ -22,7 +22,8 @@ class CharacterSetting
 class MenuCharacter extends FlxSprite
 {
 	private static var settings:Map<String, CharacterSetting> = [
-		'bf' => new CharacterSetting(0, -20, 1.0, true)
+		'bf' => new CharacterSetting(0, -20, 1.0, true),
+		'stick' => new CharacterSetting(10, 0, 0.6, true)
 	];
 
 	private var flipped:Bool = false;
@@ -38,6 +39,8 @@ class MenuCharacter extends FlxSprite
 
 		animation.addByPrefix('bf', "BF idle dance white", 24);
 		animation.addByPrefix('bfConfirm', 'BF HEY!!', 24, false);
+		animation.addByPrefix('stick', 'stickletto0', 24);
+		animation.addByPrefix('sticklettoConfirm', 'stickletto press', 24, false);
 
 		setGraphicSize(Std.int(width * scale));
 		updateHitbox();

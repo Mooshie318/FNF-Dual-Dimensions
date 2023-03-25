@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="boss.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="image0000" x="0" y="0" width="1357" height="792"/>
+	<SubTexture name="image0001" x="0" y="0" width="1357" height="792"/>
+	<SubTexture name="image0002" x="1367" y="0" width="1357" height="792"/>
+	<SubTexture name="image0003" x="1367" y="0" width="1357" height="792"/>
+	<SubTexture name="image0004" x="2734" y="0" width="1357" height="792"/>
+	<SubTexture name="image0005" x="2734" y="0" width="1357" height="792"/>
+	<SubTexture name="image0006" x="2734" y="0" width="1357" height="792"/>
+	<SubTexture name="image0007" x="0" y="802" width="1357" height="792"/>
+	<SubTexture name="image0008" x="1367" y="802" width="1357" height="792"/>
+	<SubTexture name="image0009" x="1367" y="802" width="1357" height="792"/>
+	<SubTexture name="image0010" x="2734" y="802" width="1357" height="792"/>
+	<SubTexture name="image0011" x="2734" y="802" width="1357" height="792"/>
+	<SubTexture name="image0012" x="0" y="1604" width="1357" height="792"/>
+	<SubTexture name="image0013" x="0" y="1604" width="1357" height="792"/>
+	<SubTexture name="image0014" x="1367" y="1604" width="1357" height="792"/>
+	<SubTexture name="image0015" x="2734" y="1604" width="1357" height="792"/>
+</TextureAtlas>

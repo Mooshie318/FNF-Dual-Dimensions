@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="stickletta.png">
+	<!-- Created with Adobe Animate version 22.0.8.217 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="stickletta dia0000" x="0" y="0" width="233" height="242"/>
+	<SubTexture name="stickletta dia c0000" x="243" y="0" width="233" height="242"/>
+	<SubTexture name="stickletta dia happier0000" x="486" y="0" width="312" height="242"/>
+	<SubTexture name="stickletta dia happy0000" x="0" y="252" width="298" height="244"/>
+	<SubTexture name="stickletta dia wink0000" x="308" y="252" width="233" height="247"/>
+</TextureAtlas>

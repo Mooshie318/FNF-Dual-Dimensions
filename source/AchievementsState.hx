@@ -26,13 +26,12 @@ class AchievementsState extends MusicBeatState
 		['View achievements',						'View achievements on Gamejolt'],
         ['Secret', 									'Find and beat one of the secret songs'],
 		['Secret 2', 								'Find and beat one of the secret songs'],
-		['References', 								'Correctly guess all FNM references'],
 		['Keeping it 100', 							"FC a song with all sicks (MFC) (can't be tutorial)"],
 		['Freezeless run', 							'Beat a song without freezing'],
 		['Is it cold in here? Or is it just me?', 	"Freeze for the maximum time (3 seconds) and survive all while it's your turn"],
-		['Lucky', 'Get the luckiest item on the item block'],
-		['Unlucky', 'Get the unluckiest item on the item block'],
-		['Battle master', 'Beat all battle songs']
+		['Battle master', 							'Beat all battle songs'],
+		['Hit or Miss',                             'Beat the first challenge minigame'],
+		['Ralph',                                   'Beat the 4th boss minigame']
     ];
 
 	var descText:FlxText;

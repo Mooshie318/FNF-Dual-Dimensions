@@ -145,6 +145,19 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 				iconColor = 'FFD5007C';
+			
+			case 'grilfen':
+				tex = Paths.getSparrowAtlas('grilfen', 'shared');
+				frames = tex;
+				animation.addByIndices('danceLeft', 'dance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'dance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+
+				addOffset('danceLeft');
+				addOffset('danceRight');
+
+				iconColor = 'FFD5007C';
+
+				playAnim('danceRight');
 
 			case 'slime':
 				tex = Paths.getSparrowAtlas('slime_crew');
@@ -569,6 +582,27 @@ class Character extends FlxSprite
 				addOffset("singRIGHTmiss", -30, 21);
 				addOffset("singLEFTmiss", 12, 24);
 				addOffset("singDOWNmiss", -11, -19);
+
+				iconColor = 'FF009BFF';
+
+				playAnim('idle');
+
+				flipX = true;
+			
+			case 'bofen':
+				var tex = Paths.getSparrowAtlas('bofen','shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, true);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singLEFT', 'right', 24, false);
+				animation.addByPrefix('singRIGHT', 'left', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -40, 4);
+				addOffset("singRIGHT", -120, 0);
+				addOffset("singLEFT", -94, 0);
+				addOffset("singDOWN", -98, 0);
 
 				iconColor = 'FF009BFF';
 
@@ -1120,12 +1154,14 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'down', 24, false);
 				animation.addByPrefix('singLEFT', 'left', 24, false);
 				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('attack', 'attack', 24, false);
 	
 				addOffset('idle'); 
 				addOffset("singUP", 9, 25);
 				addOffset("singRIGHT", 17, -26);
 				addOffset("singLEFT", 9, 16);
 				addOffset("singDOWN", 36, -21);
+				addOffset('attack', 90, 0);
 
 				iconColor = 'FF000000';
 	
@@ -1134,6 +1170,205 @@ class Character extends FlxSprite
 			case 'stickletto':
 				frames = Paths.getSparrowAtlas('stickletto', 'shared');
 	
+				animation.addByPrefix('idle', 'idle0', 24, false);
+				animation.addByPrefix('singUP', 'up0', 24, false);
+				animation.addByPrefix('singDOWN', 'down0', 24, false);
+				animation.addByPrefix('singLEFT', 'right0', 24, false);
+				animation.addByPrefix('singRIGHT', 'left0', 24, false);
+				animation.addByPrefix('dodge', 'dodge', 24, false);
+
+				animation.addByPrefix('firstDeath', 'ded0', 24, false);
+				animation.addByPrefix('deathLoop', 'ded loop', 24, true);
+				animation.addByPrefix('deathConfirm', 'retry', 24, false);
+
+				addOffset('idle'); 
+				addOffset("singUP", -30, 11);
+				addOffset("singRIGHT", -19, 8);
+				addOffset("singLEFT", -15, 9);
+				addOffset("singDOWN", -25, -11);
+				addOffset('dodge', 36, 10);
+
+				addOffset('firstDeath', 747, 40);
+				addOffset('deathLoop', -12, -121);
+				addOffset('deathConfirm', -12, -121);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+				flipX = true;
+				if (!isPlayer)
+					flipX = false;
+
+			case 'stickletto-f':
+				frames = Paths.getSparrowAtlas('stickletto', 'shared');
+	
+				animation.addByPrefix('idle', 'idle0', 24, false);
+				animation.addByPrefix('singUP', 'up0', 24, false);
+				animation.addByPrefix('singDOWN', 'down0', 24, false);
+				animation.addByPrefix('singLEFT', 'left0', 24, false);
+				animation.addByPrefix('singRIGHT', 'right0', 24, false);
+				animation.addByPrefix('dodge', 'dodge', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 0, 11);
+				addOffset("singRIGHT", -3, 9);
+				addOffset("singLEFT", 16, 8);
+				addOffset("singDOWN", 53, -11);
+				addOffset('dodge', 69, 10); // nice
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+			case 'stickletto-i':
+				frames = Paths.getSparrowAtlas('stickletto', 'shared');
+	
+				animation.addByPrefix('idle', 'idle i0', 24, false);
+				animation.addByPrefix('singUP', 'up i0', 24, false);
+				animation.addByPrefix('singDOWN', 'down i0', 24, false);
+				animation.addByPrefix('singLEFT', 'left i0', 24, false);
+				animation.addByPrefix('singRIGHT', 'right i0', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 13, 44);
+				addOffset("singRIGHT", 40, 9);
+				addOffset("singLEFT", -27, -7);
+				addOffset("singDOWN", 79, -79);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'stickletto-i-w':
+				frames = Paths.getSparrowAtlas('stickletto', 'shared');
+	
+				animation.addByPrefix('idle', 'idle i in', 24, false);
+				animation.addByPrefix('singUP', 'up i in', 24, false);
+				animation.addByPrefix('singDOWN', 'down i in', 24, false);
+				animation.addByPrefix('singLEFT', 'left i in', 24, false);
+				animation.addByPrefix('singRIGHT', 'right i in', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 13, 44);
+				addOffset("singRIGHT", -27, -7);
+				addOffset("singLEFT", 40, 9);
+				addOffset("singDOWN", 79, -79);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+			case 'stickletto-i-w-f':
+				frames = Paths.getSparrowAtlas('stickletto', 'shared');
+	
+				animation.addByPrefix('idle', 'idle i in', 24, false);
+				animation.addByPrefix('singUP', 'up i in', 24, false);
+				animation.addByPrefix('singDOWN', 'down i in', 24, false);
+				animation.addByPrefix('singLEFT', 'left i in', 24, false);
+				animation.addByPrefix('singRIGHT', 'right i in', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", -24, 44);
+				addOffset("singRIGHT", 96, -7);
+				addOffset("singLEFT", -44, 9);
+				addOffset("singDOWN", 21, -79);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'stickletto-c':
+				frames = Paths.getSparrowAtlas('stickletto-c', 'shared');
+	
+				animation.addByPrefix('idle', 'idle c', 24, false);
+				animation.addByPrefix('singUP', 'up c', 24, false);
+				animation.addByPrefix('singDOWN', 'down c', 24, false);
+				animation.addByPrefix('singLEFT', 'right c', 24, false);
+				animation.addByPrefix('singRIGHT', 'left c', 24, false);
+				animation.addByPrefix('pushed', 'pushed', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", -16, -1);
+				addOffset("singRIGHT", -21, -3);
+				addOffset("singLEFT", 14, -5);
+				addOffset("singDOWN", -16, -7);
+				addOffset('pushed', 120, 2);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+				flipX = true;
+			
+			case 'stickletto-unc':
+				frames = Paths.getSparrowAtlas('stickletto-c', 'shared');
+	
+				animation.addByPrefix('idle', 'idle0', 24, false);
+				animation.addByPrefix('singUP', 'up0', 24, false);
+				animation.addByPrefix('singDOWN', 'down0', 24, false);
+				animation.addByPrefix('singLEFT', 'right0', 24, false);
+				animation.addByPrefix('singRIGHT', 'left0', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", -2, 0);
+				addOffset("singRIGHT", -29, 0);
+				addOffset("singLEFT", 38, 5);
+				addOffset("singDOWN", 37, -9);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'stickletto-unc-f':
+				frames = Paths.getSparrowAtlas('stickletto-c', 'shared');
+	
+				animation.addByPrefix('idle', 'idle0', 24, false);
+				animation.addByPrefix('singUP', 'up0', 24, false);
+				animation.addByPrefix('singDOWN', 'down0', 24, false);
+				animation.addByPrefix('singLEFT', 'left0', 24, false);
+				animation.addByPrefix('singRIGHT', 'right0', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 0, 0);
+				addOffset("singRIGHT", 33, 5);
+				addOffset("singLEFT", 15, 0);
+				addOffset("singDOWN", 64, -9);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+			case 'stickletto-b':
+				frames = Paths.getSparrowAtlas('stickletto back', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'right', 24, false);
+				animation.addByPrefix('singRIGHT', 'left', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 0, 7);
+				addOffset("singRIGHT", 2, 3);
+				addOffset("singLEFT", 22, 3);
+				addOffset("singDOWN", 51, -10);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'stickletta-f':
+				frames = Paths.getSparrowAtlas('stickletta', 'shared');
+	
 				animation.addByPrefix('idle', 'idle', 24, false);
 				animation.addByPrefix('singUP', 'up', 24, false);
 				animation.addByPrefix('singDOWN', 'down', 24, false);
@@ -1141,16 +1376,449 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'right', 24, false);
 	
 				addOffset('idle'); 
-				addOffset("singUP", -29, 11);
-				addOffset("singRIGHT", -18, 8);
-				addOffset("singLEFT", -15, 9);
-				addOffset("singDOWN", -25, -11);
+				addOffset("singUP", 1, -4);
+				addOffset("singRIGHT", -16, 1);
+				addOffset("singLEFT", 37, -2);
+				addOffset("singDOWN", -6, -61);
+
+				iconColor = 'FFFF00FF';
+	
+				playAnim('idle');
+
+			case 'stickletta':
+				frames = Paths.getSparrowAtlas('stickletta', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 35, -4);
+				addOffset("singRIGHT", 13, -2);
+				addOffset("singLEFT", 0, 1);
+				addOffset("singDOWN", -4, -61);
+
+				iconColor = 'FFFF00FF';
+	
+				playAnim('idle');
+
+			case 'stickletta-c':
+				frames = Paths.getSparrowAtlas('stickletta-c', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 35, -4);
+				addOffset("singRIGHT", 13, -2);
+				addOffset("singLEFT", 0, 1);
+				addOffset("singDOWN", -4, -61);
+
+				iconColor = 'FFFF00FF';
+	
+				playAnim('idle');
+
+			case 'stickletta-c-f':
+				frames = Paths.getSparrowAtlas('stickletta-c', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle');
+				if (PlayState.SONG.song.toLowerCase() == 'sticklettabreaker')
+				{
+					addOffset("singUP", 35, -4);
+					addOffset("singRIGHT", 13, -2);
+					addOffset("singLEFT", 0, 1);
+					addOffset("singDOWN", -6, -58);
+				}
+				else
+				{
+					addOffset("singUP", 1, -4);
+					addOffset("singRIGHT", -16, 1);
+					addOffset("singLEFT", 37, -2);
+					addOffset("singDOWN", -6, -61);
+				}
+
+				iconColor = 'FFFF00FF';
+	
+				playAnim('idle');
+
+				if (PlayState.SONG.song.toLowerCase() == 'sticklettabreaker')
+					flipX = true;
+
+			case 'stickletta-b':
+				frames = Paths.getSparrowAtlas('stickletta back', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", -15, 3);
+				addOffset("singRIGHT", -35, 0);
+				addOffset("singLEFT", 34, 0);
+				addOffset("singDOWN", -28, -60);
+
+				iconColor = 'FFFF00FF';
+	
+				playAnim('idle');
+			
+			case 'stickletta-gf':
+				frames = Paths.getSparrowAtlas('stickletta dance', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+	
+				addOffset('idle');
+
+				iconColor = 'FFFF00FF';
+	
+				playAnim('idle');
+
+			case 'sticklettabow-b':
+				frames = Paths.getSparrowAtlas('sticklettabow back', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 13, 11);
+				addOffset("singRIGHT", 54, 4);
+				addOffset("singLEFT", 78, 7);
+				addOffset("singDOWN", 18, -50);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+			
+			case 'swordletto-b':
+				frames = Paths.getSparrowAtlas('swordletto back', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", -14, 83);
+				addOffset("singRIGHT", 7, 6);
+				addOffset("singLEFT", 50, 5);
+				addOffset("singDOWN", -9, -5);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+			case 'clonerman':
+				frames = Paths.getSparrowAtlas('clonerman', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 64, 40);
+				addOffset("singRIGHT", 47, -10);
+				addOffset("singLEFT", 127, 2);
+				addOffset("singDOWN", 91, -16);
+
+				iconColor = 'FF00FFFF';
+	
+				playAnim('idle');
+
+			case 'sticklettabow':
+				frames = Paths.getSparrowAtlas('sticklettabow', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle');
+				addOffset("singUP", 164, 80);
+				addOffset("singRIGHT", 0, 2);
+				addOffset("singLEFT", 216, 7);
+				addOffset("singDOWN", 76, -65);
+
+				iconColor = 'FF000000';
+	
+				playAnim('idle');
+			
+			case 'swordletto':
+				frames = Paths.getSparrowAtlas('swordletto', 'shared');
+
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", -45, 0);
+				addOffset("singRIGHT", -52, -56);
+				addOffset("singLEFT", 36, -52);
+				addOffset("singDOWN", -53, -66);
+
+				iconColor = 'FF000000';
+
+				playAnim('idle');
+
+			case 'striker':
+				frames = Paths.getSparrowAtlas('striker', 'shared');
+
+				animation.addByPrefix('idle2', 'idle2', 24, false);
+				animation.addByPrefix('attack', 'attack', 24, false);
+				animation.addByPrefix('idle', 'idle0', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('idle2');
+				addOffset('attack');
+				addOffset('idle'); 
+				addOffset("singUP", 0, 31);
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+
+				iconColor = 'FF000000';
+
+				playAnim('idle2');
+			
+			case 'striker-fr':
+				frames = Paths.getSparrowAtlas('striker front', 'shared');
+
+				animation.addByPrefix('appear', 'appear', 24, false);
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('appear', 23, 2);
+				addOffset('idle'); 
+				addOffset("singUP", 0, 215);
+				addOffset("singRIGHT", 0, 0);
+				addOffset("singLEFT", 165, 0);
+				addOffset("singDOWN", 114, 5);
+
+				iconColor = 'FF000000';
+
+				playAnim('idle');
+
+			case 'yellow':
+				frames = Paths.getSparrowAtlas('yellow dude', 'shared');
+	
+				animation.addByIndices('danceLeft', 'idle', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'idle', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('danceLeft');
+				addOffset('danceRight'); 
+				addOffset("singUP", -115, -1);
+				addOffset("singRIGHT", -112, -4);
+				addOffset("singLEFT", -141, -8);
+				addOffset("singDOWN", -151, -6);
+
+				iconColor = 'FFFFFF00';
+	
+				playAnim('danceRight');
+
+			case 'yellow-f':
+				frames = Paths.getSparrowAtlas('yellow dude', 'shared');
+	
+				animation.addByIndices('danceLeft', 'idle', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByIndices('danceRight', 'idle', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'right', 24, false);
+				animation.addByPrefix('singRIGHT', 'left', 24, false);
+	
+				addOffset('danceLeft');
+				addOffset('danceRight'); 
+				addOffset("singUP", -46, 0);
+				addOffset("singRIGHT", -125, -8);
+				addOffset("singLEFT", -55, -4);
+				addOffset("singDOWN", -96, -5);
+
+				iconColor = 'FFFFFF00';
+	
+				playAnim('danceRight');
+
+				flipX = true;
+			
+			case 'red':
+				frames = Paths.getSparrowAtlas('red dude', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 0, 170);
+				addOffset("singRIGHT", 120, -60);
+				addOffset("singLEFT", 150, -20);
+				addOffset("singDOWN", 90, -50);
+
+				iconColor = 'FFFF0000';
+	
+				playAnim('idle');
+			
+			case 'red-f':
+				frames = Paths.getSparrowAtlas('red dude', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'right', 24, false);
+				animation.addByPrefix('singRIGHT', 'left', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 30, 170);
+				addOffset("singRIGHT", -90, -20);
+				addOffset("singLEFT", 170, -60);
+				addOffset("singDOWN", 47, -50);
+
+				iconColor = 'FFFF0000';
+	
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'stiburn':
+				frames = Paths.getSparrowAtlas('stiburn', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('infect', 'infection', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 0, 70);
+				addOffset("singRIGHT", -54, -40);
+				addOffset("singLEFT", 52, -46);
+				addOffset("singDOWN", 20, -40);
+				addOffset('infect', 320, -20);
 
 				iconColor = 'FF000000';
 	
 				playAnim('idle');
 
-				flipX = true;
+			case 'stiburn-fr':
+				frames = Paths.getSparrowAtlas('stiburn front', 'shared');
+
+				animation.addByPrefix('appear', 'appear', 24, false);
+				animation.addByPrefix('attack', 'attack', 24, false);
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				addOffset('appear', 0, 68);
+				addOffset('attack', 0, -16);
+				addOffset('idle');
+				addOffset("singUP", 0, 227);
+				addOffset("singRIGHT", 0, -27);
+				addOffset("singLEFT", 206, 6);
+				addOffset("singDOWN", 0, -27);
+
+				iconColor = 'FF000000';
+
+				playAnim('idle');
+
+			case 'stlaw':
+				frames = Paths.getSparrowAtlas('other_stiburns', 'shared');
+	
+				animation.addByPrefix('idle', 'stlaw0', 24, false);
+				animation.addByPrefix('attack', 'stlaw attack', 24, false);
+
+				addOffset('idle');
+				addOffset('attack', 194, 113);
+			
+			case 'stibow':
+				frames = Paths.getSparrowAtlas('other_stiburns', 'shared');
+	
+				animation.addByPrefix('idle', 'stibow0', 24, false);
+				animation.addByPrefix('attack', 'stibow attack', 24, false);
+
+				addOffset('idle');
+				addOffset('attack', -5, -6);
+
+			case 'stickannon':
+				frames = Paths.getSparrowAtlas('other_stiburns', 'shared');
+	
+				animation.addByPrefix('idle', 'stickannon0', 24, false);
+				animation.addByPrefix('attack', 'stickannon attack', 24, false);
+
+				addOffset('idle');
+				addOffset('attack', 412, 38);
+
+			case 'crocker':
+				frames = Paths.getSparrowAtlas('crocker', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", -12, 6);
+				addOffset("singRIGHT", 16, 27);
+				addOffset("singLEFT", 44, 27);
+				addOffset("singDOWN", 220, -90);
+
+				iconColor = 'FF00FF00';
+	
+				playAnim('idle');
+			
+			case 'ralph':
+				frames = Paths.getSparrowAtlas('ralph', 'shared');
+	
+				animation.addByPrefix('idle', 'idle', 24, true);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('dodge', 'dodge', 24, false);
+				animation.addByPrefix('attack', 'bite', 24, false);
+	
+				addOffset('idle'); 
+				addOffset("singUP", 14, 157);
+				addOffset("singRIGHT", 0, 0);
+				addOffset("singLEFT", 137, 0);
+				addOffset("singDOWN", 0, -188);
+				addOffset("dodge", 110, 0);
+				addOffset("attack", 0, 0);
+
+				iconColor = 'FFB763CC';
+	
+				playAnim('idle');
 		}
 
 		dance();
@@ -1219,7 +1887,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf' | 'gf-airship':
+				case 'gf' | 'gf-airship' | 'grilfen':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
@@ -1261,6 +1929,13 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					}
+				case 'yellow' | 'yellow-f':
+					danced = !danced;
+
+					if (danced)
+						playAnim('danceRight');
+					else
+						playAnim('danceLeft');
 				default:
 					playAnim('idle');
 			}

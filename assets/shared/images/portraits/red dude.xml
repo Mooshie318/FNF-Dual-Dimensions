@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="red dude.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="red dude dia0000" x="0" y="0" width="162" height="266"/>
+	<SubTexture name="red dude dia haha0000" x="172" y="0" width="179" height="243"/>
+	<SubTexture name="red dude dia mad0000" x="0" y="276" width="331" height="170"/>
+</TextureAtlas>

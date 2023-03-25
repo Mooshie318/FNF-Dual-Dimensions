@@ -18,6 +18,7 @@ using StringTools;
 
 class FreeplayState extends MusicBeatState
 {
+	var didTheThing:Bool = false;
 	var songs:Array<SongMetadata> = [];
 
 	var selector:FlxText;
@@ -34,9 +35,24 @@ class FreeplayState extends MusicBeatState
 
 	private var iconArray:Array<HealthIcon> = [];
 
+	public static var isP1:Bool = false;
+	public static var isP2:Bool = false;
+	public static var isP3:Bool = false;
+	public static var isP4:Bool = false;
+	public static var isP5:Bool = false;
+
 	override function create()
 	{
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+
+		if (isP1)
+			initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist-Pt1'));
+		else if (isP2)
+			initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist-Pt2'));
+		else if (isP3)
+			initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist-Pt3'));
+		else if (!isP1 && !isP2 && !isP3 && !isP4 && !isP5)
+			initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 
 		for (i in 0...initSonglist.length)
 		{
@@ -161,10 +177,23 @@ class FreeplayState extends MusicBeatState
 			changeDiff(-1);
 		if (controls.RIGHT_P)
 			changeDiff(1);
+		if (curSelected > 39 && !didTheThing)
+		{
+			changeDiff(0);
+			didTheThing = true;
+		}
+		if (curSelected <= 36)
+			didTheThing = false;
 
 		if (controls.BACK)
 		{
 			FlxG.switchState(new MainMenuState());
+		}
+
+		if (FlxG.keys.pressed.CONTROL)
+		{
+			if (FlxG.keys.justPressed.R)
+				Highscore.resetSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 		}
 
 		if (accepted)
@@ -174,10 +203,7 @@ class FreeplayState extends MusicBeatState
 			trace(poop);
 
 			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
-			if (curSelected != 40)
-				PlayState.isStoryMode = false;
-			else
-				PlayState.isStoryMode = true;
+			PlayState.isStoryMode = false;
 			PlayState.storyDifficulty = curDifficulty;
 			PlayState.storyWeek = songs[curSelected].week;
 			trace('CUR WEEK: ' + PlayState.storyWeek);
@@ -189,10 +215,15 @@ class FreeplayState extends MusicBeatState
 	{
 		curDifficulty += change;
 
-		if (curDifficulty < 0)
+		if (curSelected > 39 || isP2 || isP3 || isP4 || isP5)
 			curDifficulty = 2;
-		if (curDifficulty > 2)
-			curDifficulty = 0;
+		else
+		{
+			if (curDifficulty < 0)
+				curDifficulty = 2;
+			if (curDifficulty > 2)
+				curDifficulty = 0;
+		}
 
 		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);

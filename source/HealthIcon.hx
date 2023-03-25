@@ -67,8 +67,49 @@ class HealthIcon extends FlxSprite
 		animation.add('trooper-back', [22, 23], 0, false, isPlayer);
 		animation.add('gooey-back', [45, 46], 0, false, isPlayer);
 		animation.add('supermooshie-diagonal', [26, 27], 0, false, isPlayer);
-		animation.add('sticko', [55], 0, false, isPlayer);
+
 		animation.add('stickletto', [55], 0, false, isPlayer);
+		animation.add('stickletto-f', [55], 0, false, isPlayer);
+		animation.add('stickletto-i', [55], 0, false, isPlayer);
+		animation.add('stickletto-c', [55], 0, false, isPlayer);
+		animation.add('stickletto-unc', [55], 0, false, isPlayer);
+		animation.add('stickletto-unc-f', [55], 0, false, isPlayer);
+		animation.add('stickletto-b', [55], 0, false, isPlayer);
+		animation.add('stickletta-f', [58], 0, false, isPlayer);
+		animation.add('stickletta-c-f', [58], 0, false, isPlayer);
+		animation.add('stickletta-gf', [58], 0, false, isPlayer);
+		animation.add('stickletta-b', [58], 0, false, isPlayer);
+		animation.add('sticklettabow-b', [55], 0, false, isPlayer);
+		animation.add('swordletto-b', [55], 0, false, isPlayer);
+
+		animation.add('sticko', [55], 0, false, isPlayer);
+		animation.add('stickletta', [58], 0, false, isPlayer);
+		animation.add('stickletta-c', [58], 0, false, isPlayer);
+		animation.add('clonerman', [57], 0, false, isPlayer);
+		animation.add('swordletto', [55], 0, false, isPlayer);
+		animation.add('sticklettabow', [55], 0, false, isPlayer);
+		animation.add('stickletto-i-w', [55], 0, false, isPlayer);
+		animation.add('stickletto-i-w-f', [55], 0, false, isPlayer);
+		animation.add('striker', [55], 0, false, isPlayer);
+		animation.add('striker-fr', [55], 0, false, isPlayer);
+		animation.add('yellow', [59], 0, false, isPlayer);
+		animation.add('yellow-f', [59], 0, false, isPlayer);
+		animation.add('red', [56], 0, false, isPlayer);
+		animation.add('red-f', [56], 0, false, isPlayer);
+		animation.add('stiburn', [55], 0, false, isPlayer);
+		animation.add('stiburn-fr', [55], 0, false, isPlayer);
+		animation.add('stlaw', [55], 0, false, isPlayer);
+		animation.add('stickannon', [55], 0, false, isPlayer);
+		animation.add('stibow', [55], 0, false, isPlayer);
+		animation.add('crocker', [60, 61], 0, false, isPlayer);
+
+		animation.add('bofen', [0, 1], 0, false, isPlayer);
+		animation.add('grilfen', [16], 0, false, isPlayer);
+
+		animation.add('ralph', [62, 63], 0, false, isPlayer);
+
+		// TEMPLATE
+		// animation.add('', [], 0, false, isPlayer);
 		animation.play(char);
 		switch(char){
 			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':

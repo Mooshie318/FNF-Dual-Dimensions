@@ -6,7 +6,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.3.0 - The mechanic update] - 2022-03-05
+## [1.4.0] - 2023-03-25
+### Added
+- 33 new songs: 32 story mode, 1 challenge
+- Part 2 (9 chapters + bonus chapter 2)
+- 1 chapter of part 3
+- New menu music
+- New minigames menu
+- A literal boss fight (Pretty bad and a little buggy, will fix in next update)
+- Some cool things to All-Around-You
+- The moosanity cutscene
+- 2 new achievements
+- More battle stuff
+- Flip X in animation debug, just press F
+### Changed
+- Changed weeks into chapters because not all weeks are canonically 1 week apart
+- Changed how to unlock battle songs
+- The menu music
+### Fixed
+- End of week cutscenes crashing the game
+### Removed
+- All item block related achievements
+- "References" Achievement
+- "Guess the References" Menu
+- The item block
+- Easy and Normal difficulties past part 1
+### Note
+- 1.3.0's note was wrong
+- Next update shouldn't take as long as this one did
+
+## [1.3.0 - The mechanic update] - 2022-03-03
 ### Added
 - Customizable keybinds (woo)
 - Item block mechanic
@@ -18,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cutscenes, now in MP4 because webm kept crashing and idk why
 ### Note
 - Maybe 1.4.0, prob not tho. If not, next update is gonna be BEEG
+- (2023-3-24) And luckily there was a 1.4.0, otherwise it would've been on 1.3.0 for years
 
 ## [1.2.0] - 2022-01-10
 ### Added
@@ -88,6 +118,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New dialogue
 ### Removed
 - Regular engine fnm, replaced with kade engine
+### Note (from 2022-03-10)
+- This update was fucking rushed
 
 ## [Beta 1.0.0] - 2021-05-26
 ### Added

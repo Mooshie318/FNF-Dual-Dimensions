@@ -12,7 +12,7 @@ class GameOverSubstate extends MusicBeatSubstate
 {
 	var retry:FlxSprite;
 	var quit:FlxSprite;
-	var retrySelected:Bool = false;
+	var retrySelected:Bool = true;
 
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
@@ -24,18 +24,24 @@ class GameOverSubstate extends MusicBeatSubstate
 		var daStage = PlayState.curStage;
 		var daSong = PlayState.SONG.song.toLowerCase();
 		var daBf:String = '';
-		/*switch (daStage)
+		switch (daStage)
 		{
-			default:
-				daBf = 'bf';
-		}*/
-		switch(daSong)
-		{
-			case 'air-battle' | 'thunder-storm':
+			case 'plane-air-battle':
 				daBf = 'bf-gf';
+			case 'stick' | 'red' | 'stick2' | 'stick3' | 'cyan' | 'sburn':
+				daBf = 'stickletto';
 			default:
 				daBf = 'bf';
 		}
+		/*switch(daSong)
+		{
+			case 'air-battle' | 'thunder-storm':
+				daBf = 'bf-gf';
+			case 'alan' | 'sticks-n-stones' | 'branching-out' | 'logging-in' | 'fury' | 'rage':
+				daBf = 'stickletto';
+			default:
+				daBf = 'bf';
+		}*/
 
 		super();
 

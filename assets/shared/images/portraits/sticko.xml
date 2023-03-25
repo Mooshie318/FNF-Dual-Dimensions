@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sticko.png">
+	<!-- Created with Adobe Animate version 22.0.4.185 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="sticko dia0000" x="0" y="0" width="260" height="250"/>
+	<SubTexture name="sticko dia haha0000" x="270" y="0" width="244" height="210"/>
+	<SubTexture name="sticko dia mad0000" x="524" y="0" width="317" height="226"/>
+</TextureAtlas>

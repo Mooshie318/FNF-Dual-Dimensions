@@ -19,18 +19,6 @@ class KadeEngineData
 
 		if (FlxG.save.data.downscroll == null)
 			FlxG.save.data.downscroll = false;
-
-		if (FlxG.save.data.wasd == null)
-			FlxG.save.data.wasd = true;
-
-		if (FlxG.save.data.dfjk == null)
-			FlxG.save.data.dfjk = false;
-
-		if (FlxG.save.data.askl == null)
-			FlxG.save.data.askl = false;
-
-		if (FlxG.save.data.woops == null)
-			FlxG.save.data.woops = false;
 			
 		if (FlxG.save.data.accuracyDisplay == null)
 			FlxG.save.data.accuracyDisplay = true;
@@ -79,7 +67,7 @@ class KadeEngineData
 			FlxG.save.data.watermark = true;
 		
 		if (FlxG.save.data.itemBlock == null)
-			FlxG.save.data.itemBlock = true;
+			FlxG.save.data.itemBlock = false;
 
 		if (FlxG.save.data.beatGooey == null)
 			FlxG.save.data.beatGooey = false;
@@ -89,6 +77,24 @@ class KadeEngineData
 
 		if (FlxG.save.data.beatSupermooshie == null)
 			FlxG.save.data.beatSupermooshie == false;
+
+		if (FlxG.save.data.beatGooeyWeek == null)
+			FlxG.save.data.beatGooeyWeek == false;
+
+		if (FlxG.save.data.beatSlimeWeek == null)
+			FlxG.save.data.beatSlimeWeek == false;
+
+		if (FlxG.save.data.beatMooWeek == null)
+			FlxG.save.data.beatMooWeek == false;
+
+		if (FlxG.save.data.beatStickoWeek == null)
+			FlxG.save.data.beatStickoWeek == false;
+
+		if (FlxG.save.data.beatRalphWeek == null)
+			FlxG.save.data.beatRalphWeek = false;
+
+		if (FlxG.save.data.beatRalphBoss == null)
+			FlxG.save.data.beatRalphBoss = false;
 
 		Conductor.recalculateTimings();
 		PlayerSettings.player1.controls.loadKeyBinds();

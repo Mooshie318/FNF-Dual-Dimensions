@@ -216,7 +216,6 @@ class ReferenceGuessState extends MusicBeatState
 		if (w4Box.text == w4Answer && w5Box.text == w5Answer && w6Box.text == w6Answer && w7Box.text == w7Answer && w8Box.text == w8Answer && w9Box.text == w9Answer && w10Box.text == w10Answer && w11Box.text == w11Answer)
 		{
 			FlxG.save.data.platformerUnlocked = true;
-			GameJoltAPI.getTrophy(155059);
 
 			correct = new FlxText(400, 300, 0);
 			correct.text = 'CORRECT!!';

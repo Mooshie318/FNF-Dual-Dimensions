@@ -21,6 +21,7 @@ using StringTools;
 
 class StoryMenuState extends MusicBeatState
 {
+	var didTheThing:Bool = false; // > 36
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
@@ -36,13 +37,24 @@ class StoryMenuState extends MusicBeatState
 		['red', 'light-speed', 'moo-storm', 'moosanity', 'Moovenge'],
 		['Plane', 'Air-Battle', 'Thunder-Storm'],
 		['lemons', 'freezing', 'burning', 'slimy', 'slime-rematch'],
-		['all-around-you']
+		['all-around-you', 'alan'],
+		['sticks-n-stones', 'branching-out', 'logging-in'],
+		['stickletta', 'hot-pink', 'friends'],
+		['duplication', 'darkness'],
+		['enemy', 'trust', 'team-up'],
+		['infecto', 'recovery', 'striker'],
+		['yellow', 'teleportation', 'ffff00'],
+		['ff0000', 'laser', '00ffff'],
+		['fury', 'rage', 'fiery-madness'],
+		['crock', 'switch', 'bite', 'crocker'],
+		['sticklettabreaker'],
+		['portal', 'ralph', 'amethyst', 'bite-wave']
 	];
 	var curDifficulty:Int = 1;
 
 	// comment below applys to this as well
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true, true, true, true];
-
+	// Update (2022-11-27): I found a better way
+	public static var weekUnlocked:Array<Bool> = [];
 
 	// i really hope there's a better way to do this
 	var weekCharacters:Array<Dynamic> = [
@@ -58,6 +70,17 @@ class StoryMenuState extends MusicBeatState
 		['', 'bf', ''],
 		['', 'bf', ''],
 		['', 'bf', ''],
+		['', 'bf', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
+		['', 'stick', ''],
 		['', 'bf', '']
 	];
 
@@ -74,24 +97,46 @@ class StoryMenuState extends MusicBeatState
 		"Moo Land",
 		"Plane battle",
 		"Slime crew rematch",
-		"Bonus week"
+		"Bonus chapter",
+		"Sticks and Squares",
+		"Stickletta",
+		"Clonerman",
+		"Reverse FNF mod",
+		"Striker",
+		"Yellow dude",
+		"Red dude",
+		"Dark red void",
+		"Crocker",
+		"Bonus chapter",
+		"Ralph Ralph Ralph"
 	];
 
 	// Based on hard mode (+ means more difficult and - means less difficult)
 	var weekDifficulty:Array<String> = [
-		"Super easy",
-		"Easy",
-		"Moderate",
-		"Moderate +",
-		"Challenging",
-		"Challenging +",
-		"Hard -",
-		"Hard",
-		"Hard +",
-		"Super hard",
-		"Super hard",
-		"Challenging",
-		"Challenging"
+		"Super easy",    // Tutorial
+		"Easy",          // C1  - Slime crew
+		"Moderate",      // C2  - James
+		"Moderate +",    // C3  - Ghost
+		"Challenging",   // C4  - Sheary
+		"Challenging +", // C5  - Cluckington & Clooshie
+		"Hard -",        // C6  - Trooper
+		"Hard",          // C7  - Gooey
+		"Hard +",        // C8  - Mooshie
+		"Super hard",    // C9  - Supermooshie
+		"Super hard",    // C10 - Supermooshie & Sheary
+		"Challenging",   // C11 - Slime crew
+		"Hard +",        // B1  - All in Pt1 + Sticko
+		"Challenging +", // C12 - Sticko
+		"Hard -",        // C13 - Stickletta
+		"Moderate +",    // C14 - Clonerman
+		"Challenging -", // C15 - Sticklettabow & Swordletto
+		"Hard -",        // C16 - Infecto & Striker
+		"Hard",          // C17 - Yellow dude
+		"Hard -",        // C18 - Red dude
+		"Hard +",        // C19 - Stiburn
+		"Super hard",    // C20 - Crocker
+		"Super hard",    // B2  - All in Pt2
+		"Hard -"         // C21 - Ralph
 	];
 
 	var txtWeekTitle:FlxText;
@@ -122,10 +167,13 @@ class StoryMenuState extends MusicBeatState
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
-		if (FlxG.sound.music != null)
+		if (!FlxG.sound.music.playing)
 		{
-			if (!FlxG.sound.music.playing)
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			FlxG.sound.playMusic(Paths.music('menu'));
+		}
+		for (i in 0...weekData.length)
+		{
+			weekUnlocked.push(true);
 		}
 
 		persistentUpdate = persistentDraw = true;
@@ -290,6 +338,20 @@ class StoryMenuState extends MusicBeatState
 					changeDifficulty(1);
 				if (controls.LEFT_P)
 					changeDifficulty(-1);
+				if (curWeek > 11 && !didTheThing)
+				{
+					changeDifficulty(0);
+					didTheThing = true;
+				}
+				if (curWeek <= 11)
+					didTheThing = false;
+			}
+			if (FlxG.keys.pressed.CONTROL)
+			{
+				if (FlxG.keys.justPressed.R)
+				{
+					Highscore.saveWeekScore(curWeek, 0, curDifficulty, true);
+				}
 			}
 
 			if (controls.ACCEPT)
@@ -326,7 +388,10 @@ class StoryMenuState extends MusicBeatState
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 
 				grpWeekText.members[curWeek].startFlashing();
-				grpWeekCharacters.members[1].animation.play('bfConfirm');
+				if (curWeek <= 12 || curWeek > 22)
+					grpWeekCharacters.members[1].animation.play('bfConfirm');
+				else if (curWeek >= 13 && curWeek <= 22)
+					grpWeekCharacters.members[1].animation.play('sticklettoConfirm');
 				stopspamming = true;
 			}
 
@@ -393,6 +458,54 @@ class StoryMenuState extends MusicBeatState
 					else
 						LoadingState.loadAndSwitchState(new PlayState());
 				}
+				else if (curWeek == 16)
+				{
+					if (FlxG.save.data.cutscenes)
+					{
+						video.playMP4(Paths.video('theyTalk'), new PlayState());
+						#if windows
+						DiscordClient.changePresence("In cutscene", null, null, true);
+						#end
+					}
+					else
+						LoadingState.loadAndSwitchState(new PlayState());
+				}
+				else if (curWeek == 17)
+				{
+					if (FlxG.save.data.cutscenes)
+					{
+						video.playMP4(Paths.video('striker strikes'), new PlayState());
+						#if windows
+						DiscordClient.changePresence("In cutscene", null, null, true);
+						#end
+					}
+					else
+						LoadingState.loadAndSwitchState(new PlayState());
+				}
+				else if (curWeek == 21)
+				{
+					if (FlxG.save.data.cutscenes)
+					{
+						video.playMP4(Paths.video('crocker appears'), new PlayState());
+						#if windows
+						DiscordClient.changePresence("In cutscene", null, null, true);
+						#end
+					}
+					else
+						LoadingState.loadAndSwitchState(new PlayState());
+				}
+				else if (curWeek == 23)
+				{
+					if (FlxG.save.data.cutscenes)
+						{
+							video.playMP4(Paths.video('they portal'), new PlayState());
+							#if windows
+							DiscordClient.changePresence("In cutscene", null, null, true);
+							#end
+						}
+						else
+							LoadingState.loadAndSwitchState(new PlayState());
+				}
 				else
 				{
 					LoadingState.loadAndSwitchState(new PlayState());
@@ -405,10 +518,15 @@ class StoryMenuState extends MusicBeatState
 	{
 		curDifficulty += change;
 
-		if (curDifficulty < 0)
+		if (curWeek > 11)
 			curDifficulty = 2;
-		if (curDifficulty > 2)
-			curDifficulty = 0;
+		else
+		{
+			if (curDifficulty < 0)
+				curDifficulty = 2;
+			if (curDifficulty > 2)
+				curDifficulty = 0;
+		}
 
 		sprDifficulty.offset.x = 0;
 

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sword and bow.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="sticklettabow dia0000" x="0" y="0" width="287" height="233"/>
+	<SubTexture name="swordletto dia0000" x="297" y="0" width="186" height="269"/>
+</TextureAtlas>

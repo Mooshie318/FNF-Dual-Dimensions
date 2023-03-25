@@ -31,8 +31,10 @@ enum abstract Action(String) to String from String
 	var PAUSE = "pause";
 	var RESET = "reset";
 	var CHEAT = "cheat";
-	var BATTLE_ONE = "b1"; // for battle mechanic
-	var BATTLE_TWO = "b2"; // ^^^^^^^^^^^^^^^^^^^
+	var BATTLE_ONE = "b1"; // for battle mechanic // Attack
+	var BATTLE_TWO = "b2"; // ^^^^^^^^^^^^^^^^^^^ // Dodge
+	var BATTLE_TWOL = "b2l"; // ^^^^^^^^^^^^^^^^^ // Dodge left
+	var BATTLE_TWOR = "b2r"; // ^^^^^^^^^^^^^^^^^ // Dodge right
 }
 #else
 @:enum
@@ -55,8 +57,10 @@ abstract Action(String) to String from String
 	var PAUSE = "pause";
 	var RESET = "reset";
 	var CHEAT = "cheat";
-	var BATTLE_ONE = "b1"; // for battle mechanic
-	var BATTLE_TWO = "b2"; // ^^^^^^^^^^^^^^^^^^^
+	var BATTLE_ONE = "b1"; // for battle mechanic // Attack
+	var BATTLE_TWO = "b2"; // ^^^^^^^^^^^^^^^^^^^ // Dodge
+	var BATTLE_TWOL = "b2l"; // ^^^^^^^^^^^^^^^^^ // Dodge left
+	var BATTLE_TWOR = "b2r"; // ^^^^^^^^^^^^^^^^^ // Dodge right
 }
 #end
 
@@ -84,6 +88,8 @@ enum Control
 	CHEAT;
 	BATTLE_ONE;
 	BATTLE_TWO;
+	BATTLE_TWOL;
+	BATTLE_TWOR;
 }
 
 enum KeyboardScheme
@@ -119,8 +125,10 @@ class Controls extends FlxActionSet
 	var _pause = new FlxActionDigital(Action.PAUSE);
 	var _reset = new FlxActionDigital(Action.RESET);
 	var _cheat = new FlxActionDigital(Action.CHEAT);
-	var _battle1 = new FlxActionDigital(Action.BATTLE_ONE); // battle mechanic
-	var _battle2 = new FlxActionDigital(Action.BATTLE_TWO); // ^^^^^^^^^^^^^^^
+	var _battle1 = new FlxActionDigital(Action.BATTLE_ONE); // battle mechanic // Attack
+	var _battle2 = new FlxActionDigital(Action.BATTLE_TWO); // ^^^^^^^^^^^^^^^ // Dodge
+	var _battle2l = new FlxActionDigital(Action.BATTLE_TWOL); // ^^^^^^^^^^^^^ // Dodge left
+	var _battle2r = new FlxActionDigital(Action.BATTLE_TWOR); // ^^^^^^^^^^^^^ // Dodge right
 
 	#if (haxe >= "4.0.0")
 	var byName:Map<String, FlxActionDigital> = [];
@@ -216,7 +224,7 @@ class Controls extends FlxActionSet
 	inline function get_CHEAT()
 		return _cheat.check();
 
-	public var BATTLE_ONE(get, never):Bool; // this line to line 225 are for battle mechanic
+	public var BATTLE_ONE(get, never):Bool; // this line to line 245 are for battle mechanic
 
 	inline function get_BATTLE_ONE()
 		return _battle1.check();
@@ -225,6 +233,16 @@ class Controls extends FlxActionSet
 
 	inline function get_BATTLE_TWO()
 		return _battle2.check();
+
+	public var BATTLE_TWOL(get, never):Bool;
+
+	inline function get_BATTLE_TWOL()
+		return _battle2l.check();
+
+	public var BATTLE_TWOR(get, never):Bool;
+
+	inline function get_BATTLE_TWOR()
+		return _battle2r.check();
 
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
@@ -248,8 +266,10 @@ class Controls extends FlxActionSet
 		add(_pause);
 		add(_reset);
 		add(_cheat);
-		add(_battle1); // for battle mechanic
-		add(_battle2); // ^^^^^^^^^^^^^^^^^^^
+		add(_battle1); // for battle mechanic // Attack
+		add(_battle2); // ^^^^^^^^^^^^^^^^^^^ // Dodge
+		add(_battle2l); // ^^^^^^^^^^^^^^^^^^ // Dodge left
+		add(_battle2r); // ^^^^^^^^^^^^^^^^^^ // Dodge right
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -278,8 +298,10 @@ class Controls extends FlxActionSet
 		add(_pause);
 		add(_reset);
 		add(_cheat);
-		add(_battle1); // for battle mechanic
-		add(_battle2); // ^^^^^^^^^^^^^^^^^^^
+		add(_battle1); // for battle mechanic // Attack
+		add(_battle2); // ^^^^^^^^^^^^^^^^^^^ // Dodge
+		add(_battle2l); // ^^^^^^^^^^^^^^^^^^ // Dodge left
+		add(_battle2r); // ^^^^^^^^^^^^^^^^^^ // Dodge right
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -334,8 +356,10 @@ class Controls extends FlxActionSet
 			case PAUSE: _pause;
 			case RESET: _reset;
 			case CHEAT: _cheat;
-			case BATTLE_ONE: _battle1; // battle mechanic
-			case BATTLE_TWO: _battle2; // ^^^^^^^^^^^^^^^
+			case BATTLE_ONE: _battle1; // battle mechanic // Attack
+			case BATTLE_TWO: _battle2; // ^^^^^^^^^^^^^^^ // Dodge
+			case BATTLE_TWOL: _battle2l; // ^^^^^^^^^^^^^ // Dodge left
+			case BATTLE_TWOR: _battle2r; // ^^^^^^^^^^^^^ // Dodge right
 		}
 	}
 
@@ -381,10 +405,14 @@ class Controls extends FlxActionSet
 				func(_reset, JUST_PRESSED);
 			case CHEAT:
 				func(_cheat, JUST_PRESSED);
-			case BATTLE_ONE: // this to line 385 are for battle mechanic
+			case BATTLE_ONE: // this to line 411 are for battle mechanic // Attack
 				func(_battle1, JUST_PRESSED);
-			case BATTLE_TWO:
+			case BATTLE_TWO: // Dodge
 				func(_battle2, JUST_PRESSED);
+			case BATTLE_TWOL: // Dodge left
+				func(_battle2l, JUST_PRESSED);
+			case BATTLE_TWOR: // Dodge right
+				func(_battle2r, JUST_PRESSED);
 		}
 	}
 
@@ -540,6 +568,8 @@ class Controls extends FlxActionSet
 		buttons.set(Control.PAUSE,[FlxGamepadInputID.START]);
 		buttons.set(Control.BATTLE_ONE,[FlxGamepadInputID.fromString(FlxG.save.data.gpattackBind)]);
 		buttons.set(Control.BATTLE_TWO,[FlxGamepadInputID.fromString(FlxG.save.data.gpdodgeBind)]);
+		buttons.set(Control.BATTLE_TWOL,[FlxGamepadInputID.fromString(FlxG.save.data.gpdodgeLBind)]);
+		buttons.set(Control.BATTLE_TWOR,[FlxGamepadInputID.fromString(FlxG.save.data.gpdodgeRBind)]);
 
 		addGamepad(0,buttons);
 
@@ -553,6 +583,8 @@ class Controls extends FlxActionSet
 		inline bindKeys(Control.RESET, [FlxKey.fromString(FlxG.save.data.killBind)]);
 		inline bindKeys(Control.BATTLE_ONE, [FlxKey.fromString(FlxG.save.data.attackBind)]);
 		inline bindKeys(Control.BATTLE_TWO, [FlxKey.fromString(FlxG.save.data.dodgeBind), FlxKey.SPACE]);
+		inline bindKeys(Control.BATTLE_TWOL, [FlxKey.fromString(FlxG.save.data.dodgeLBind)]);
+		inline bindKeys(Control.BATTLE_TWOR, [FlxKey.fromString(FlxG.save.data.dodgeRBind)]);
 	}
 
 	function removeKeyboard()
@@ -623,8 +655,10 @@ class Controls extends FlxActionSet
 			Control.RIGHT => [DPAD_RIGHT, LEFT_STICK_DIGITAL_RIGHT],
 			Control.PAUSE => [START],
 			Control.RESET => [Y], 
-			Control.BATTLE_ONE => [RIGHT_STICK_DIGITAL_LEFT], // battle
-			Control.BATTLE_TWO => [RIGHT_STICK_DIGITAL_RIGHT] // ^^^^^^
+			Control.BATTLE_ONE => [RIGHT_STICK_DIGITAL_UP],    // battle
+			Control.BATTLE_TWO => [RIGHT_STICK_DIGITAL_DOWN],  // ^^^^^^
+			Control.BATTLE_TWOL => [RIGHT_STICK_DIGITAL_LEFT], // ^^^^^^
+			Control.BATTLE_TWOR => [RIGHT_STICK_DIGITAL_RIGHT] // ^^^^^^
 		]);
 		#else
 		addGamepadLiteral(id, [
@@ -639,8 +673,10 @@ class Controls extends FlxActionSet
 			//Swap Y and X for switch
 			Control.RESET => [Y],
 			Control.CHEAT => [X],
-			Control.BATTLE_ONE => [RIGHT_STICK_DIGITAL_LEFT], // battle
-			Control.BATTLE_TWO => [RIGHT_STICK_DIGITAL_RIGHT] // ^^^^^^
+			Control.BATTLE_ONE => [RIGHT_STICK_DIGITAL_UP],    // battle
+			Control.BATTLE_TWO => [RIGHT_STICK_DIGITAL_DOWN],  // ^^^^^^
+			Control.BATTLE_TWOL => [RIGHT_STICK_DIGITAL_LEFT], // ^^^^^^
+			Control.BATTLE_TWOR => [RIGHT_STICK_DIGITAL_RIGHT] // ^^^^^^
 		]);
 		#end
 	}

@@ -31,6 +31,8 @@ class DialogueBox extends FlxSpriteGroup
 	public var finishThing:Void->Void;
 
 	// dialogue portraits are so annoying :(
+	// I wonder if I could just do 1 var? - 2022-8-24
+	// I'll try next update - 2023-3-12
 	var firePort:FlxSprite;
 	var firePortMad:FlxSprite;
 	var firePortAhh:FlxSprite;
@@ -69,6 +71,40 @@ class DialogueBox extends FlxSpriteGroup
 	var bfPort:FlxSprite;
 	var bfPortMad:FlxSprite;
 	var gfPort:FlxSprite;
+
+	var stickoPort:FlxSprite;
+	var stickoPortMad:FlxSprite;
+	var stickoPortHaha:FlxSprite;
+
+	var sticklettaPort:FlxSprite;
+	var sticklettaPortHappy:FlxSprite;
+	var sticklettaPortHappier:FlxSprite;
+	var sticklettaPortWink:FlxSprite;
+	var sticklettaPortR:FlxSprite;
+	var sticklettaPortC:FlxSprite;
+
+	var clonerPort:FlxSprite;
+
+	var swordlettoPortL:FlxSprite;
+	var swordlettoPortR:FlxSprite;
+	var sticklettabowPortL:FlxSprite;
+	var sticklettabowPortR:FlxSprite;
+
+	var strikerPort:FlxSprite;
+
+	var yellowPort:FlxSprite;
+
+	var redPort:FlxSprite;
+	var redPortMad:FlxSprite;
+	var redPortHaha:FlxSprite;
+
+	var stiburnPort:FlxSprite;
+
+	var sticklettoPort:FlxSprite;
+	var sticklettoPortAhh:FlxSprite;
+
+	// TEMPLATE
+	// var e:FlxSprite;
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
@@ -141,6 +177,26 @@ class DialogueBox extends FlxSpriteGroup
 				case 'lemons' | 'freezing' | 'burning' | 'slimy' | 'slime-rematch':
 					hasDialog = true;
 				case 'all-around-you':
+					hasDialog = true;
+				case 'sticks-n-stones' | 'branching-out' | 'logging-in':
+					hasDialog = true;
+				case 'gooey-battle' | 'fire-battle' | 'moo-battle' | 'hit-and-miss':
+					hasDialog = true;
+				case 'fury' | 'rage' | 'fiery-madness':
+					hasDialog = true;
+				case 'trust' | 'team-up':
+					hasDialog = true;
+				case 'ff0000' | 'laser' | '00ffff':
+					hasDialog = true;
+				case 'duplication' | 'darkness':
+					hasDialog = true;
+				case 'stickletta' | 'hot-pink' | 'friends':
+					hasDialog = true;
+				case 'yellow' | 'teleportation' | 'ffff00':
+					hasDialog = true;
+				case 'recovery' | 'striker':
+					hasDialog = true;
+				case 'bite-wave':
 					hasDialog = true;
 			}
 		}
@@ -381,6 +437,186 @@ class DialogueBox extends FlxSpriteGroup
 		add(bfPortMad);
 		bfPortMad.visible = false;
 
+		stickoPort = new FlxSprite(200, 200);
+		stickoPort.frames = Paths.getSparrowAtlas('portraits/sticko');
+		stickoPort.animation.addByPrefix('enter', 'sticko dia0', 24, false);
+		stickoPort.updateHitbox();
+		stickoPort.scrollFactor.set();
+		add(stickoPort);
+		stickoPort.visible = false;
+
+		stickoPortMad = new FlxSprite(200, 225);
+		stickoPortMad.frames = Paths.getSparrowAtlas('portraits/sticko');
+		stickoPortMad.animation.addByPrefix('enter', 'sticko dia mad', 24, false);
+		stickoPortMad.updateHitbox();
+		stickoPortMad.scrollFactor.set();
+		add(stickoPortMad);
+		stickoPortMad.visible = false;
+
+		stickoPortHaha = new FlxSprite(200, 225);
+		stickoPortHaha.frames = Paths.getSparrowAtlas('portraits/sticko');
+		stickoPortHaha.animation.addByPrefix('enter', 'sticko dia haha', 24, false);
+		stickoPortHaha.updateHitbox();
+		stickoPortHaha.scrollFactor.set();
+		add(stickoPortHaha);
+		stickoPortHaha.visible = false;
+
+		sticklettaPort = new FlxSprite(200, 225);
+		sticklettaPort.frames = Paths.getSparrowAtlas('portraits/stickletta');
+		sticklettaPort.animation.addByPrefix('enter', 'stickletta dia0', 24, false);
+		sticklettaPort.updateHitbox();
+		sticklettaPort.scrollFactor.set();
+		add(sticklettaPort);
+		sticklettaPort.visible = false;
+
+		sticklettaPortHappy = new FlxSprite(200, 225);
+		sticklettaPortHappy.frames = Paths.getSparrowAtlas('portraits/stickletta');
+		sticklettaPortHappy.animation.addByPrefix('enter', 'stickletta dia happy', 24, false);
+		sticklettaPortHappy.updateHitbox();
+		sticklettaPortHappy.scrollFactor.set();
+		add(sticklettaPortHappy);
+		sticklettaPortHappy.visible = false;
+
+		sticklettaPortHappier = new FlxSprite(200, 225);
+		sticklettaPortHappier.frames = Paths.getSparrowAtlas('portraits/stickletta');
+		sticklettaPortHappier.animation.addByPrefix('enter', 'stickletta dia happier', 24, false);
+		sticklettaPortHappier.updateHitbox();
+		sticklettaPortHappier.scrollFactor.set();
+		add(sticklettaPortHappier);
+		sticklettaPortHappier.visible = false;
+
+		sticklettaPortWink = new FlxSprite(200, 225);
+		sticklettaPortWink.frames = Paths.getSparrowAtlas('portraits/stickletta');
+		sticklettaPortWink.animation.addByPrefix('enter', 'stickletta dia wink', 24, false);
+		sticklettaPortWink.updateHitbox();
+		sticklettaPortWink.scrollFactor.set();
+		add(sticklettaPortWink);
+		sticklettaPortWink.visible = false;
+
+		sticklettaPortR = new FlxSprite(830, 225);
+		sticklettaPortR.frames = Paths.getSparrowAtlas('portraits/stickletta');
+		sticklettaPortR.animation.addByPrefix('enter', 'stickletta dia0', 24, false);
+		sticklettaPortR.updateHitbox();
+		sticklettaPortR.scrollFactor.set();
+		sticklettaPortR.flipX = true;
+		add(sticklettaPortR);
+		sticklettaPortR.visible = false;
+
+		sticklettaPortC = new FlxSprite(830, 225);
+		sticklettaPortC.frames = Paths.getSparrowAtlas('portraits/stickletta');
+		sticklettaPortC.animation.addByPrefix('enter', 'stickletta dia c', 24, false);
+		sticklettaPortC.updateHitbox();
+		sticklettaPortC.scrollFactor.set();
+		sticklettaPortC.flipX = true;
+		add(sticklettaPortC);
+		sticklettaPortC.visible = false;
+
+		clonerPort = new FlxSprite(200, 200);
+		clonerPort.frames = Paths.getSparrowAtlas('portraits/clonerman');
+		clonerPort.animation.addByPrefix('enter', 'clonerman dia', 24, false);
+		clonerPort.updateHitbox();
+		clonerPort.scrollFactor.set();
+		add(clonerPort);
+		clonerPort.visible = false;
+
+		sticklettabowPortL = new FlxSprite(200, 225);
+		sticklettabowPortL.frames = Paths.getSparrowAtlas('portraits/sword and bow');
+		sticklettabowPortL.animation.addByPrefix('enter', 'sticklettabow dia', 24, false);
+		sticklettabowPortL.updateHitbox();
+		sticklettabowPortL.scrollFactor.set();
+		add(sticklettabowPortL);
+		sticklettabowPortL.visible = false;
+
+		sticklettabowPortR = new FlxSprite(799, 225);
+		sticklettabowPortR.frames = Paths.getSparrowAtlas('portraits/sword and bow');
+		sticklettabowPortR.animation.addByPrefix('enter', 'sticklettabow dia', 24, false);
+		sticklettabowPortR.updateHitbox();
+		sticklettabowPortR.scrollFactor.set();
+		sticklettabowPortR.flipX = true;
+		add(sticklettabowPortR);
+		sticklettabowPortR.visible = false;
+
+		swordlettoPortL = new FlxSprite(200, 180);
+		swordlettoPortL.frames = Paths.getSparrowAtlas('portraits/sword and bow');
+		swordlettoPortL.animation.addByPrefix('enter', 'swordletto dia', 24, false);
+		swordlettoPortL.updateHitbox();
+		swordlettoPortL.scrollFactor.set();
+		swordlettoPortL.flipX = true;
+		add(swordlettoPortL);
+		swordlettoPortL.visible = false;
+
+		swordlettoPortR = new FlxSprite(900, 180);
+		swordlettoPortR.frames = Paths.getSparrowAtlas('portraits/sword and bow');
+		swordlettoPortR.animation.addByPrefix('enter', 'swordletto dia', 24, false);
+		swordlettoPortR.updateHitbox();
+		swordlettoPortR.scrollFactor.set();
+		add(swordlettoPortR);
+		swordlettoPortR.visible = false;
+
+		stiburnPort = new FlxSprite(200, 285);
+		stiburnPort.frames = Paths.getSparrowAtlas('portraits/stiburn');
+		stiburnPort.animation.addByPrefix('enter', 'stiburn dia', 24, false);
+		stiburnPort.updateHitbox();
+		stiburnPort.scrollFactor.set();
+		add(stiburnPort);
+		stiburnPort.visible = false;
+
+		sticklettoPort = new FlxSprite(799, 225);
+		sticklettoPort.frames = Paths.getSparrowAtlas('portraits/stickletto');
+		sticklettoPort.animation.addByPrefix('enter', 'stickletto dia0', 24, false);
+		sticklettoPort.updateHitbox();
+		sticklettoPort.scrollFactor.set();
+		add(sticklettoPort);
+		sticklettoPort.visible = false;
+
+		sticklettoPortAhh = new FlxSprite(830, 215);
+		sticklettoPortAhh.frames = Paths.getSparrowAtlas('portraits/stickletto');
+		sticklettoPortAhh.animation.addByPrefix('enter', 'stickletto dia ahh', 24, false);
+		sticklettoPortAhh.updateHitbox();
+		sticklettoPortAhh.scrollFactor.set();
+		add(sticklettoPortAhh);
+		sticklettoPortAhh.visible = false;
+
+		strikerPort = new FlxSprite(250, 280);
+		strikerPort.frames = Paths.getSparrowAtlas('portraits/striker');
+		strikerPort.animation.addByPrefix('enter', 'striker dia', 24, false);
+		strikerPort.updateHitbox();
+		strikerPort.scrollFactor.set();
+		add(strikerPort);
+		strikerPort.visible = false;
+
+		yellowPort = new FlxSprite(200, 200);
+		yellowPort.frames = Paths.getSparrowAtlas('portraits/yellow dude');
+		yellowPort.animation.addByPrefix('enter', 'yellow dude dia0', 24, false);
+		yellowPort.updateHitbox();
+		yellowPort.scrollFactor.set();
+		add(yellowPort);
+		yellowPort.visible = false;
+
+		redPort = new FlxSprite(200, 200);
+		redPort.frames = Paths.getSparrowAtlas('portraits/red dude');
+		redPort.animation.addByPrefix('enter', 'red dude dia0', 24, false);
+		redPort.updateHitbox();
+		redPort.scrollFactor.set();
+		add(redPort);
+		redPort.visible = false;
+
+		redPortMad = new FlxSprite(175, 275);
+		redPortMad.frames = Paths.getSparrowAtlas('portraits/red dude');
+		redPortMad.animation.addByPrefix('enter', 'red dude dia mad', 24, false);
+		redPortMad.updateHitbox();
+		redPortMad.scrollFactor.set();
+		add(redPortMad);
+		redPortMad.visible = false;
+
+		redPortHaha = new FlxSprite(200, 200);
+		redPortHaha.frames = Paths.getSparrowAtlas('portraits/red dude');
+		redPortHaha.animation.addByPrefix('enter', 'red dude dia haha', 24, false);
+		redPortHaha.updateHitbox();
+		redPortHaha.scrollFactor.set();
+		add(redPortHaha);
+		redPortHaha.visible = false;
+
 		// template (rename n to the name of your var, and remove /* and */)
 		/*n = new FlxSprite(250, 40);
 		n.frames = Paths.getSparrowAtlas('portraits/something');
@@ -507,917 +743,193 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue.start(0.04, true);
 
 		// there better be an easier way to do this, I hate doing this
+		// update 3/6/2022 - found an easier way to do this, still hate doing it tho
 		switch (curCharacter)
 		{
 			case 'boyfriend':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!bfPort.visible)
 				{
 					bfPort.visible = true;
 					bfPort.animation.play('enter');
 				}
 			case 'girlfriend':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!gfPort.visible)
 				{
 					gfPort.visible = true;
 					gfPort.animation.play('enter');
 				}
 			case 'fire':
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!firePort.visible)
 				{
 					firePort.visible = true;
 					firePort.animation.play('enter');
 				}
 			case 'firemad':
-				firePort.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!firePortMad.visible)
 				{
 					firePortMad.visible = true;
 					firePortMad.animation.play('enter');
 				}
 			case 'fireahh':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!firePortAhh.visible)
 				{
 					firePortAhh.visible = true;
 					firePortAhh.animation.play('enter');
 				}
 			case 'icy':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!icyPort.visible)
 				{
 					icyPort.visible = true;
 					icyPort.animation.play('enter');
 				}
 			case 'icymad':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!icyPortMad.visible)
 				{
 					icyPortMad.visible = true;
 					icyPortMad.animation.play('enter');
 				}
 			case 'icyahh':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!icyPortAhh.visible)
 				{
 					icyPortAhh.visible = true;
 					icyPortAhh.animation.play('enter');
 				}
 			case 'lemony':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!lemonyPort.visible)
 				{
 					lemonyPort.visible = true;
 					lemonyPort.animation.play('enter');
 				}
 			case 'lemonymad':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!lemonyPortMad.visible)
 				{
 					lemonyPortMad.visible = true;
 					lemonyPortMad.animation.play('enter');
 				}
 			case 'lemonyahh':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!lemonyPortAhh.visible)
 				{
 					lemonyPortAhh.visible = true;
 					lemonyPortAhh.animation.play('enter');
 				}
 			case 'slimy':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!slimyPort.visible)
 				{
 					slimyPort.visible = true;
 					slimyPort.animation.play('enter');
 				}
 			case 'slimymad':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!slimyPortMad.visible)
 				{
 					slimyPortMad.visible = true;
 					slimyPortMad.animation.play('enter');
 				}
 			case 'slimyahh':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!slimyPortAhh.visible)
 				{
 					slimyPortAhh.visible = true;
 					slimyPortAhh.animation.play('enter');
 				}
 			case 'crew':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!crewPort.visible)
 				{
 					crewPort.visible = true;
 					crewPort.animation.play('enter');
 				}
 			case 'baby':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!babyPort.visible)
 				{
 					babyPort.visible = true;
 					babyPort.animation.play('enter');
 				}
 			case 'sooubway':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!sooubwayPort.visible)
 				{
 					sooubwayPort.visible = true;
 					sooubwayPort.animation.play('enter');
 				}
 			case 'group':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!groupPort.visible)
 				{
 					groupPort.visible = true;
 					groupPort.animation.play('enter');
 				}
 			case 'mooshie':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!mooshiePort.visible)
 				{
 					mooshiePort.visible = true;
 					mooshiePort.animation.play('enter');
 				}
 			case 'supermooshie':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!supermooshiePort.visible)
 				{
 					supermooshiePort.visible = true;
 					supermooshiePort.animation.play('enter');
 				}
 			case 'supermadshie':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!supermooshiePortMad.visible)
 				{
 					supermooshiePortMad.visible = true;
 					supermooshiePortMad.animation.play('enter');
 				}
 			case 'bfmad':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
+				hideChars();
 				if (!bfPortMad.visible)
 				{
 					bfPortMad.visible = true;
 					bfPortMad.animation.play('enter');
 				}
 			case 'ghost':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!ghostPort.visible)
 				{
 					ghostPort.visible = true;
 					ghostPort.animation.play('enter');
 				}
 			case 'sheary':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				ghostPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!shepPort.visible)
 				{
 					shepPort.visible = true;
 					shepPort.animation.play('enter');
 				}
 			case 'cluckington':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				shepPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!cluckPort.visible)
 				{
 					cluckPort.visible = true;
 					cluckPort.animation.play('enter');
 				}
 			case 'clooshie':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!clooshPort.visible)
 				{
 					clooshPort.visible = true;
 					clooshPort.animation.play('enter');
 				}
 			case 'trooper':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!trooperPort.visible)
 				{
 					trooperPort.visible = true;
@@ -1425,33 +937,7 @@ class DialogueBox extends FlxSpriteGroup
 				}
 
 			case 'gooey':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!gooeyPort.visible)
 				{
 					gooeyPort.visible = true;
@@ -1459,37 +945,187 @@ class DialogueBox extends FlxSpriteGroup
 				}
 
 			case 'goomba':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				trooperPort.visible = false;
-				gooeyPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!goombaPort.visible)
 				{
 					goombaPort.visible = true;
 					goombaPort.animation.play('enter');
+				}
+
+			case 'sticko':
+				hideChars();
+				if (!stickoPort.visible)
+				{
+					stickoPort.visible = true;
+					stickoPort.animation.play('enter');
+				}
+
+			case 'stickomad':
+				hideChars();
+				if (!stickoPortMad.visible)
+				{
+					stickoPortMad.visible = true;
+					stickoPortMad.animation.play('enter');
+				}
+
+			case 'stickohaha':
+				hideChars();
+				if (!stickoPortHaha.visible)
+				{
+					stickoPortHaha.visible = true;
+					stickoPortHaha.animation.play('enter');
+				}
+
+			case 'sticklettabowL':
+				hideChars();
+				if (!sticklettabowPortL.visible)
+				{
+					sticklettabowPortL.visible = true;
+					sticklettabowPortL.animation.play('enter');
+				}
+
+			case 'sticklettabowR':
+				hideChars();
+				if (!sticklettabowPortR.visible)
+				{
+					sticklettabowPortR.visible = true;
+					sticklettabowPortR.animation.play('enter');
+				}
+
+			case 'swordlettoL':
+				hideChars();
+				if (!swordlettoPortL.visible)
+				{
+					swordlettoPortL.visible = true;
+					swordlettoPortL.animation.play('enter');
+				}
+
+			case 'swordlettoR':
+				hideChars();
+				if (!swordlettoPortR.visible)
+				{
+					swordlettoPortR.visible = true;
+					swordlettoPortR.animation.play('enter');
+				}
+
+			case 'stiburn':
+				hideChars();
+				if (!stiburnPort.visible)
+				{
+					stiburnPort.visible = true;
+					stiburnPort.animation.play('enter');
+				}
+
+			case 'stickletto':
+				hideChars();
+				if (!sticklettoPort.visible)
+				{
+					sticklettoPort.visible = true;
+					sticklettoPort.animation.play('enter');
+				}
+
+			case 'sticklettoahh':
+				hideChars();
+				if (!sticklettoPortAhh.visible)
+				{
+					sticklettoPortAhh.visible = true;
+					sticklettoPortAhh.animation.play('enter');
+				}
+
+			case 'red':
+				hideChars();
+				if (!redPort.visible)
+				{
+					redPort.visible = true;
+					redPort.animation.play('enter');
+				}
+
+			case 'redmad':
+				hideChars();
+				if (!redPortMad.visible)
+				{
+					redPortMad.visible = true;
+					redPortMad.animation.play('enter');
+				}
+
+			case 'redhaha':
+				hideChars();
+				if (!redPortHaha.visible)
+				{
+					redPortHaha.visible = true;
+					redPortHaha.animation.play('enter');
+				}
+
+			case 'clonerman':
+				hideChars();
+				if (!clonerPort.visible)
+				{
+					clonerPort.visible = true;
+					clonerPort.animation.play('enter');
+				}
+
+			case 'stickletta':
+				hideChars();
+				if (!sticklettaPort.visible)
+				{
+					sticklettaPort.visible = true;
+					sticklettaPort.animation.play('enter');
+				}
+
+			case 'sticklettahappy':
+				hideChars();
+				if (!sticklettaPortHappy.visible)
+				{
+					sticklettaPortHappy.visible = true;
+					sticklettaPortHappy.animation.play('enter');
+				}
+
+			case 'sticklettahappier':
+				hideChars();
+				if (!sticklettaPortHappier.visible)
+				{
+					sticklettaPortHappier.visible = true;
+					sticklettaPortHappier.animation.play('enter');
+				}
+
+			case 'sticklettawink':
+				hideChars();
+				if (!sticklettaPortWink.visible)
+				{
+					sticklettaPortWink.visible = true;
+					sticklettaPortWink.animation.play('enter');
+				}
+
+			case 'sticklettaR':
+				hideChars();
+				if (!sticklettaPortR.visible)
+				{
+					sticklettaPortR.visible = true;
+					sticklettaPortR.animation.play('enter');
+				}
+
+			case 'sticklettaC':
+				hideChars();
+				if (!sticklettaPortC.visible)
+				{
+					sticklettaPortC.visible = true;
+					sticklettaPortC.animation.play('enter');
+				}
+			
+			case 'yellow':
+				hideChars();
+				if (!yellowPort.visible)
+				{
+					yellowPort.visible = true;
+					yellowPort.animation.play('enter');
+				}
+
+			case 'striker':
+				hideChars();
+				if (!strikerPort.visible)
+				{
+					strikerPort.visible = true;
+					strikerPort.animation.play('enter');
 				}
 
 			case 'bg':
@@ -1513,49 +1149,25 @@ class DialogueBox extends FlxSpriteGroup
 			case 'narrator':
 				hideChars();
 
-			// full template (rename s to ur var)
+			// template (rename s to ur var)
 			/*case 's':
-				firePort.visible = false;
-				firePortMad.visible = false;
-				firePortAhh.visible = false;
-				icyPort.visible = false;
-				icyPortMad.visible = false;
-				icyPortAhh.visible = false;
-				lemonyPort.visible = false;
-				lemonyPortMad.visible = false;
-				lemonyPortAhh.visible = false;
-				slimyPort.visible = false;
-				slimyPortMad.visible = false;
-				slimyPortAhh.visible = false;
-				crewPort.visible = false;
-				bfPort.visible = false;
-				gfPort.visible = false;
-				babyPort.visible = false;
-				sooubwayPort.visible = false;
-				groupPort.visible = false;
-				shepPort.visible = false;
-				cluckPort.visible = false;
-				clooshPort.visible = false;
-				gooeyPort.visible = false;
-				goombaPort.visible = false;
-				mooshiePort.visible = false;
-				supermooshiePort.visible = false;
-				supermooshiePortMad.visible = false;
-				bfPortMad.visible = false;
+				hideChars();
 				if (!s.visible)
 				{
 					s.visible = true;
 					s.animation.play('enter');
 				}*/
+		}
 
-			// empty template (rename e and m to ur var(s))
-			/*case 'e':
-				m.visible = false;
-				if (!e.visible)
-				{
-					e.visible = true;
-					e.animation.play('enter');
-				}*/
+		if (curCharacter == 'bg')
+		{
+			swagDialogue.visible = false;
+			dropText.visible = false;
+		}
+		else
+		{
+			swagDialogue.visible = true;
+			dropText.visible = true;
 		}
 
 		//switch(curCharacter)
@@ -1602,14 +1214,38 @@ class DialogueBox extends FlxSpriteGroup
 		babyPort.visible = false;
 		sooubwayPort.visible = false;
 		groupPort.visible = false;
+		ghostPort.visible = false;
 		shepPort.visible = false;
 		cluckPort.visible = false;
 		clooshPort.visible = false;
+		trooperPort.visible = false;
 		gooeyPort.visible = false;
 		goombaPort.visible = false;
 		mooshiePort.visible = false;
 		supermooshiePort.visible = false;
 		supermooshiePortMad.visible = false;
 		bfPortMad.visible = false;
+		stickoPort.visible = false;
+		stickoPortMad.visible = false;
+		stickoPortHaha.visible = false;
+		sticklettaPort.visible = false;
+		sticklettaPortHappy.visible = false;
+		sticklettaPortHappier.visible = false;
+		sticklettaPortR.visible = false;
+		sticklettaPortC.visible = false;
+		sticklettaPortWink.visible = false;
+		clonerPort.visible = false;
+		sticklettabowPortL.visible = false;
+		sticklettabowPortR.visible = false;
+		swordlettoPortL.visible = false;
+		swordlettoPortR.visible = false;
+		strikerPort.visible = false;
+		yellowPort.visible = false;
+		redPort.visible = false;
+		redPortMad.visible = false;
+		redPortHaha.visible = false;
+		stiburnPort.visible = false;
+		sticklettoPort.visible = false;
+		sticklettoPortAhh.visible = false;
 	}
 }

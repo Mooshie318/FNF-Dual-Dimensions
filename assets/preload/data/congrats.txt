@@ -8,7 +8,7 @@ I made the week 8 character first
 it took me way too long to add a character just because the xml had a capital
 i'm dumb
 ..
-the battle mechanic made the game too laggy so I removed it (will add it back at some point)
+the battle mechanic made the game too laggy so I removed it (will add it back at some point) (I added it back)
 ...
 dialogue portraits are so annoying to add
 ...

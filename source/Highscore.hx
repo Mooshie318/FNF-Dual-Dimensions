@@ -10,6 +10,12 @@ class Highscore
 	public static var songScores:Map<String, Int> = new Map<String, Int>();
 	#end
 
+	// Ctrl + C Ctrl + V Be like
+	public static function resetSong(song:String, diff:Int = 0):Void
+	{
+		var daSong:String = formatSong(song, diff);
+		setScore(daSong, 0);
+	}
 
 	public static function saveScore(song:String, score:Int = 0, ?diff:Int = 0):Void
 	{
@@ -30,7 +36,7 @@ class Highscore
 			setScore(daSong, score);
 	}
 
-	public static function saveWeekScore(week:Int = 1, score:Int = 0, ?diff:Int = 0):Void
+	public static function saveWeekScore(week:Int = 1, score:Int = 0, ?diff:Int = 0, isReset:Bool = false):Void
 	{
 
 		#if !switch
@@ -40,9 +46,14 @@ class Highscore
 
 		var daWeek:String = formatSong('week' + week, diff);
 
-		if (songScores.exists(daWeek))
+		if (!isReset)
 		{
-			if (songScores.get(daWeek) < score)
+			if (songScores.exists(daWeek))
+			{
+				if (songScores.get(daWeek) < score)
+					setScore(daWeek, score);
+			}
+			else
 				setScore(daWeek, score);
 		}
 		else

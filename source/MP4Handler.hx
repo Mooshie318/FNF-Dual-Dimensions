@@ -104,8 +104,11 @@ class MP4Handler extends vlc.VlcBitmap
 	{
 		this.pauseMusic = pauseMusic;
 
-		if (FlxG.sound.music != null && pauseMusic)
+		if (pauseMusic)
+		{
 			FlxG.sound.music.pause();
+			FlxG.sound.pause();
+		}
 
 		#if sys
 		play(checkFile(path));
