@@ -4515,10 +4515,10 @@ class PlayState extends MusicBeatState
 		// DONT use this on the last song of any week
 		// and DONT use this before skipping dialogue on the last song, shit will get broken and i'm too lazy to fix it
 		// also don't use it in Moosanity, the game is weird
-		// #if debug
+		#if debug
 		if (FlxG.keys.justPressed.ONE)
 			endSong();
-		// #end
+		#end
 	}
 
 	// my end dialogue code is absolute shit
