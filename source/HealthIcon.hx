@@ -22,6 +22,7 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-dodge', [0, 1], 0, false, isPlayer);
 		animation.add('bf-gf', [37, 38], 0, false, isPlayer);
 		animation.add('bf-opponent', [0, 1], 0, false, isPlayer);
+		animation.add('bf-flipped', [0, 1], 0, false, isPlayer);
 		animation.add('bf-battle', [0, 1], 0, false, isPlayer);
 		animation.add('bf-bDiagonal', [0, 1], 0, false, isPlayer);
 		animation.add('bf-bDiagonal-f', [0, 1], 0, false, isPlayer);
@@ -79,6 +80,7 @@ class HealthIcon extends FlxSprite
 		animation.add('stickletta-c-f', [58], 0, false, isPlayer);
 		animation.add('stickletta-gf', [58], 0, false, isPlayer);
 		animation.add('stickletta-b', [58], 0, false, isPlayer);
+		animation.add('stickletta-m', [58], 0, false, isPlayer);
 		animation.add('sticklettabow-b', [55], 0, false, isPlayer);
 		animation.add('swordletto-b', [55], 0, false, isPlayer);
 
@@ -90,6 +92,7 @@ class HealthIcon extends FlxSprite
 		animation.add('sticklettabow', [55], 0, false, isPlayer);
 		animation.add('stickletto-i-w', [55], 0, false, isPlayer);
 		animation.add('stickletto-i-w-f', [55], 0, false, isPlayer);
+		animation.add('stickletto-dd', [55], 0, false, isPlayer);
 		animation.add('striker', [55], 0, false, isPlayer);
 		animation.add('striker-fr', [55], 0, false, isPlayer);
 		animation.add('yellow', [59], 0, false, isPlayer);
@@ -107,6 +110,9 @@ class HealthIcon extends FlxSprite
 		animation.add('grilfen', [16], 0, false, isPlayer);
 
 		animation.add('ralph', [62, 63], 0, false, isPlayer);
+
+		animation.add('maroon', [64], 0, false, isPlayer);
+		animation.add('blue', [65], 0, false, isPlayer);
 
 		// TEMPLATE
 		// animation.add('', [], 0, false, isPlayer);

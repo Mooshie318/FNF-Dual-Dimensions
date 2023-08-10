@@ -42,7 +42,7 @@ class MainMenuState extends MusicBeatState
 
 	public static var kadeEngineVer:String = "1.4.2" + nightly;
 	public static var gameVer:String = "0.2.7.1";
-	public static var fnmVer:String = "1.4.0";
+	public static var fnmVer:String = "1.4.1";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -62,7 +62,7 @@ class MainMenuState extends MusicBeatState
 		if (!FlxG.sound.music.playing)
 		{
 			// FlxG.sound.playMusic(Paths.music('freakyMenu'));
-			FlxG.sound.playMusic(Paths.music('menu'));
+			FlxG.sound.playMusic(Paths.music('menu drums'));
 		}
 
 		persistentUpdate = persistentDraw = true;
@@ -119,6 +119,11 @@ class MainMenuState extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
+		var altTxt:FlxText = new FlxText(FlxG.width - 206, FlxG.height - 24, 0, "ALT + R to reset music", 12);
+		altTxt.scrollFactor.set();
+		altTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(altTxt);
+
 		changeItem();
 
 		extrasButton = new FlxUIButton(1200, 10, "Extras", sendToExtras);
@@ -132,6 +137,12 @@ class MainMenuState extends MusicBeatState
 		add(extrasButton);
 		add(gjButton);
 
+		// Dynamic(?) menu music
+		TitleState.piano.fadeIn(0.5, TitleState.piano.volume, 0.7);
+		TitleState.synth.fadeIn(0.5, TitleState.synth.volume, 0.7);
+		TitleState.guitar.fadeOut(0.5, 0);
+		TitleState.bass.fadeOut(0.5, 0);
+
 		super.create();
 	}
 
@@ -144,10 +155,27 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
+		if (FlxG.keys.pressed.ALT)
+		{
+			if (FlxG.keys.justPressed.R)
+			{
+				TitleState.piano.time = FlxG.sound.music.time;
+				TitleState.synth.time = FlxG.sound.music.time;
+				TitleState.guitar.time = FlxG.sound.music.time;
+				TitleState.bass.time = FlxG.sound.music.time;
+			}
+		}
+
 		FlxG.mouse.visible = true;
 
 		if (FlxG.mouse.justPressed && FlxG.mouse.screenX <= 30 && FlxG.mouse.screenY <= 30)
 		{
+			// Dynamic(?) menu music
+			TitleState.piano.fadeOut(0.5, 0);
+			TitleState.synth.fadeOut(0.5, 0);
+			TitleState.guitar.fadeOut(0.5, 0);
+			TitleState.bass.fadeOut(0.5, 0);
+
 			PlayState.isStoryMode = true;
 			PlayState.storyDifficulty = 2;
 			PlayState.SONG = Song.loadFromJson('boyfriend-hard', 'boyfriend');
@@ -211,7 +239,8 @@ class MainMenuState extends MusicBeatState
 								switch (daChoice)
 								{
 									case 'story mode':
-										FlxG.switchState(new StoryMenuState());
+										// FlxG.switchState(new StoryMenuState());
+										FlxG.switchState(new FNMStoryMenuState());
 										trace("Story Menu Selected");
 									case 'freeplay':
 										openSubState(new FPSelectSubState(bg.getGraphicMidpoint().x, bg.getGraphicMidpoint().y));

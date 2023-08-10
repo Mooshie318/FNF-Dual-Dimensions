@@ -198,6 +198,8 @@ class DialogueBox extends FlxSpriteGroup
 					hasDialog = true;
 				case 'bite-wave':
 					hasDialog = true;
+				case 'dark-purple' | 'sticklettabreaker':
+					hasDialog = true;
 			}
 		}
 

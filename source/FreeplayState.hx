@@ -23,10 +23,9 @@ class FreeplayState extends MusicBeatState
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	var scoreText:FlxText;
-	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
 
@@ -105,14 +104,9 @@ class FreeplayState extends MusicBeatState
 		scoreBG.alpha = 0.6;
 		add(scoreBG);
 
-		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
-		diffText.font = scoreText.font;
-		add(diffText);
-
 		add(scoreText);
 
 		changeSelection();
-		changeDiff();
 
 		selector = new FlxText();
 
@@ -120,6 +114,17 @@ class FreeplayState extends MusicBeatState
 		selector.text = ">";
 
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
+
+		var ctrlTxt:FlxText = new FlxText(FlxG.width - 215, FlxG.height - 24, 0, "CTRL + R to reset score", 12);
+		ctrlTxt.scrollFactor.set();
+		ctrlTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(ctrlTxt);
+
+		// Dynamic(?) menu music
+		TitleState.piano.fadeOut(0.5, 0);
+		TitleState.synth.fadeOut(0.5, 0);
+		TitleState.guitar.fadeOut(0.5, 0);
+		TitleState.bass.fadeOut(0.5, 0);
 
 		super.create();
 	}
@@ -173,27 +178,16 @@ class FreeplayState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		if (controls.LEFT_P)
-			changeDiff(-1);
-		if (controls.RIGHT_P)
-			changeDiff(1);
-		if (curSelected > 39 && !didTheThing)
-		{
-			changeDiff(0);
-			didTheThing = true;
-		}
-		if (curSelected <= 36)
-			didTheThing = false;
-
 		if (controls.BACK)
 		{
+			FlxG.sound.music.fadeOut(0.5, 0, v -> FlxG.sound.music.stop());
 			FlxG.switchState(new MainMenuState());
 		}
 
 		if (FlxG.keys.pressed.CONTROL)
 		{
 			if (FlxG.keys.justPressed.R)
-				Highscore.resetSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
+				Highscore.resetSong(songs[curSelected].songName, curDifficulty);
 		}
 
 		if (accepted)
@@ -208,39 +202,6 @@ class FreeplayState extends MusicBeatState
 			PlayState.storyWeek = songs[curSelected].week;
 			trace('CUR WEEK: ' + PlayState.storyWeek);
 			LoadingState.loadAndSwitchState(new PlayState());
-		}
-	}
-
-	function changeDiff(change:Int = 0)
-	{
-		curDifficulty += change;
-
-		if (curSelected > 39 || isP2 || isP3 || isP4 || isP5)
-			curDifficulty = 2;
-		else
-		{
-			if (curDifficulty < 0)
-				curDifficulty = 2;
-			if (curDifficulty > 2)
-				curDifficulty = 0;
-		}
-
-		#if !switch
-		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-		#end
-
-		switch (curDifficulty)
-		{
-			case 0:
-				diffText.text = "EASY";
-			case 1:
-				diffText.text = 'NORMAL';
-			case 2:
-				diffText.text = "HARD";
-			case 3:
-				diffText.text = "DUET";
-			case 4:
-				diffText.text = "FUCKYOU";
 		}
 	}
 

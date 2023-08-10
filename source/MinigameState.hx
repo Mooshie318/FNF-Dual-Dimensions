@@ -27,23 +27,27 @@ class MinigameState extends MusicBeatState
     var b3Unlocked:Bool = FlxG.save.data.beatMooWeek;
     var b4Unlocked:Bool = FlxG.save.data.beatRalphWeek;
 
-    var ch1Unlocked:Bool = false;
+    var ch1Unlocked:Bool = (FlxG.save.data.beatMooWeek && FlxG.save.data.beatStickoWeek);
+    var ch2Unlocked:Bool = (FlxG.save.data.beatSaWeek);
 
-    var boss:Array<String> = [
-        'b1',
-        'b2',
-        'b3',
-        'b4'
+    var boss:Array<Dynamic> = [
+        ['b1', 'Beat 1-7'],
+        ['b2', 'Beat 1-11'],
+        ['b3', 'Beat 1-9'],
+        ['b4', 'Beat 3-1']
     ];
 
-    var challenge:Array<String> = [
-        'ch1'
+    var challenge:Array<Dynamic> = [
+        ['ch1', 'Beat 1-9 and 2-1'],
+        ['ch2', '(WILL CHANGE LATER) Beat 2-2']
     ];
 
 	var curSelected:Int = 0;
     var image:FlxSprite;
     var lArrow:FlxSprite;
     var rArrow:FlxSprite;
+
+    var descText:FlxText;
 
 	override function create()
 	{
@@ -60,8 +64,18 @@ class MinigameState extends MusicBeatState
         rArrow.screenCenter(Y);
 		add(rArrow);
 
-        updateImage();
 		changeSelection();
+
+        var altTxt:FlxText = new FlxText(FlxG.width - 206, FlxG.height - 24, 0, "ALT + R to reset music", 12);
+		altTxt.scrollFactor.set();
+		altTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(altTxt);
+
+        // Dynamic(?) menu music
+        TitleState.piano.fadeOut(0.5, 0);
+		TitleState.synth.fadeOut(0.5, 0);
+		TitleState.guitar.fadeIn(0.5, TitleState.guitar.volume, 0.7);
+		TitleState.bass.fadeOut(0.5, 0);
 
         super.create();
 	}
@@ -70,14 +84,21 @@ class MinigameState extends MusicBeatState
 	{
 		super.update(elapsed);
 
+        if (FlxG.keys.pressed.ALT)
+        {
+            if (FlxG.keys.justPressed.R)
+            {
+                TitleState.piano.time = FlxG.sound.music.time;
+                TitleState.synth.time = FlxG.sound.music.time;
+                TitleState.guitar.time = FlxG.sound.music.time;
+                TitleState.bass.time = FlxG.sound.music.time;
+            }
+        }
+
 		var leftP = controls.LEFT_P;
 		var rightP = controls.RIGHT_P;
 		var accept = controls.ACCEPT;
 
-        if (FlxG.save.data.beatMooWeek && FlxG.save.data.beatStickoWeek)
-            ch1Unlocked = true;
-        else
-            ch1Unlocked = false;
 		if (leftP)
 		{
 			changeSelection(-1);
@@ -98,18 +119,50 @@ class MinigameState extends MusicBeatState
                     case 0:
                         PlayState.SONG = Song.loadFromJson('gooey-battle-hard', 'gooey-battle');
                         if (b1Unlocked)
+                        {
                             LoadingState.loadAndSwitchState(new PlayState(), true);
+
+                            // Dynamic(?) menu music
+                            TitleState.piano.fadeOut(0.5, 0);
+                            TitleState.synth.fadeOut(0.5, 0);
+                            TitleState.guitar.fadeOut(0.5, 0);
+                            TitleState.bass.fadeOut(0.5, 0);
+                        }
                     case 1:
                         PlayState.SONG = Song.loadFromJson('fire-battle-hard', 'fire-battle');
                         if (b2Unlocked)
+                        {
                             LoadingState.loadAndSwitchState(new PlayState(), true);
+
+                            // Dynamic(?) menu music
+                            TitleState.piano.fadeOut(0.5, 0);
+                            TitleState.synth.fadeOut(0.5, 0);
+                            TitleState.guitar.fadeOut(0.5, 0);
+                            TitleState.bass.fadeOut(0.5, 0);
+                        }
                     case 2:
                         PlayState.SONG = Song.loadFromJson('moo-battle-hard', 'moo-battle');
                         if (b3Unlocked)
+                        {
                             LoadingState.loadAndSwitchState(new PlayState(), true);
+
+                            // Dynamic(?) menu music
+                            TitleState.piano.fadeOut(0.5, 0);
+                            TitleState.synth.fadeOut(0.5, 0);
+                            TitleState.guitar.fadeOut(0.5, 0);
+                            TitleState.bass.fadeOut(0.5, 0);
+                        }
                     case 3:
                         if (b4Unlocked)
+                        {
                             FlxG.switchState(new BossState());
+
+                            // Dynamic(?) menu music
+                            TitleState.piano.fadeOut(0.5, 0);
+                            TitleState.synth.fadeOut(0.5, 0);
+                            TitleState.guitar.fadeOut(0.5, 0);
+                            TitleState.bass.fadeOut(0.5, 0);
+                        }
                 }
             }
             if (isC)
@@ -121,7 +174,27 @@ class MinigameState extends MusicBeatState
                         PlayState.storyDifficulty = 2;
                         PlayState.SONG = Song.loadFromJson('hit-and-miss-hard', 'hit-and-miss');
                         if (ch1Unlocked)
+                        {
                             LoadingState.loadAndSwitchState(new PlayState(), true);
+                            // Dynamic(?) menu music
+                            TitleState.piano.fadeOut(0.5, 0);
+                            TitleState.synth.fadeOut(0.5, 0);
+                            TitleState.guitar.fadeOut(0.5, 0);
+                            TitleState.bass.fadeOut(0.5, 0);
+                        }
+                    case 1:
+                        PlayState.isStoryMode = true;
+                        PlayState.storyDifficulty = 1;
+                        PlayState.SONG = Song.loadFromJson('dark-purple-hard', 'dark-purple');
+                        if (ch2Unlocked)
+                        {
+                            LoadingState.loadAndSwitchState(new PlayState(), true);
+                            // Dynamic(?) menu music
+                            TitleState.piano.fadeOut(0.5, 0);
+                            TitleState.synth.fadeOut(0.5, 0);
+                            TitleState.guitar.fadeOut(0.5, 0);
+                            TitleState.bass.fadeOut(0.5, 0);
+                        }
                 }
             }
 		}
@@ -149,6 +222,7 @@ class MinigameState extends MusicBeatState
 
 		FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
         updateImage();
+        updateText();
     }
 
     function updateImage():Void
@@ -162,27 +236,27 @@ class MinigameState extends MusicBeatState
                     if (!b1Unlocked)
                         image = new FlxSprite().loadGraphic(Paths.image('minigames/locked'));
                     else
-                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected]));
+                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected][0]));
                 case 1:
                     if (!b2Unlocked)
                         image = new FlxSprite().loadGraphic(Paths.image('minigames/locked'));
                     else
-                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected]));
+                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected][0]));
                 case 2:
                     if (!b3Unlocked)
                         image = new FlxSprite().loadGraphic(Paths.image('minigames/locked'));
                     else
-                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected]));
+                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected][0]));
                 case 3:
                     if (!b4Unlocked)
                         image = new FlxSprite().loadGraphic(Paths.image('minigames/locked'));
                     else
-                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected]));
+                        image = new FlxSprite().loadGraphic(Paths.image('minigames/boss/' + boss[curSelected][0]));
             }
             image.screenCenter();
             add(image);
         }
-        else if (isC)
+        if (isC)
         {
             remove(image);
             switch (curSelected)
@@ -191,11 +265,30 @@ class MinigameState extends MusicBeatState
                     if (!ch1Unlocked)
                         image = new FlxSprite().loadGraphic(Paths.image('minigames/locked'));
                     else
-                        image = new FlxSprite().loadGraphic(Paths.image('minigames/challenge/' + challenge[curSelected]));
+                        image = new FlxSprite().loadGraphic(Paths.image('minigames/challenge/' + challenge[curSelected][0]));
+                case 1:
+                    if (!ch2Unlocked)
+                        image = new FlxSprite().loadGraphic(Paths.image('minigames/locked'));
+                    else
+                        image = new FlxSprite().loadGraphic(Paths.image('minigames/challenge/' + challenge[curSelected][0]));
             }
-            image = new FlxSprite().loadGraphic(Paths.image('minigames/challenge/' + challenge[curSelected]));
             image.screenCenter();
             add(image);
         }
+    }
+
+    function updateText():Void
+    {
+        remove(descText);
+
+        if (isB)
+            descText = new FlxText(150, 650, 980, boss[curSelected][1], 32);
+        if (isC)
+            descText = new FlxText(150, 650, 980, challenge[curSelected][1], 32);
+
+        descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        descText.scrollFactor.set();
+        descText.borderSize = 2.4;
+        add(descText);
     }
 }

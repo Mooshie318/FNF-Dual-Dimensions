@@ -254,12 +254,28 @@ class GuessState extends MusicBeatState
     {
         if (codeBox.text == '7391203')
         {
+            // Dynamic(?) menu music
+            TitleState.piano.fadeOut(0.5, 0);
+            TitleState.synth.fadeOut(0.5, 0);
+            TitleState.guitar.fadeOut(0.5, 0);
+            TitleState.bass.fadeOut(0.5, 0);
+
             PlayState.isStoryMode = true;
-
             PlayState.storyDifficulty = 1;
-
             PlayState.SONG = Song.loadFromJson('7391203', '7391203');
+            LoadingState.loadAndSwitchState(new PlayState(), true);
+        }
+        if (codeBox.text == '4-21-1-12')
+        {
+            // Dynamic(?) menu music
+            TitleState.piano.fadeOut(0.5, 0);
+            TitleState.synth.fadeOut(0.5, 0);
+            TitleState.guitar.fadeOut(0.5, 0);
+            TitleState.bass.fadeOut(0.5, 0);
 
+            PlayState.isStoryMode = true;
+            PlayState.storyDifficulty = 1;
+            PlayState.SONG = Song.loadFromJson('dual-dimensions-hard', 'dual-dimensions');
             LoadingState.loadAndSwitchState(new PlayState(), true);
         }
     }

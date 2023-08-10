@@ -50,6 +50,13 @@ class TitleState extends MusicBeatState
 
 	var wackyImage:FlxSprite;
 
+	// Dynamic(?) menu music
+	public static var piano:FlxSound;
+	public static var synth:FlxSound;
+	public static var guitar:FlxSound;
+	public static var bass:FlxSound;
+	public static var drums:FlxSound;
+
 	override public function create():Void
 	{
 		#if polymod
@@ -126,7 +133,6 @@ class TitleState extends MusicBeatState
 	}
 
 	var logoBl:FlxSprite;
-	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
 
@@ -146,9 +152,33 @@ class TitleState extends MusicBeatState
 			transIn = FlxTransitionableState.defaultTransIn;
 			transOut = FlxTransitionableState.defaultTransOut;
 
-			FlxG.sound.playMusic(Paths.music('menu'), 0);
+			// Dynamic(?) menu music
+			piano = new FlxSound().loadEmbedded(Paths.music('menu piano'), true);
+			synth = new FlxSound().loadEmbedded(Paths.music('menu synth'), true);
+			guitar = new FlxSound().loadEmbedded(Paths.music('menu guitar'), true);
+			bass = new FlxSound().loadEmbedded(Paths.music('menu bass'), true);
+			drums = new FlxSound().loadEmbedded(Paths.music('menu drums'), true);
+
+			piano.volume = 0;
+			synth.volume = 0;
+			guitar.volume = 0;
+			bass.volume = 0;
+
+			piano.play();
+			synth.play();
+			guitar.play();
+			bass.play();
+
+			FlxG.sound.playMusic(Paths.music('menu drums'), 0);
+
+			piano.time = FlxG.sound.music.time;
+			synth.time = FlxG.sound.music.time;
+			guitar.time = FlxG.sound.music.time;
+			bass.time = FlxG.sound.music.time;
 
 			FlxG.sound.music.fadeIn(4, 0, 0.7);
+			piano.fadeIn(4, 0, 0.7);
+			synth.fadeIn(4, 0, 0.7);
 		}
 
 		// Conductor.changeBPM(102);
@@ -158,19 +188,13 @@ class TitleState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl = new FlxSprite(-150, 25);
+		logoBl.frames = Paths.getSparrowAtlas('FNM Logo');
 		logoBl.antialiasing = true;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
+		logoBl.screenCenter(X);
+		logoBl.animation.addByPrefix('bump', 'FNM logo', 24);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
-
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
-		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		gfDance.antialiasing = true;
-		add(gfDance);
 		add(logoBl);
 
 		titleText = new FlxSprite(120, FlxG.height * 0.8);
@@ -196,8 +220,6 @@ class TitleState extends MusicBeatState
 		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er", true);
 		credTextShit.screenCenter();
 
-		// credTextShit.alignment = CENTER;
-
 		credTextShit.visible = false;
 
 		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
@@ -208,6 +230,11 @@ class TitleState extends MusicBeatState
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = true;
 
+		var altTxt:FlxText = new FlxText(FlxG.width - 206, FlxG.height - 24, 0, "ALT + R to reset music", 12);
+		altTxt.scrollFactor.set();
+		altTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(altTxt);
+
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
 		FlxG.mouse.visible = false;
@@ -216,8 +243,6 @@ class TitleState extends MusicBeatState
 			skipIntro();
 		else
 			initialized = true;
-
-		// credGroup.add(credTextShit);
 	}
 
 	function getIntroTextShit():Array<Array<String>>
@@ -240,11 +265,24 @@ class TitleState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music != null)
+		{
 			Conductor.songPosition = FlxG.sound.music.time;
+		}
 
 		if (FlxG.keys.justPressed.F)
 		{
 			FlxG.fullscreen = !FlxG.fullscreen;
+		}
+
+		if (FlxG.keys.pressed.ALT)
+		{
+			if (FlxG.keys.justPressed.R)
+			{
+				TitleState.piano.time = FlxG.sound.music.time;
+				TitleState.synth.time = FlxG.sound.music.time;
+				TitleState.guitar.time = FlxG.sound.music.time;
+				TitleState.bass.time = FlxG.sound.music.time;
+			}
 		}
 
 		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
@@ -363,11 +401,6 @@ class TitleState extends MusicBeatState
 
 		logoBl.animation.play('bump');
 		danceLeft = !danceLeft;
-
-		if (danceLeft)
-			gfDance.animation.play('danceRight');
-		else
-			gfDance.animation.play('danceLeft');
 
 		FlxG.log.add(curBeat);
 

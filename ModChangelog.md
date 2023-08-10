@@ -6,6 +6,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.1 - The Music Update Part 1] - 2023-08-10
+### Added
+- 1 New secret song
+- 1 New challenge song
+### Changed
+- The mod name
+- The name on the top of the window
+- Remastered the songs of chapters 1-5
+- Menu music now slightly changes depending on the menu (Main menu, Story mode, Options, Minigames)
+- A lot of the dialogue
+- Story menu
+- BF Opponent sprites
+- Changed Opponent BF's voice in second secret song
+- Chapter 2 icons
+- Stickletta icon
+### Fixed
+- Resetting score now works on all songs
+### Removed
+- The FLA files, find them on the google drive
+- The files for non-hard difficulties
+### Note
+- The Music Update Part 2 will remaster music from Chapter 6 through Bonus 1
+
 ## [1.4.0] - 2023-03-25
 ### Added
 - 33 new songs: 32 story mode, 1 challenge
@@ -13,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 1 chapter of part 3
 - New menu music
 - New minigames menu
-- A literal boss fight (Pretty bad and a little buggy, will fix in next update)
+- A literal boss fight (Pretty bad and a little buggy, will fix in next update maybe (I didn't))
 - Some cool things to All-Around-You
 - The moosanity cutscene
 - 2 new achievements

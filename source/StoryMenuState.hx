@@ -169,7 +169,7 @@ class StoryMenuState extends MusicBeatState
 
 		if (!FlxG.sound.music.playing)
 		{
-			FlxG.sound.playMusic(Paths.music('menu'));
+			FlxG.sound.playMusic(Paths.music('menu drums'));
 		}
 		for (i in 0...weekData.length)
 		{
@@ -288,11 +288,38 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 165");
 
+		var altTxt:FlxText = new FlxText(FlxG.width - 210, FlxG.height - 41, 0, "ALT + R to reset music", 12);
+		altTxt.scrollFactor.set();
+		altTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(altTxt);
+		
+		var ctrlTxt:FlxText = new FlxText(FlxG.width - 215, FlxG.height - 24, 0, "CTRL + R to reset score", 12);
+		ctrlTxt.scrollFactor.set();
+		ctrlTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(ctrlTxt);
+
+		// Dynamic(?) menu music
+		TitleState.piano.fadeIn(0.5, TitleState.piano.volume, 0.7);
+		TitleState.synth.fadeIn(0.5, TitleState.synth.volume, 0.7);
+		TitleState.guitar.fadeOut(0.5, 0);
+		TitleState.bass.fadeIn(0.5, TitleState.bass.volume, 0.7);
+
 		super.create();
 	}
 
 	override function update(elapsed:Float)
 	{
+		if (FlxG.keys.pressed.ALT)
+		{
+			if (FlxG.keys.justPressed.R)
+			{
+				TitleState.piano.time = FlxG.sound.music.time;
+				TitleState.synth.time = FlxG.sound.music.time;
+				TitleState.guitar.time = FlxG.sound.music.time;
+				TitleState.bass.time = FlxG.sound.music.time;
+			}
+		}
+
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));
 
 		scoreText.text = "WEEK SCORE:" + lerpScore;
@@ -376,6 +403,12 @@ class StoryMenuState extends MusicBeatState
 
 	function selectWeek()
 	{
+		// Dynamic(?) menu music
+		TitleState.piano.fadeOut(0.5, 0);
+		TitleState.synth.fadeOut(0.5, 0);
+		TitleState.guitar.fadeOut(0.5, 0);
+		TitleState.bass.fadeOut(0.5, 0);
+
 		if (weekUnlocked[curWeek])
 		{
 			if (stopspamming == false)

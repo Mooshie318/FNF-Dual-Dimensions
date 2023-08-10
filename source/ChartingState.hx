@@ -495,6 +495,9 @@ class ChartingState extends MusicBeatState
 	{
 		curStep = recalculateSteps();
 
+		if (!FlxG.mouse.visible)
+			FlxG.mouse.visible = true;
+
 		if (FlxG.keys.justPressed.ALT && UI_box.selected_tab == 0)
 		{
 			writingNotes = !writingNotes;
@@ -1044,10 +1047,30 @@ class ChartingState extends MusicBeatState
 			noteType = 6;
 		if (FlxG.keys.pressed.B) // ice
 			noteType = 7;
+		
+		// (2023-6-27)
+		// I'm porting to codename engine when it's out of beta
+		#if !debug
 		if (n != null)
-			_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength, n.noteType]);
+		{
+			if (noteType < 1)
+				_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength]);
+			else
+				_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength, n.noteType]);
+		}
 		else
-			_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus, noteType]);
+		{
+			if (noteType < 1)
+				_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus]);
+			else
+				_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus, noteType]);
+		}
+		#elseif debug
+		if (n != null)
+			_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength]);
+		else
+			_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus]);
+		#end
 
 		var thingy = _song.notes[curSection].sectionNotes[_song.notes[curSection].sectionNotes.length - 1];
 

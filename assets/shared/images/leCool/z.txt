@@ -14,13 +14,13 @@ Slimy:
 	Fact: He's the least hated by Fire.
 
 Baby James:
-	Fact: He sucks at music.
+	Fact: He (No longer) sucks at music.
 
 Sooubway James:
-	Fact: He also sucks at music.
+	Fact: He also (No longer) sucks at music.
 
 Ghost:
-	Fact: He has anger issues on Wednesday at 5:37pm to 6:00pm because he died at 5:37pm and became a ghost at 6:00pm.
+	Fact: He is mad on Wednesday at 5:37pm to 6:00pm because he died at 5:37pm and became a ghost at 6:00pm.
 
 Sheary:
 	Fact: She is very happy on Wednesday at 5:37pm to 6:00pm because she hates Ghost. 

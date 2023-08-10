@@ -96,6 +96,9 @@ class KadeEngineData
 		if (FlxG.save.data.beatRalphBoss == null)
 			FlxG.save.data.beatRalphBoss = false;
 
+		if (FlxG.save.data.beatSaWeek == null)
+			FlxG.save.data.beatSaWeek = false;
+
 		Conductor.recalculateTimings();
 		PlayerSettings.player1.controls.loadKeyBinds();
 		KeyBinds.keyCheck();

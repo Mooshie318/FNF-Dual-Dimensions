@@ -94,6 +94,17 @@ class OptionsMenu extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
+		var altTxt:FlxText = new FlxText(FlxG.width - 206, FlxG.height - 24, 0, "ALT + R to reset music", 12);
+		altTxt.scrollFactor.set();
+		altTxt.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(altTxt);
+
+		// Dynamic(?) menu music
+		TitleState.piano.fadeOut(0.5, 0);
+		TitleState.synth.fadeOut(0.5, 0);
+		TitleState.guitar.fadeOut(0.5, 0);
+		TitleState.bass.fadeOut(0.5, 0);
+
 		super.create();
 	}
 
@@ -109,6 +120,17 @@ class OptionsMenu extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if (FlxG.keys.pressed.ALT)
+		{
+			if (FlxG.keys.justPressed.R)
+			{
+				TitleState.piano.time = FlxG.sound.music.time;
+				TitleState.synth.time = FlxG.sound.music.time;
+				TitleState.guitar.time = FlxG.sound.music.time;
+				TitleState.bass.time = FlxG.sound.music.time;
+			}
+		}
 
 		if (acceptInput)
 		{

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="FNM Logo.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="FNM logo0000" x="0" y="0" width="804" height="414" frameX="-30" frameY="-15" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0001" x="814" y="0" width="864" height="445"/>
+	<SubTexture name="FNM logo0002" x="814" y="0" width="864" height="445"/>
+	<SubTexture name="FNM logo0003" x="0" y="455" width="850" height="438" frameX="-7" frameY="-3" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0004" x="0" y="455" width="850" height="438" frameX="-7" frameY="-3" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0005" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0006" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0007" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0008" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0009" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0010" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0011" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0012" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0013" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+	<SubTexture name="FNM logo0014" x="860" y="455" width="828" height="427" frameX="-18" frameY="-9" frameWidth="864" frameHeight="445"/>
+</TextureAtlas>

@@ -4,6 +4,7 @@ bf-car
 bf-dodge
 bf-gf
 bf-opponent
+bf-flipped
 bf-battle
 bf-bDiagonal
 bf-bDiagonal-f
@@ -47,6 +48,7 @@ sticklettabow
 swordletto
 stickletto-i-w
 stickletto-i-w-f
+stickletto-dd
 striker
 striker-fr
 yellow
@@ -70,8 +72,12 @@ stickletta-f
 stickletta-c-f
 stickletta-b
 stickletta-gf
+stickletta-m
 sticklettabow-b
 swordletto-b
 bofen
 grilfen
 ralph
+
+maroon
+blue
