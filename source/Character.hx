@@ -70,11 +70,20 @@ class Character extends FlxSprite
 			case 'gf-airship':
 				tex = Paths.getSparrowAtlas('airship/gf', 'shared');
 				frames = tex;
-				animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceLeft',  'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 				animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByPrefix('singLEFT',    'GF left note',    24, false);
+				animation.addByPrefix('singRIGHT',   'GF Right Note',   24, false);
+				animation.addByPrefix('singUP',      'GF Up Note',      24, false);
+				animation.addByPrefix('singDOWN',    'GF Down Note',    24, false);
 
 				addOffset('danceLeft');
 				addOffset('danceRight');
+
+				addOffset("singUP",    -9, 11);
+				addOffset("singRIGHT", -2, -12);
+				addOffset("singLEFT",  0, -10);
+				addOffset("singDOWN",  -12, -9);
 
 				iconColor = 'FFD5007C';
 
@@ -281,6 +290,7 @@ class Character extends FlxSprite
 
 				animation.addByPrefix('hit', 'BF hit', 24, false);
 				animation.addByPrefix('dodge', 'boyfriend dodge', 24, false);
+				animation.addByPrefix('preattack', 'bf pre attack', 24, false);
 				animation.addByPrefix('attack', 'boyfriend attack', 24, false);
 
 				animation.addByPrefix('firstDeath', "BF dies", 24, false);
@@ -305,6 +315,7 @@ class Character extends FlxSprite
 				addOffset('scared', -4);
 				addOffset('hit', 30, 25);
 				addOffset('dodge', 0, -8);
+				addOffset('preattack', -25, -37);
 				addOffset('attack', 300, 274);
 				addOffset('frozen', 68, 171);
 
@@ -332,6 +343,27 @@ class Character extends FlxSprite
 				iconColor = 'FF009BFF';
 
 				playAnim('idle');
+
+			case 'bf-opponent-f':
+				var tex = Paths.getSparrowAtlas('BF Opponent','shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singLEFT', 'right', 24, false);
+				animation.addByPrefix('singRIGHT', 'left', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 3, 30);
+				addOffset("singRIGHT", -2, -2);
+				addOffset("singLEFT", 5, 4);
+				addOffset("singDOWN", -2, -50);
+
+				iconColor = 'FF009BFF';
+
+				playAnim('idle');
+
+				flipX = true;
 
 			case 'bf-flipped':
 				var tex = Paths.getSparrowAtlas('BF flipped','shared');
@@ -684,16 +716,96 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'gooey down', 24, false);
 				animation.addByPrefix('singLEFT', 'gooey left', 24, false);
 				animation.addByPrefix('singRIGHT', 'gooey right', 24, false);
-				animation.addByPrefix('getem', 'gooey get em', 24, false);
-				animation.addByPrefix('sacrifice', 'gooey sacrifice', 24, false);
+				animation.addByPrefix('attack', 'attack 5', 24, false);
 
 				addOffset('idle');
 				addOffset("singUP", 173, -7);
 				addOffset("singRIGHT", 0, -79);
 				addOffset("singLEFT", 230, -34);
 				addOffset("singDOWN", 0, -12);
-				addOffset("getem", 0, 49);
-				addOffset("sacrifice", 0, 58);
+				addOffset("attack", 0, 30);
+
+				iconColor = 'FF936122';
+
+				playAnim('idle');
+
+			case 'gooey-4':
+				frames = Paths.getSparrowAtlas('airship/gooey 4', 'shared');
+
+				animation.addByPrefix('idle', 'gooey idle', 24, false);
+				animation.addByPrefix('singUP', 'gooey up', 24, false);
+				animation.addByPrefix('singDOWN', 'gooey down', 24, false);
+				animation.addByPrefix('singLEFT', 'gooey left', 24, false);
+				animation.addByPrefix('singRIGHT', 'gooey right', 24, false);
+				animation.addByPrefix('attack', 'attack 4', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 54);
+				addOffset("singRIGHT", -2, -5);
+				addOffset("singLEFT", 193, -6);
+				addOffset("singDOWN", 0, -32);
+				addOffset("attack", -4, 36);
+
+				iconColor = 'FF936122';
+
+				playAnim('idle');
+
+			case 'gooey-3':
+				frames = Paths.getSparrowAtlas('airship/gooey 3', 'shared');
+
+				animation.addByPrefix('idle', 'gooey idle', 24, false);
+				animation.addByPrefix('singUP', 'gooey up', 24, false);
+				animation.addByPrefix('singDOWN', 'gooey down', 24, false);
+				animation.addByPrefix('singLEFT', 'gooey left', 24, false);
+				animation.addByPrefix('singRIGHT', 'gooey right', 24, false);
+				animation.addByPrefix('attack', 'attack 3', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 78);
+				addOffset("singRIGHT", 0, 3);
+				addOffset("singLEFT", 160, 2);
+				addOffset("singDOWN", -4, -16);
+				addOffset("attack", -2, 34);
+
+				iconColor = 'FF936122';
+
+				playAnim('idle');
+		
+			case 'gooey-2':
+				frames = Paths.getSparrowAtlas('airship/gooey 2', 'shared');
+
+				animation.addByPrefix('idle', 'gooey idle', 24, false);
+				animation.addByPrefix('singUP', 'gooey up', 24, false);
+				animation.addByPrefix('singDOWN', 'gooey down', 24, false);
+				animation.addByPrefix('singLEFT', 'gooey left', 24, false);
+				animation.addByPrefix('singRIGHT', 'gooey right', 24, false);
+				animation.addByPrefix('attack', 'attack 2', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 54);
+				addOffset("singRIGHT", 0, 12);
+				addOffset("singLEFT", 30, -3);
+				addOffset("singDOWN", 0, -25);
+				addOffset("attack", -2, 30);
+
+				iconColor = 'FF936122';
+
+				playAnim('idle');
+			
+			case 'gooey-1':
+				frames = Paths.getSparrowAtlas('airship/gooey 1', 'shared');
+
+				animation.addByPrefix('idle', 'gooey idle', 24, false);
+				animation.addByPrefix('singUP', 'gooey up', 24, false);
+				animation.addByPrefix('singDOWN', 'gooey down', 24, false);
+				animation.addByPrefix('singLEFT', 'gooey left', 24, false);
+				animation.addByPrefix('singRIGHT', 'gooey right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 3, 17);
+				addOffset("singRIGHT", -10, 4);
+				addOffset("singLEFT", 30, 6);
+				addOffset("singDOWN", 0, -49);
 
 				iconColor = 'FF936122';
 

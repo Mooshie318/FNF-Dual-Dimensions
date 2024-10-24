@@ -32,7 +32,7 @@ Cluckington:
 
 Clooshie:
 	Fact: He was a mistake.
-	Fact: Supermooshie and him were testing a cloning machine that he (Supermooshie) made
+	Fact: Supermooshie and Cluckington were testing a cloning machine that he (Supermooshie) made
 		  and it cloned a combination of the 2 instead of cloning the 2.
 
 Trooper:
@@ -40,9 +40,6 @@ Trooper:
 
 Gooey:
 	Fact: He hates Bf and Trooper.
-
-Mooshie:
-	Fact: He thinks Supermooshie stole his name.
 
 Supermooshie:
 	Fact: He hates Bf.
@@ -60,6 +57,7 @@ Stickletta:
 
 Clonerman:
 	Fact: Him, Yellow dude, and Red dude are brothers.
+	Fact: They're also in a group called "The Primary Colors"
 
 Sticklettabow:
 	Fact: He trusts people too quickly.

@@ -101,6 +101,15 @@ class ExtrasState extends MusicBeatState
             FlxG.switchState(new MainMenuState());
         }
 
+        // if (FlxG.keys.justPressed.G)
+        // {
+        //     var right:FNMNotification = new FNMNotification(1, "Song unlocked!", "Check minigames");
+        //     add(right);
+
+        //     var left:FNMNotification = new FNMNotification(2, "New achievement!", "Ralph");
+        //     add(left);
+        // }
+
         FlxG.mouse.visible = true;
 
 		super.update(elapsed);

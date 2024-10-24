@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="poof cloud.png">
+	<!-- Created with Adobe Animate version 24.0.3.19 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="poof cloud0000" x="0" y="0" width="341" height="338"/>
+	<SubTexture name="poof cloud0001" x="0" y="0" width="341" height="338"/>
+	<SubTexture name="poof cloud0002" x="351" y="0" width="302" height="291" frameX="-20" frameY="-20" frameWidth="341" frameHeight="338"/>
+	<SubTexture name="poof cloud0003" x="351" y="0" width="302" height="291" frameX="-20" frameY="-20" frameWidth="341" frameHeight="338"/>
+	<SubTexture name="poof cloud0004" x="663" y="0" width="160" height="148" frameX="-90" frameY="-91" frameWidth="341" frameHeight="338"/>
+	<SubTexture name="poof cloud0005" x="663" y="0" width="160" height="148" frameX="-90" frameY="-91" frameWidth="341" frameHeight="338"/>
+	<SubTexture name="poof cloud0006" x="833" y="0" width="45" height="45" frameX="-147" frameY="-144" frameWidth="341" frameHeight="338"/>
+	<SubTexture name="poof cloud0007" x="833" y="0" width="45" height="45" frameX="-147" frameY="-144" frameWidth="341" frameHeight="338"/>
+</TextureAtlas>

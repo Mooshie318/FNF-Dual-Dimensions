@@ -23,15 +23,16 @@ class AchievementsState extends MusicBeatState
 
 	// name, description
 	var challenges:Array<Dynamic> = [
-		['View achievements',						'View achievements on Gamejolt'],
-        ['Secret', 									'Find and beat one of the secret songs'],
-		['Secret 2', 								'Find and beat one of the secret songs'],
-		['Keeping it 100', 							"FC a song with all sicks (MFC) (can't be tutorial)"],
-		['Freezeless run', 							'Beat a song without freezing'],
-		['Is it cold in here? Or is it just me?', 	"Freeze for the maximum time (3 seconds) and survive all while it's your turn"],
-		['Battle master', 							'Beat all battle songs'],
-		['Hit or Miss',                             'Beat the first challenge minigame'],
-		['Ralph',                                   'Beat the 4th boss minigame']
+		['View achievements',		'View achievements on Gamejolt'],
+        ['Secret', 					'Find and beat one of the secret songs'],
+		['Secret 2', 				'Find and beat one of the secret songs'],
+		['Dual dimensions',         'Find and beat one of the secret songs'],
+		['Keeping it 100', 			"FC a song with all sicks (MFC) (can't be tutorial)"],
+		// ['Freezeless run', 			'Beat a song without freezing'],
+		// ['Is it cold in here?', 	"Freeze for the maximum time (3 seconds) and survive"],
+		['Battle master', 			'Beat all battle songs'],
+		['Hit or Miss',         	'Beat the first challenge minigame'],
+		['Ralph',               	'Beat the 4th boss minigame']
     ];
 
 	var descText:FlxText;

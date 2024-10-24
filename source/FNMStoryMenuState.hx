@@ -14,6 +14,8 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
 import flixel.FlxCamera;
+import flixel.addons.ui.FlxUICheckBox;
+import flixel.addons.ui.FlxUIButton;
 
 #if windows
 import Discord.DiscordClient;
@@ -35,11 +37,8 @@ class FNMStoryMenuState extends MusicBeatState
 		['Cluck', 'Clooshie', 'Fight-For-Life'],
 		['Trooper', 'Shell', 'Attack'],
 		['Gooey', 'Sacrifice', 'Squash'],
-		['moo', 'mooshie', 'showdown'],
-		['red', 'light-speed', 'moo-storm', 'moosanity', 'Moovenge'],
-		['Plane', 'Air-Battle', 'Thunder-Storm'],
-		['lemons', 'freezing', 'burning', 'slimy', 'slime-rematch'],
-		['all-around-you', 'alan'],
+		['red', 'light-speed', 'moo-storm'],
+		['all-around-you'],
 		['sticks-n-stones', 'branching-out', 'logging-in'],
 		['stickletta', 'hot-pink', 'friends'],
 		['duplication', 'darkness'],
@@ -55,7 +54,6 @@ class FNMStoryMenuState extends MusicBeatState
 
 	var curDifficulty:Int = 2;
 
-	// comment below applys to this as well
 	// Update (2022-11-27): I found a better way
 	public static var weekUnlocked:Array<Bool> = [];
 
@@ -68,10 +66,7 @@ class FNMStoryMenuState extends MusicBeatState
 		"Cluck team",
 		"Flying simulator ft. Trooper",
 		"Airship",
-		"Mooshie",
 		"Moo Land",
-		"Plane battle",
-		"Slime crew rematch",
 		"Bonus chapter",
 		"Sticks and Squares",
 		"Stickletta",
@@ -86,32 +81,54 @@ class FNMStoryMenuState extends MusicBeatState
 		"Ralph Ralph Ralph"
 	];
 
-	// Based on hard mode (+ means more difficult and - means less difficult)
+	// (+ means more difficult and - means less difficult)
 	var weekDifficulty:Array<String> = [
-		"Super easy",    // Tutorial
-		"Easy",          // C1  - Slime crew
-		"Moderate",      // C2  - James
-		"Moderate +",    // C3  - Ghost
-		"Challenging",   // C4  - Sheary
-		"Challenging +", // C5  - Cluckington & Clooshie
-		"Hard -",        // C6  - Trooper
-		"Hard",          // C7  - Gooey
-		"Hard +",        // C8  - Mooshie
-		"Super hard",    // C9  - Supermooshie
-		"Super hard",    // C10 - Supermooshie & Sheary
-		"Challenging",   // C11 - Slime crew
-		"Hard +",        // B1  - All in Pt1 + Sticko
-		"Challenging +", // C12 - Sticko
-		"Hard -",        // C13 - Stickletta
-		"Moderate +",    // C14 - Clonerman
-		"Challenging -", // C15 - Sticklettabow & Swordletto
-		"Hard -",        // C16 - Infecto & Striker
-		"Hard",          // C17 - Yellow dude
-		"Hard -",        // C18 - Red dude
-		"Hard +",        // C19 - Stiburn
-		"Super hard",    // C20 - Crocker
-		"Super hard",    // B2  - All in Pt2
-		"Hard -"         // C21 - Ralph
+		"Super easy",    // 1-0  - Tutorial
+		"Easy",          // 1-1  - Slime crew
+		"Moderate",      // 1-2  - James
+		"Moderate +",    // 1-3  - Ghost
+		"Challenging",   // 1-4  - Sheary
+		"Challenging +", // 1-5  - Cluckington & Clooshie
+		"Hard",          // 1-6  - Trooper
+		"Hard +",        // 1-7  - Gooey
+		"Super hard",    // 1-8  - Supermooshie
+		"Hard +",        // B-1  - All in Part 1
+		"Challenging +", // 2-1  - Sticko
+		"Hard -",        // 2-2  - Stickletta
+		"Moderate +",    // 2-3  - Clonerman
+		"Challenging -", // 2-4  - Sticklettabow & Swordletto
+		"Hard -",        // 2-5  - Infecto & Striker
+		"Hard",          // 2-6  - Yellow dude
+		"Hard -",        // 2-7  - Red dude
+		"Hard +",        // 2-8  - Stiburn
+		"Super hard",    // 2-9  - Crocker
+		"Super hard",    // B-2  - All in Part 2
+		"Hard +"         // 3-1  - Ralph
+	];
+
+	// Until music updates are done
+	var isOld:Array<Bool> = [
+		false,  // 1-0  - Tutorial
+		false,  // 1-1  - Slime crew
+		false,  // 1-2  - James
+		false,  // 1-3  - Ghost
+		false,  // 1-4  - Sheary
+		false,  // 1-5  - Cluckington & Clooshie
+		false,  // 1-6  - Trooper
+		false,  // 1-7  - Gooey
+		false,  // 1-8  - Supermooshie
+		true,   // B-1  - All in Pt1
+		true,   // 2-1  - Sticko
+		true,   // 2-2  - Stickletta
+		true,   // 2-3  - Clonerman
+		true,   // 2-4  - Sticklettabow & Swordletto
+		true,   // 2-5  - Infecto & Striker
+		true,   // 2-6  - Yellow dude
+		true,   // 2-7  - Red dude
+		true,   // 2-8  - Stiburn
+		true,   // 2-9  - Crocker
+		true,   // B-2  - All in Pt2
+		false,  // 3-1  - Ralph
 	];
 
 	var txtWeekTitle:FlxText;
@@ -131,6 +148,11 @@ class FNMStoryMenuState extends MusicBeatState
 
 	override function create()
 	{
+		TitleState.piano.time = FlxG.sound.music.time;
+		TitleState.synth.time = FlxG.sound.music.time;
+		TitleState.guitar.time = FlxG.sound.music.time;
+		TitleState.bass.time = FlxG.sound.music.time;
+
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Story Mode Menu", null);
@@ -209,18 +231,19 @@ class FNMStoryMenuState extends MusicBeatState
 
 			grpWeekText.add(weekThing);
 
-			if (i == 13)
-				k = 3;
+			if (i == 10)
+				k = 0; // Align 2-1 with 1-0
 
-			if (i >= 13 && i < 23)
+			if (i >= 10 && i < 20) // Part 2
 				weekThing.x += ((weekThing.width + 100) * k);
-			else if (i >= 23)
+			else if (i >= 20) // Part 3
 				weekThing.x += ((weekThing.width + 100) * (i - 10));
-			else
+			else // Part 1
 				weekThing.x += ((weekThing.width + 100) * i);
 			weekThing.antialiasing = true;
 
-			if (i >= 13 && i < 23)
+			// Put Part 2 above Part 1
+			if (i >= 10 && i < 20)
 				weekThing.y -= weekThing.height + 30;
 
 			k += 1;
@@ -289,7 +312,7 @@ class FNMStoryMenuState extends MusicBeatState
 
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));
 
-		scoreText.text = "WEEK SCORE:" + lerpScore;
+		scoreText.text = "LEVEL SCORE:" + lerpScore;
 
 		txtWeekTitle.text = weekNames[curWeek].toUpperCase();
 		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);
@@ -308,9 +331,9 @@ class FNMStoryMenuState extends MusicBeatState
 			{
 				if (controls.LEFT_P)
 				{
-					if (curWeek == 23)
+					if (curWeek == 20)
 						changeWeek(-11, false, true);
-					else if (curWeek == 13)
+					else if (curWeek == 10)
 						changeWeek(9);
 					else
 						changeWeek(-1);
@@ -318,9 +341,9 @@ class FNMStoryMenuState extends MusicBeatState
 
 				if (controls.RIGHT_P)
 				{
-					if (curWeek == 12)
+					if (curWeek == 9)
 						changeWeek(11, false, true);
-					else if (curWeek == 22)
+					else if (curWeek == 19)
 						changeWeek(-9);
 					else
 						changeWeek(1);
@@ -328,13 +351,13 @@ class FNMStoryMenuState extends MusicBeatState
 
 				if (controls.UP_P)
 				{
-					if (curWeek >= 3 && curWeek < 13)
+					if (curWeek >= 0 && curWeek < 10)
 						changeWeek(10, true);
 				}
 
 				if (controls.DOWN_P)
 				{
-					if (curWeek >= 13 && curWeek < 23)
+					if (curWeek >= 10 && curWeek < 20)
 						changeWeek(-10, true);
 				}
 			}
@@ -348,7 +371,10 @@ class FNMStoryMenuState extends MusicBeatState
 
 			if (controls.ACCEPT)
 			{
-				selectWeek();
+				if (!isOld[curWeek] || FlxG.save.data.storyShowWarningAgain == false)
+					selectWeek();
+				else
+					oldWarning(false);
 			}
 		}
 
@@ -404,19 +430,7 @@ class FNMStoryMenuState extends MusicBeatState
 			var video:VideoHandlerMP4 = new VideoHandlerMP4();
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				if (curWeek == 9)
-				{
-					if (FlxG.save.data.cutscenes)
-					{
-						video.playMP4(Paths.video('red'), new PlayState());
-						#if windows
-						DiscordClient.changePresence("In cutscene", null, null, true);
-						#end
-					}
-					else
-						LoadingState.loadAndSwitchState(new PlayState());
-				}
-				else if (curWeek == 5)
+				if (curWeek == 5)
 				{
 					if (FlxG.save.data.cutscenes)
 					{
@@ -428,7 +442,7 @@ class FNMStoryMenuState extends MusicBeatState
 					else
 						LoadingState.loadAndSwitchState(new PlayState());
 				}
-				else if (curWeek == 12)
+				else if (curWeek == 9)
 				{
 					if (FlxG.save.data.cutscenes)
 					{
@@ -440,7 +454,7 @@ class FNMStoryMenuState extends MusicBeatState
 					else
 						LoadingState.loadAndSwitchState(new PlayState());
 				}
-				else if (curWeek == 16)
+				else if (curWeek == 13)
 				{
 					if (FlxG.save.data.cutscenes)
 					{
@@ -452,7 +466,7 @@ class FNMStoryMenuState extends MusicBeatState
 					else
 						LoadingState.loadAndSwitchState(new PlayState());
 				}
-				else if (curWeek == 17)
+				else if (curWeek == 14)
 				{
 					if (FlxG.save.data.cutscenes)
 					{
@@ -464,7 +478,7 @@ class FNMStoryMenuState extends MusicBeatState
 					else
 						LoadingState.loadAndSwitchState(new PlayState());
 				}
-				else if (curWeek == 21)
+				else if (curWeek == 18)
 				{
 					if (FlxG.save.data.cutscenes)
 					{
@@ -476,7 +490,7 @@ class FNMStoryMenuState extends MusicBeatState
 					else
 						LoadingState.loadAndSwitchState(new PlayState());
 				}
-				else if (curWeek == 23)
+				else if (curWeek == 20)
 				{
 					if (FlxG.save.data.cutscenes)
 						{
@@ -494,6 +508,53 @@ class FNMStoryMenuState extends MusicBeatState
 				}
 			});
 		}
+	}
+
+	var warningText:FlxText;
+	var continueButton:FlxUIButton;
+	var backButton:FlxUIButton;
+	var showAgainCheck:FlxUICheckBox;
+	function oldWarning(scrapped:Bool = false)
+	{
+		FlxG.sound.play(Paths.sound('notification'));
+
+		warningText = new FlxText(50, 550, 0, "WARNING: This is old and garbage. Are you sure you want to continue?", 12);
+		if (scrapped)
+			warningText.text = "WARNING: This has been scrapped. Are you sure you want to continue?";
+		warningText.scrollFactor.set();
+		warningText.setFormat("VCR OSD Mono", 26, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		warningText.cameras = [camHUD];
+
+		continueButton = new FlxUIButton(530, 650, "Continue", selectWeek);
+		continueButton.resize(100, 50);
+		continueButton.setLabelFormat(null, 15, FlxColor.BLACK);
+		continueButton.cameras = [camHUD];
+
+		backButton = new FlxUIButton(650, 650, "Back", removeWarnUI);
+		backButton.resize(100, 50);
+		backButton.setLabelFormat(null, 15, FlxColor.BLACK);
+		backButton.cameras = [camHUD];
+
+		showAgainCheck = new FlxUICheckBox(500, 600, null, null, "Don't show again", 200);
+		showAgainCheck.checked = false;
+		showAgainCheck.callback = function()
+		{
+			FlxG.save.data.storyShowWarningAgain = !FlxG.save.data.storyShowWarningAgain;
+		};
+		showAgainCheck.cameras = [camHUD];
+
+		add(warningText);
+		add(continueButton);
+		add(backButton);
+		add(showAgainCheck);
+	}
+
+	function removeWarnUI()
+	{
+		remove(warningText);
+		remove(continueButton);
+		remove(backButton);
+		remove(showAgainCheck);
 	}
 
 	var lerpScore:Int = 0;

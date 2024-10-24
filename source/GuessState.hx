@@ -274,7 +274,7 @@ class GuessState extends MusicBeatState
             TitleState.bass.fadeOut(0.5, 0);
 
             PlayState.isStoryMode = true;
-            PlayState.storyDifficulty = 1;
+            PlayState.storyDifficulty = 2;
             PlayState.SONG = Song.loadFromJson('dual-dimensions-hard', 'dual-dimensions');
             LoadingState.loadAndSwitchState(new PlayState(), true);
         }

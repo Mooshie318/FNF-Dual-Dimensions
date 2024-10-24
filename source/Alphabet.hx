@@ -10,6 +10,8 @@ import flixel.system.FlxSound;
 
 using StringTools;
 
+// I copied probably most if not all of this from psych engine
+
 /**
  * Loosley based on FlxTypeText lolol
  */

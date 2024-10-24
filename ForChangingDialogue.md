@@ -70,6 +70,6 @@
 
 :narrator: for narrator (all dia portraits won't be visible)
 
-:bg: for dialogue bg (ex. :bg:e (e is the path in diaImage/)
-:bgskip: same thing
+:bg: for dialogue bg no box (ex. :bg:e (e is the path in diaImage/)
+:bgskip: same thing but with box
 :hidebg: to remove the image

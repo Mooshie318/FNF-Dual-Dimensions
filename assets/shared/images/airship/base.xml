@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="base.png">
+	<!-- Created with Adobe Animate version 24.0.4.28 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="base0000" x="0" y="0" width="2116" height="792"/>
+	<SubTexture name="base_shoot0000" x="0" y="802" width="2116" height="802"/>
+	<SubTexture name="base_shoot0001" x="0" y="802" width="2116" height="802"/>
+	<SubTexture name="base_shoot0002" x="0" y="1614" width="2116" height="792" frameX="0" frameY="-10" frameWidth="2116" frameHeight="802"/>
+	<SubTexture name="base_shoot0003" x="0" y="1614" width="2116" height="792" frameX="0" frameY="-10" frameWidth="2116" frameHeight="802"/>
+	<SubTexture name="base_shoot0004" x="0" y="0" width="2116" height="792" frameX="0" frameY="-10" frameWidth="2116" frameHeight="792"/>
+	<SubTexture name="base_shoot0005" x="0" y="0" width="2116" height="792" frameX="0" frameY="-10" frameWidth="2116" frameHeight="792"/>
+</TextureAtlas>

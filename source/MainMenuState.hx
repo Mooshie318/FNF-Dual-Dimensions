@@ -4,6 +4,7 @@ import Controls.KeyboardScheme;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.FlxCamera;
 import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -42,7 +43,7 @@ class MainMenuState extends MusicBeatState
 
 	public static var kadeEngineVer:String = "1.4.2" + nightly;
 	public static var gameVer:String = "0.2.7.1";
-	public static var fnmVer:String = "1.4.1";
+	public static var fnmVer:String = "1.4.2";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -50,10 +51,56 @@ class MainMenuState extends MusicBeatState
 	var extrasButton:FlxUIButton;
 	var gjButton:FlxUIButton;
 
+	// DEBUG
+	var songButton:FlxUIButton; // Go to sendToSong() to change the song
+
 	var bg:FlxSprite;
+
+	private var camHUD:FlxCamera;
+	private var camTOP:FlxCamera;
+
+	// FNM Notifications + save data (Check KadeEngineData.hx)
+	var achievements:Array<String> = [
+		"Secret",
+		"Secret 2",
+		"Dual dimensions",
+		"Keeping it 100",
+		"Freezeless run",
+		"Is it cold in here?",
+		"Battle master",
+		"Hit or Miss",
+		"Ralph"
+	];
+
+	// 1 = Boss minigames
+	// 2 = Challenge minigames
+	var unlockables:Array<String> = [
+		"Gooey-Battle",
+		"Fire-Battle",
+		"Moo-Battle",
+		"Ralph boss",
+		"Hit-or-Miss",
+		"Dark-Purple"
+	];
+	var places:Array<Int> = [
+		1,
+		1,
+		1,
+		1,
+		2,
+		2
+	];
+
+	var notifYMod:Float = 0;  // If more than 1 notif is on screen on the left side
+	var notifYMod2:Float = 0; // If more than 1 notif is on screen on the right side
 
 	override function create()
 	{
+		TitleState.piano.time = FlxG.sound.music.time;
+		TitleState.synth.time = FlxG.sound.music.time;
+		TitleState.guitar.time = FlxG.sound.music.time;
+		TitleState.bass.time = FlxG.sound.music.time;
+
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
@@ -137,11 +184,77 @@ class MainMenuState extends MusicBeatState
 		add(extrasButton);
 		add(gjButton);
 
+		songButton = new FlxUIButton(590, 10, "Test\nsong", sendToSong);
+		songButton.resize(100, 50);
+		songButton.setLabelFormat(null, 12, FlxColor.BLACK);
+		#if debug
+		add(songButton);
+		#end
+
 		// Dynamic(?) menu music
 		TitleState.piano.fadeIn(0.5, TitleState.piano.volume, 0.7);
 		TitleState.synth.fadeIn(0.5, TitleState.synth.volume, 0.7);
 		TitleState.guitar.fadeOut(0.5, 0);
 		TitleState.bass.fadeOut(0.5, 0);
+
+		camHUD = new FlxCamera();
+		camHUD.bgColor.alpha = 0;
+		camTOP = new FlxCamera();
+		camTOP.bgColor.alpha = 0;
+
+		FlxG.cameras.add(camHUD);
+		FlxG.cameras.add(camTOP);
+
+		FlxCamera.defaultCameras = [camHUD];
+
+		// Notifications
+		for (i in 0...FlxG.save.data.achievementsToBeEarned.length)
+		{
+			if (FlxG.save.data.achievementsToBeEarned.length == 0 || i == FlxG.save.data.achievementsToBeEarned.length)
+				break;
+
+			for (j in achievements)
+			{
+				if (FlxG.save.data.achievementsToBeEarned[i] == j)
+				{
+					earnAchievement(j, notifYMod);
+					FlxG.save.data.achievementsToBeEarned.splice(FlxG.save.data.achievementsToBeEarned.indexOf(j), 1); // Removes j from achievementsToBeEarned
+
+					notifYMod += 80; // So that no notifications overlap each other
+				}
+			}
+		}
+
+		for (i in 0...FlxG.save.data.songsToBeUnlocked.length)
+		{
+			if (FlxG.save.data.songsToBeUnlocked.length == 0)
+				break;
+
+			var pNum:Int = -1;
+
+			for (j in unlockables)
+			{
+				pNum += 1;
+
+				if (FlxG.save.data.songsToBeUnlocked[i] == j)
+				{
+					trace("OOH IT EQUALS THE THING!!!!!");
+					switch(places[pNum])
+					{
+						case 1:
+							trace("OOH BOSS BOSS BOSS BOSS");
+							unlockSong(FlxG.save.data.songsToBeUnlocked[i], "Check the boss minigames", notifYMod2);
+						case 2:
+							trace("OOH CHALLENGE CHALLENGE CHALLENGE CHALLENGE");
+							unlockSong(FlxG.save.data.songsToBeUnlocked[i], "Check the challenge minigames", notifYMod2);
+					}
+
+					FlxG.save.data.songsToBeUnlocked.splice(FlxG.save.data.songsToBeUnlocked.indexOf(j), 1); // Removes j from songsToBeUnlocked
+
+					notifYMod2 += 80; // So that no notifications overlap each other
+				}
+			}
+		}
 
 		super.create();
 	}
@@ -289,5 +402,51 @@ class MainMenuState extends MusicBeatState
 	function sendToGJLogin():Void
 	{
 		FlxG.switchState(new GameJoltLogin());
+	}
+
+	function sendToSong():Void
+	{
+		var song:String   = "red";
+		var suffix:String = "-hard";
+
+		// Dynamic(?) menu music
+		TitleState.piano.fadeOut(0.5, 0);
+		TitleState.synth.fadeOut(0.5, 0);
+		TitleState.guitar.fadeOut(0.5, 0);
+		TitleState.bass.fadeOut(0.5, 0);
+
+		PlayState.isStoryMode = false;
+		if (suffix == "-hard") PlayState.storyDifficulty = 2;
+		else PlayState.storyDifficulty = 1;
+		PlayState.SONG = Song.loadFromJson(song + suffix, song);
+		LoadingState.loadAndSwitchState(new PlayState(), true);
+	}
+
+	function earnAchievement(a:String, ymod:Float):Void
+	{
+		FlxG.sound.play(Paths.sound('notification'));
+
+		var n:FNMNotification = new FNMNotification(2, "New achievement!", a);
+		n.cameras = [camTOP];
+		n.y += ymod;
+		add(n);
+
+		FlxG.save.data.achievementsEarned.push(a);
+		trace(FlxG.save.data.achievementsEarned);
+		trace(FlxG.save.data.achievementsToBeEarned);
+	}
+
+	function unlockSong(s:String, msg:String, ymod:Float):Void
+	{
+		FlxG.sound.play(Paths.sound('notification'));
+
+		var n:FNMNotification = new FNMNotification(1, "Song unlocked!", msg);
+		n.cameras = [camTOP];
+		n.y += ymod;
+		add(n);
+
+		FlxG.save.data.songsUnlocked.push(s);
+		trace(FlxG.save.data.songsUnlocked);
+		trace(FlxG.save.data.songsToBeUnlocked);
 	}
 }

@@ -22,6 +22,7 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-dodge', [0, 1], 0, false, isPlayer);
 		animation.add('bf-gf', [37, 38], 0, false, isPlayer);
 		animation.add('bf-opponent', [0, 1], 0, false, isPlayer);
+		animation.add('bf-opponent-f', [0, 1], 0, false, isPlayer);
 		animation.add('bf-flipped', [0, 1], 0, false, isPlayer);
 		animation.add('bf-battle', [0, 1], 0, false, isPlayer);
 		animation.add('bf-bDiagonal', [0, 1], 0, false, isPlayer);
@@ -49,6 +50,10 @@ class HealthIcon extends FlxSprite
 		animation.add('cluckington', [17, 18], 0, false, isPlayer);
 		animation.add('clooshie', [19, 20], 0, false, isPlayer);
 		animation.add('gooey', [45, 46], 0, false, isPlayer);
+		animation.add('gooey-4', [45, 46], 0, false, isPlayer);
+		animation.add('gooey-3', [45, 46], 0, false, isPlayer);
+		animation.add('gooey-2', [45, 46], 0, false, isPlayer);
+		animation.add('gooey-1', [45, 46], 0, false, isPlayer);
 		animation.add('gooey-battle', [45, 46], 0, false, isPlayer);
 		animation.add('gooey-squished', [45, 46], 0, false, isPlayer);
 		animation.add('mooshie', [24, 25], 0, false, isPlayer);

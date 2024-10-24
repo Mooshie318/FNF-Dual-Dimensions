@@ -1,0 +1,8 @@
+This is mainly just for me so I don't be unsmart
+
+- Code it in
+- Add it in AchievementsState.hx
+- Add it in MainMenuState.hx
+- Make art for GameJolt and FNM:
+    - GameJolt: Psych Engine style
+    - FNM: Minigame style

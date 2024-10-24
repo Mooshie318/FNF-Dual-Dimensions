@@ -22,23 +22,23 @@ class MinigameState extends MusicBeatState
     public static var isB:Bool = false;
     public static var isC:Bool = false;
 
-    var b1Unlocked:Bool = FlxG.save.data.beatGooeyWeek;
-    var b2Unlocked:Bool = FlxG.save.data.beatSlimeWeek;
-    var b3Unlocked:Bool = FlxG.save.data.beatMooWeek;
-    var b4Unlocked:Bool = FlxG.save.data.beatRalphWeek;
+    var b1Unlocked:Bool = FlxG.save.data.beatGooeyWeek; // Gooey-Battle
+    var b2Unlocked:Bool = FlxG.save.data.beatSlimeWeek; // Fire-Battle
+    var b3Unlocked:Bool = FlxG.save.data.beatMooWeek;   // Moo-Battle
+    var b4Unlocked:Bool = FlxG.save.data.beatRalphWeek; // Ralph boss
 
-    var ch1Unlocked:Bool = (FlxG.save.data.beatMooWeek && FlxG.save.data.beatStickoWeek);
-    var ch2Unlocked:Bool = (FlxG.save.data.beatSaWeek);
+    var ch1Unlocked:Bool = (FlxG.save.data.beatMooWeek && FlxG.save.data.beatStickoWeek); // Hit-or-Miss
+    var ch2Unlocked:Bool = (FlxG.save.data.beatSaWeek); // Dark-Purple
 
     var boss:Array<Dynamic> = [
         ['b1', 'Beat 1-7'],
-        ['b2', 'Beat 1-11'],
-        ['b3', 'Beat 1-9'],
+        ['b2', 'Beat 1-1'],
+        ['b3', 'Beat 1-8'],
         ['b4', 'Beat 3-1']
     ];
 
     var challenge:Array<Dynamic> = [
-        ['ch1', 'Beat 1-9 and 2-1'],
+        ['ch1', 'Beat 1-8 and 2-1'],
         ['ch2', '(WILL CHANGE LATER) Beat 2-2']
     ];
 

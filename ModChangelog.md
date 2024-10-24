@@ -4,7 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Unreleased - The Music Update Part 3]
+### Changed
+- Remastered the songs of Chapter 2-1 through 2-5
+- A lot of the dialogue
+
+## [1.4.2 - The Music Update Part 2] - 2024-10-24
+### Added
+- Added a notification system for achievements and unlocking songs
+- A welcome message with some important info after the title screen
+- Some weeks will have a popup warning when you press enter, showing that it's old and you prob shouldn't play it
+### Changed
+- Remastered the songs of Chapter 1-6 through 1-8
+- A lot of the dialogue
+- 1-9 is now 1-8
+- Changed the cutscenes for the emd of 1-6, 1-7, and 1-8
+### Removed
+- 1-8 (old), 1-10, and 1-11 because it didn't fit
+- Alan cover that was in B-1
+- Moosanity and Moovenge from 1-8
+### Note
+- Will release a small update when All-Around-You_Remastered is finished
+- The Music Update Part 3 will remaster music from Level 2-1 to 2-5
+- The update took so long because I was slow and I went to the hospital many times
+- For accurate scores, do CTRL + R (resets your score) on every song/week if your score isn't already 0
+- You should exit the game before playing Level 1-8 or Moo-Storm (There's a bug that I don't wanna fix)
 
 ## [1.4.1 - The Music Update Part 1] - 2023-08-10
 ### Added

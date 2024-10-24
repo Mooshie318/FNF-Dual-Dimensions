@@ -819,11 +819,30 @@ class BossState extends MusicBeatState
 				FlxG.save.data.beatRalphBoss = true;
 				// "Ralph" achievement
 				GameJoltAPI.getTrophy(189083);
+				checkAchievement("Ralph");
 				new FlxTimer().start(1, function(t:FlxTimer)
 				{
 					FlxG.switchState(new MainMenuState());
 				}, 1);
 			}, 1);
 		}});
+	}
+
+	// Notifications and Achievements
+	function checkAchievement(a:String):Void
+	{
+		var e:Array<String> = FlxG.save.data.achievementsEarned;
+		var tbe:Array<String> = FlxG.save.data.achievementsToBeEarned;
+
+		FlxG.save.data.achievementsToBeEarned.push(a);
+
+		for (i in e)
+		{
+			for (j in tbe)
+			{
+				if (i == a && j == i)
+					FlxG.save.data.achievementsToBeEarned.splice(FlxG.save.data.achievementsToBeEarned.indexOf(j), 1); // Removes j from achievementsToBeEarned
+			}
+		}
 	}
 }

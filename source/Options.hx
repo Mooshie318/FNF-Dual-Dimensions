@@ -515,3 +515,23 @@ class ItemBlockOption extends Option
 		return 'Item block ' + (FlxG.save.data.itemBlock ? "On" : "Off");
 	}
 }
+
+class WelcomeOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.welcome = !FlxG.save.data.welcome;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return (!FlxG.save.data.welcome ? "Dont show" : "Show") + " welcome at start";
+	}
+}

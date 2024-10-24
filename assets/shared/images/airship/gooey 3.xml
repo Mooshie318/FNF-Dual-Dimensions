@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gooey 3.png">
+	<!-- Created with Adobe Animate version 24.0.3.19 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="attack 30000" x="0" y="0" width="211" height="683" frameX="0" frameY="-12" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30001" x="0" y="0" width="211" height="683" frameX="0" frameY="-12" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30002" x="221" y="0" width="209" height="696" frameX="-2" frameY="0" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30003" x="221" y="0" width="209" height="696" frameX="-2" frameY="0" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30004" x="440" y="0" width="209" height="684" frameX="-2" frameY="-12" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30005" x="659" y="0" width="228" height="683" frameX="-6" frameY="-12" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30006" x="897" y="0" width="405" height="621" frameX="-6" frameY="-46" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30007" x="1312" y="0" width="560" height="544" frameX="-6" frameY="-46" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30008" x="1882" y="0" width="653" height="463" frameX="-6" frameY="-138" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30009" x="2545" y="0" width="653" height="463" frameX="-6" frameY="-229" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="attack 30010" x="3208" y="0" width="205" height="463" frameX="-6" frameY="-229" frameWidth="659" frameHeight="696"/>
+	<SubTexture name="gooey down0000" x="3423" y="0" width="226" height="638" frameX="0" frameY="-9" frameWidth="226" frameHeight="647"/>
+	<SubTexture name="gooey down0001" x="3423" y="0" width="226" height="638" frameX="0" frameY="-9" frameWidth="226" frameHeight="647"/>
+	<SubTexture name="gooey down0002" x="3659" y="0" width="226" height="647"/>
+	<SubTexture name="gooey down0003" x="3659" y="0" width="226" height="647"/>
+	<SubTexture name="gooey idle0000" x="0" y="706" width="213" height="544" frameX="0" frameY="-116" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0001" x="0" y="706" width="213" height="544" frameX="0" frameY="-116" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0002" x="223" y="706" width="213" height="559" frameX="0" frameY="-101" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0003" x="223" y="706" width="213" height="559" frameX="0" frameY="-101" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0004" x="446" y="706" width="213" height="603" frameX="0" frameY="-57" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0005" x="446" y="706" width="213" height="603" frameX="0" frameY="-57" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0006" x="669" y="706" width="213" height="638" frameX="0" frameY="-22" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0007" x="669" y="706" width="213" height="638" frameX="0" frameY="-22" frameWidth="213" frameHeight="660"/>
+	<SubTexture name="gooey idle0008" x="892" y="706" width="213" height="660"/>
+	<SubTexture name="gooey idle0009" x="892" y="706" width="213" height="660"/>
+	<SubTexture name="gooey idle0010" x="892" y="706" width="213" height="660"/>
+	<SubTexture name="gooey idle0011" x="892" y="706" width="213" height="660"/>
+	<SubTexture name="gooey idle0012" x="892" y="706" width="213" height="660"/>
+	<SubTexture name="gooey idle0013" x="892" y="706" width="213" height="660"/>
+	<SubTexture name="gooey left0000" x="1115" y="706" width="353" height="637" frameX="0" frameY="-21" frameWidth="355" frameHeight="660"/>
+	<SubTexture name="gooey left0001" x="1115" y="706" width="353" height="637" frameX="0" frameY="-21" frameWidth="355" frameHeight="660"/>
+	<SubTexture name="gooey left0002" x="1478" y="706" width="306" height="660" frameX="-49" frameY="0" frameWidth="355" frameHeight="660"/>
+	<SubTexture name="gooey left0003" x="1478" y="706" width="306" height="660" frameX="-49" frameY="0" frameWidth="355" frameHeight="660"/>
+	<SubTexture name="gooey right0000" x="1794" y="706" width="320" height="652" frameX="0" frameY="-11" frameWidth="320" frameHeight="663"/>
+	<SubTexture name="gooey right0001" x="1794" y="706" width="320" height="652" frameX="0" frameY="-11" frameWidth="320" frameHeight="663"/>
+	<SubTexture name="gooey right0002" x="2124" y="706" width="289" height="663" frameX="0" frameY="0" frameWidth="320" frameHeight="663"/>
+	<SubTexture name="gooey right0003" x="2124" y="706" width="289" height="663" frameX="0" frameY="0" frameWidth="320" frameHeight="663"/>
+	<SubTexture name="gooey up0000" x="2423" y="706" width="211" height="737" frameX="0" frameY="0" frameWidth="211" frameHeight="738"/>
+	<SubTexture name="gooey up0001" x="2423" y="706" width="211" height="737" frameX="0" frameY="0" frameWidth="211" frameHeight="738"/>
+	<SubTexture name="gooey up0002" x="2644" y="706" width="211" height="720" frameX="0" frameY="-18" frameWidth="211" frameHeight="738"/>
+	<SubTexture name="gooey up0003" x="2644" y="706" width="211" height="720" frameX="0" frameY="-18" frameWidth="211" frameHeight="738"/>
+</TextureAtlas>

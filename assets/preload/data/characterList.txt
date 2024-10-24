@@ -4,6 +4,7 @@ bf-car
 bf-dodge
 bf-gf
 bf-opponent
+bf-opponent-f
 bf-flipped
 bf-battle
 bf-bDiagonal
@@ -22,6 +23,10 @@ cluckington
 clooshie
 trooper
 gooey
+gooey-4
+gooey-3
+gooey-2
+gooey-1
 gooey-squished
 gooey-battle
 mooshie

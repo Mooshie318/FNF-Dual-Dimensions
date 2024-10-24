@@ -5,17 +5,27 @@ class KadeEngineData
 {
     public static function initSave()
     {
+		// FNM (Won't be used)
 		if (FlxG.save.data.platformerUnlocked == null)
 			FlxG.save.data.platformerUnlocked = false;
 
         if (FlxG.save.data.newInput == null)
 			FlxG.save.data.newInput = true;
 
+		// FNM
 		if (FlxG.save.data.dialogue == null)
 			FlxG.save.data.dialogue = true;
 
+		// FNM
 		if (FlxG.save.data.cutscenes == null)
 			FlxG.save.data.cutscenes = true;
+
+		// FMM Welcome message
+		if (FlxG.save.data.welcome == null)
+			FlxG.save.data.welcome = false;
+
+		if (FlxG.save.data.beenWelcomed == null)
+			FlxG.save.data.beenWelcomed = false;
 
 		if (FlxG.save.data.downscroll == null)
 			FlxG.save.data.downscroll = false;
@@ -65,8 +75,10 @@ class KadeEngineData
 
 		if (FlxG.save.data.watermark == null)
 			FlxG.save.data.watermark = true;
-		
-		if (FlxG.save.data.itemBlock == null)
+
+
+		// FNM SAVE DATA
+		if (FlxG.save.data.itemBlock == null) // Won't be used
 			FlxG.save.data.itemBlock = false;
 
 		if (FlxG.save.data.beatGooey == null)
@@ -98,6 +110,25 @@ class KadeEngineData
 
 		if (FlxG.save.data.beatSaWeek == null)
 			FlxG.save.data.beatSaWeek = false;
+
+		// Mainly for notifications
+		if (FlxG.save.data.achievementsEarned == null)
+			FlxG.save.data.achievementsEarned = [];
+
+		// If you earned an achievement, it goes here until you go to the main menu
+		if (FlxG.save.data.achievementsToBeEarned == null)
+			FlxG.save.data.achievementsToBeEarned = [];
+
+		// Mainly for notifications
+		if (FlxG.save.data.songsUnlocked == null)
+			FlxG.save.data.songsUnlocked = [];
+
+		// If you unlocked a song, it goes here until you go to the main menu
+		if (FlxG.save.data.songsToBeUnlocked == null)
+			FlxG.save.data.songsToBeUnlocked = [];
+
+		if (FlxG.save.data.storyShowWarningAgain == null)
+			FlxG.save.data.storyShowWarningAgain = true;
 
 		Conductor.recalculateTimings();
 		PlayerSettings.player1.controls.loadKeyBinds();

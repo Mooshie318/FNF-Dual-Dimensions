@@ -162,21 +162,9 @@ class DialogueBox extends FlxSpriteGroup
 					hasDialog = true;
 				case 'cluck' | 'clooshie' | 'fight-for-life':
 					hasDialog = true;
-				case 'trooper' | 'shell' | 'attack':
-					hasDialog = true;
-				case 'gooey' | 'sacrifice':
-					hasDialog = true;
-				case 'moo' | 'mooshie' | 'showdown':
-					hasDialog = true;
-				case 'red' | 'light-speed' | 'moo-storm' | 'moosanity' | 'moovenge' | '7391203':
+				case 'red' | 'light-speed' | 'moo-storm' | '7391203':
 					hasDialog = true;
 				case 'interview' | 'drive-thru':
-					hasDialog = true;
-				case 'plane' | 'air-battle' | 'thunder-storm':
-					hasDialog = true;
-				case 'lemons' | 'freezing' | 'burning' | 'slimy' | 'slime-rematch':
-					hasDialog = true;
-				case 'all-around-you':
 					hasDialog = true;
 				case 'sticks-n-stones' | 'branching-out' | 'logging-in':
 					hasDialog = true;
